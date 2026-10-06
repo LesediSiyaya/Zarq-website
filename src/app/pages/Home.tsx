@@ -134,6 +134,11 @@ export default function Home() {
             {digitalServices.map(({ title }) => (
               <li key={title} className="bg-white p-4 sm:p-5 text-sm sm:text-base font-medium">{title}</li>
             ))}
+            <li className="bg-gray-950">
+              <Link to="/digital#pricing" className="flex h-full items-center justify-between gap-2 p-4 sm:p-5 text-sm sm:text-base font-medium text-white hover:bg-gray-800 transition-colors">
+                Services & pricing <ArrowRight className="w-4 h-4 flex-shrink-0" aria-hidden="true" />
+              </Link>
+            </li>
           </ul>
         </div>
       </Section>

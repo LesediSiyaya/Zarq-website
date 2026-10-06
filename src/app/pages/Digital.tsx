@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+import { ArrowRight } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, SectionHeading, StatusBadge, CTABand, ButtonLink, Eyebrow } from '../components/zarq/ui';
 import { digitalServices, digitalAudiences, founder, pricing, pricingNote } from '../components/zarq/content';
@@ -42,6 +44,15 @@ export default function Digital() {
               <p className="text-gray-600 leading-relaxed">{text}</p>
             </div>
           ))}
+          <Link to="/contact?interest=digital" className="group bg-gray-950 text-white p-6 sm:p-8 flex flex-col justify-between hover:bg-gray-800 transition-colors">
+            <p className="font-spec text-xs text-gray-400 mb-6">?</p>
+            <div>
+              <h3 className="text-2xl mb-2">Not sure what you need?</h3>
+              <p className="text-gray-300 leading-relaxed flex items-center gap-2">
+                Start a conversation <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </p>
+            </div>
+          </Link>
         </div>
       </Section>
 
