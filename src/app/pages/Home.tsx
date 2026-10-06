@@ -1,71 +1,209 @@
 import { Link } from 'react-router';
-import { ArrowRight, Code, Cpu, Lightbulb, Shield, Target, Users } from 'lucide-react';
+import { ArrowRight, GraduationCap, Handshake, Briefcase, School } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
+import Journey from '../components/zarq/Journey';
+import {
+  Section, SectionHeading, Container, Eyebrow, ButtonLink, TextLink, StatusBadge, StatusLegend, Card,
+} from '../components/zarq/ui';
+import { academy, ecosystem, tracks, journey, problemPoints, digitalServices, yearOneTargets, founder, coreMessage } from '../components/zarq/content';
 
-const coreAreas = [
-  { label: 'Technology', title: 'Digital Solutions', description: 'We build websites, software and digital experiences designed around real needs.', icon: Code, color: 'bg-[#ffc8dd]' },
-  { label: 'Access', title: 'Technology Access', description: 'We create pathways to technology, digital tools and practical learning.', icon: Users, color: 'bg-[#e7c6ff]' },
-  { label: 'Skills', title: 'STEM & Robotics', description: 'We introduce learners and communities to coding, robotics, AI and emerging technologies.', icon: Cpu, color: 'bg-[#caf0f8]' },
-];
-
-const buildCategories = [
-  { title: 'Web & Digital', description: 'Websites, digital platforms and online experiences built for people and organisations.', icon: Code, color: 'bg-[#ffc8dd]' },
-  { title: 'Software & Solutions', description: 'Technology solutions designed around specific operational and business needs.', icon: Shield, color: 'bg-[#e7c6ff]' },
-  { title: 'Digital Strategy', description: 'Helping organisations identify where technology can improve the way they work, connect and grow.', icon: Target, color: 'bg-[#caf0f8]' },
-  { title: 'IT & Technology Support', description: 'Practical technical support, implementation and technology guidance.', icon: Lightbulb, color: 'bg-[#ffc8dd]' },
-];
-
-const audiences = [
-  ['Businesses', 'Digital solutions, technology services and support to help your organisation grow.'],
-  ['Organisations', 'Practical technology solutions that improve how you operate and connect with the people you serve.'],
-  ['Learners', 'Opportunities to develop digital, coding, robotics and STEM skills.'],
-  ['Communities', 'Greater access to technology, learning and digital opportunities.'],
+const audiencePaths = [
+  { icon: GraduationCap, who: 'Young people & families', action: 'Explore Programmes', to: '/programmes' },
+  { icon: School, who: 'Schools', action: 'Partner with Zarq', to: '/get-involved#schools' },
+  { icon: Handshake, who: 'Funders & partners', action: 'Support Zarq', to: '/get-involved#partners' },
+  { icon: Briefcase, who: 'Businesses & organisations', action: 'Work with Zarq', to: '/digital' },
 ];
 
 export default function Home() {
-  useSEO({ title: 'Technology & Innovation', description: 'Zarq builds practical digital solutions, creates access to technology and develops digital skills through learning and STEM opportunities.', path: '/' });
+  useSEO({
+    title: 'From digital exclusion to economic participation',
+    description: coreMessage,
+    path: '/',
+  });
+
+  const programmes = [academy, ...tracks.filter((t) => t.id === 'youth'), ...ecosystem];
 
   return (
     <div>
-      <section className="pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[min(680px,90vw)] h-[280px] rounded-full bg-gradient-to-r from-[#caf0f8]/40 via-[#e7c6ff]/30 to-[#ffc8dd]/40 blur-3xl pointer-events-none" />
-        <div className="relative max-w-5xl mx-auto">
-          <div className="max-w-4xl">
-            <p className="text-xs sm:text-sm font-semibold tracking-[0.22em] text-gray-500 uppercase mb-6">Technology · Access · Skills</p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.94] font-normal mb-6 text-gray-950">Technology built for what comes next.</h1>
-            <p className="text-lg sm:text-xl text-gray-700 max-w-2xl leading-relaxed mb-8">Zarq builds practical digital solutions and creates access to technology, digital skills and STEM opportunities for businesses, organisations and communities.</p>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-stone-50 border-b border-gray-200">
+        <div className="zq-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <Container className="relative pt-16 pb-14 sm:pt-28 sm:pb-20">
+          <Eyebrow>Youth technology enterprise · Matatiele, Eastern Cape</Eyebrow>
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl leading-[0.95] text-gray-950 max-w-5xl mb-7">
+            From digital exclusion to economic participation.
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mb-9">
+            Zarq gives underserved young people access to technology, practical skills, real projects, mentorship and pathways to opportunity.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 mb-14 sm:mb-20">
+            <ButtonLink to="/programmes">Explore Programmes</ButtonLink>
+            <ButtonLink to="/digital" variant="secondary">Work with Zarq</ButtonLink>
+          </div>
+          <Journey steps={journey} />
+        </Container>
+      </section>
+
+      {/* What Zarq is */}
+      <Section>
+        <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
+          <Eyebrow>What Zarq is</Eyebrow>
+          <div>
+            <h2 className="text-3xl sm:text-4xl leading-tight mb-6">
+              A youth technology and digital opportunity enterprise, rooted in Matatiele.
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-5">
+              Zarq is not just a coding school, a training centre or a digital agency. It connects all three: community access, practical technology education, project-based learning, mentorship and commercial technology services.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              The aim is simple. Help young people move beyond using technology to creating with it, and then use those skills to reach real economic opportunity.
+            </p>
+            <TextLink to="/about">About Zarq</TextLink>
+          </div>
+        </div>
+      </Section>
+
+      {/* The problem */}
+      <Section tone="ink">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <div>
+            <Eyebrow dark>The problem</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-6">It's bigger than device access.</h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-5">
+              A young person can use a phone every day and still have little chance to learn how technology is built, develop a portfolio, meet mentors or turn digital skills into income.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              In underserved communities, the gap between potential and opportunity is often a gap in access.
+            </p>
+          </div>
+          <div>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What's often out of reach</p>
+            <ul className="grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden">
+              {problemPoints.map((point) => (
+                <li key={point} className="bg-gray-950 p-5 text-gray-200">{point}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* Ecosystem / programmes */}
+      <Section tone="paper">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
+          <SectionHeading
+            className="!mb-0"
+            eyebrow="The Zarq ecosystem"
+            title="One pathway, built in stages."
+            intro="Zarq is being built as an ecosystem, not a single programme. Here's what's in development and what's planned."
+          />
+          <TextLink to="/programmes">All programmes</TextLink>
+        </div>
+        <div className="mb-8"><StatusLegend /></div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {programmes.map((p) => (
+            <Link key={p.id} to={`/programmes#${p.id}`} className="group">
+              <Card className="h-full flex flex-col transition-colors group-hover:border-gray-950">
+                <StatusBadge status={p.status} className="self-start mb-6" />
+                <h3 className="text-2xl mb-2">{p.name}</h3>
+                <p className="text-gray-600 leading-relaxed flex-1">{p.summary}</p>
+                <ArrowRight className="w-4 h-4 mt-6 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* Zarq Digital */}
+      <Section>
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <Eyebrow className="">Zarq Digital</Eyebrow>
+              <StatusBadge status="current" />
+            </div>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">Technology services that also fund opportunity.</h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
+              Zarq Digital is the commercial arm of Zarq. It builds websites, apps and digital solutions for businesses and organisations. The revenue it earns helps make youth programmes sustainable.
+            </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link to="/digital" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors">Explore Services <ArrowRight className="w-4 h-4" /></Link>
-              <Link to="/about" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-gray-300 text-gray-900 font-semibold rounded-full hover:bg-gray-50 transition-colors">Discover Zarq <ArrowRight className="w-4 h-4" /></Link>
+              <ButtonLink to="/digital">Work with Zarq</ButtonLink>
+              <ButtonLink to="/contact?interest=digital" variant="secondary">Start a conversation</ButtonLink>
             </div>
           </div>
-
+          <ul className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
+            {digitalServices.map(({ title }) => (
+              <li key={title} className="bg-white p-4 sm:p-5 text-sm sm:text-base font-medium">{title}</li>
+            ))}
+          </ul>
         </div>
-      </section>
+      </Section>
 
-      <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 border-y border-gray-100">
-        <div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">The Zarq foundation</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">Technology. Access. Skills.</h2><p className="text-gray-600 text-base sm:text-lg leading-relaxed">Zarq has multiple sides, but one underlying purpose: making technology useful, understandable and more open to participation.</p></div>
-          <div className="grid md:grid-cols-3 gap-5">{coreAreas.map(({ label, title, description, icon: Icon, color }) => <div key={title} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-gray-100"><div className={"w-12 h-12 rounded-xl flex items-center justify-center mb-7 text-gray-900 " + color}><Icon className="w-6 h-6" /></div><p className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">{label}</p><h3 className="text-2xl mb-3 text-gray-950">{title}</h3><p className="text-gray-600 leading-relaxed">{description}</p></div>)}</div>
+      {/* Impact */}
+      <Section tone="blush">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+          <SectionHeading
+            className="!mb-0"
+            eyebrow="Impact"
+            title="Clear targets. Honest reporting."
+            intro="These are Zarq's proposed Year 1 targets, not results. We'll publish verified outcomes as evidence becomes available."
+          />
+          <TextLink to="/impact">Our impact model</TextLink>
         </div>
-      </section>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {yearOneTargets.slice(0, 4).map(({ value, label }) => (
+            <div key={label} className="rounded-2xl bg-white p-5 sm:p-6 border border-white">
+              <StatusBadge status="target" className="mb-5" />
+              <p className="font-brand text-4xl sm:text-5xl leading-none mb-2">{value}</p>
+              <p className="text-sm text-gray-600">{label}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-5xl mx-auto grid md:grid-cols-[0.8fr_1.2fr] gap-10 sm:gap-16 items-start"><p className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400 pt-2">Why Zarq</p><div><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-6">Technology should create opportunity.</h2><p className="text-lg text-gray-600 leading-relaxed mb-5">At Zarq, we believe technology is most valuable when it solves real problems and opens access to new possibilities.</p><p className="text-lg text-gray-600 leading-relaxed mb-8">We combine digital services with technology education and STEM initiatives to build practical solutions, develop skills and make technology more accessible.</p><Link to="/about" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">Learn About Zarq <ArrowRight className="w-4 h-4" /></Link></div></div></section>
+      {/* Founder */}
+      <Section>
+        <div className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-center max-w-5xl">
+          <img
+            src="/founder.jpg"
+            alt={`${founder.name}, founder of Zarq`}
+            loading="lazy"
+            decoding="async"
+            className="w-48 h-48 sm:w-64 sm:h-64 object-cover object-top rounded-2xl"
+          />
+          <div>
+            <Eyebrow>Why Zarq</Eyebrow>
+            <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Built by someone who understands both the technology and the access gap.</h2>
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Zarq was founded by {founder.name}, who holds a BSc in Information Technology and has hands-on experience building websites, applications, digital products and AI-related work.
+            </p>
+            <p className="font-medium">{founder.name}</p>
+            <p className="text-sm text-gray-500 mb-6">{founder.role}</p>
+            <TextLink to="/about#founder">Read the story</TextLink>
+          </div>
+        </div>
+      </Section>
 
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white"><div className="max-w-6xl mx-auto"><div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-14"><div className="max-w-2xl"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">Zarq Digital</p><h2 className="text-4xl sm:text-5xl leading-tight mb-4">What we build</h2><p className="text-gray-300 text-base sm:text-lg leading-relaxed">From digital experiences to technology solutions, Zarq helps turn ideas and challenges into practical technology.</p></div><Link to="/digital" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#ffc8dd] transition-colors shrink-0">View All Services <ArrowRight className="w-4 h-4" /></Link></div><div className="grid sm:grid-cols-2 gap-px bg-white/15 rounded-2xl overflow-hidden">{buildCategories.map(({ title, description, icon: Icon, color }) => <div key={title} className="bg-gray-900 p-6 sm:p-8 hover:bg-gray-800 transition-colors"><div className={"w-11 h-11 rounded-xl flex items-center justify-center mb-6 text-gray-900 " + color}><Icon className="w-5 h-5" /></div><h3 className="text-2xl mb-2">{title}</h3><p className="text-gray-400 leading-relaxed">{description}</p></div>)}</div></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#e7c6ff]/25"><div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 sm:gap-16 items-center"><div><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Zarq Hub · Learn</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">Technology should be accessible.</h2><p className="text-gray-700 text-lg leading-relaxed mb-8">Zarq Hub creates opportunities for people to develop practical digital skills, explore technology and access learning resources.</p><Link to="/hub" className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white rounded-full font-semibold hover:bg-gray-700 transition-colors">Explore Zarq Hub <ArrowRight className="w-4 h-4" /></Link></div><div className="grid sm:grid-cols-3 gap-4">{[['Digital Skills','Building confidence with essential digital tools and technologies.'],['Learning','Practical technology education for different levels of experience.'],['Community','Creating spaces where people can learn, experiment and connect through technology.']].map(([title, description]) => <div key={title} className="bg-white/80 rounded-2xl p-5 border border-white"><h3 className="text-xl mb-3">{title}</h3><p className="text-gray-600 text-sm leading-relaxed">{description}</p></div>)}</div></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#caf0f8]/30"><div className="max-w-6xl mx-auto grid lg:grid-cols-[0.8fr_1.2fr] gap-10 sm:gap-16 items-center"><div className="order-2 lg:order-1 bg-white/75 rounded-[2rem] p-7 sm:p-10 border border-white"><p className="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6">Emerging initiative / 03</p><div className="grid grid-cols-2 gap-4">{['Robotics','Coding','Automation','STEM projects'].map((item, index) => <div key={item} className="rounded-xl p-4 bg-white border border-gray-100"><span className="font-mono text-[10px] text-gray-400">0{index + 1}</span><p className="font-semibold text-gray-900 mt-3">{item}</p></div>)}</div></div><div className="order-1 lg:order-2"><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Zarq Robotics · Explore</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">From learning technology to building with it.</h2><p className="text-gray-700 text-lg leading-relaxed mb-4">Zarq Robotics introduces learners to robotics, coding, automation and emerging technologies through practical, hands-on experiences.</p><p className="text-gray-600 leading-relaxed mb-8">Zarq Robotics is an emerging area of the ecosystem. We are developing the ideas, projects and learning experiences that will shape this initiative.</p><Link to="/robotics" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">Explore Zarq Robotics <ArrowRight className="w-4 h-4" /></Link></div></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">The Zarq ecosystem</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">One ecosystem. Different pathways.</h2><p className="text-gray-600 text-lg leading-relaxed">Zarq brings technology, digital services and learning together under one ecosystem.</p></div><div className="grid md:grid-cols-3 gap-5 mb-8">{[['Zarq Digital','Building practical technology for businesses and organisations.','BUILD','bg-[#ffc8dd]','/digital'],['Zarq Hub','Creating access to digital learning and technology skills.','LEARN','bg-[#e7c6ff]','/hub'],['Zarq Robotics','Developing practical STEM, robotics and emerging technology experiences.','EXPLORE','bg-[#caf0f8]','/robotics']].map(([title, description, action, color, path]) => <Link to={path} key={title} className="group rounded-2xl border border-gray-200 p-6 hover:border-gray-400 transition-colors"><div className={"inline-flex px-3 py-1 rounded-full font-mono text-xs text-gray-800 mb-6 " + color}>{action}</div><h3 className="text-2xl mb-2">{title}</h3><p className="text-gray-600 leading-relaxed">{description}</p><ArrowRight className="w-4 h-4 mt-6 group-hover:translate-x-1 transition-transform" /></Link>)}</div><p className="text-center text-gray-600 max-w-3xl mx-auto leading-relaxed">Together, these areas reflect one belief: technology should be useful, accessible and capable of creating opportunity.</p></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-50"><div className="max-w-6xl mx-auto"><div className="max-w-2xl mb-10 sm:mb-14"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-4">Who Zarq is for</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-4">Built for different needs.</h2><p className="text-gray-600 text-lg leading-relaxed">Whether you need a digital solution, want to develop technology skills or are looking for new ways to engage with STEM, Zarq creates pathways into technology.</p></div><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{audiences.map(([title, description]) => <div key={title} className="bg-white rounded-2xl p-6 border border-gray-100"><h3 className="text-2xl mb-3">{title}</h3><p className="text-gray-600 text-sm leading-relaxed">{description}</p></div>)}</div></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white"><div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 sm:gap-16"><div className="flex-shrink-0"><div className="relative"><div className="absolute -inset-3 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-3xl opacity-60 blur-sm" /><img src="/founder.jpg" alt="Lesedi Siyaya, Founder of Zarq" loading="lazy" className="relative w-48 h-48 sm:w-60 sm:h-60 object-cover rounded-2xl shadow-xl" /></div></div><div className="flex-1 text-center md:text-left"><p className="text-xs font-semibold tracking-[0.2em] text-gray-400 uppercase mb-5">The person behind Zarq</p><blockquote className="text-2xl sm:text-3xl font-normal text-gray-900 leading-snug mb-6">“Technology, learning and practical innovation should meet in ways that create real opportunity.”</blockquote><p className="text-gray-600 leading-relaxed mb-5">Founded by Lesedi Siyaya, Zarq is being built around a broader vision: creating a platform where technology, learning and practical innovation can meet.</p><p className="font-semibold text-gray-900">Lesedi Siyaya</p><p className="text-sm text-gray-500 mb-6">Founder · Zarq</p><Link to="/about" className="inline-flex items-center gap-2 font-semibold text-gray-900 hover:text-gray-600 transition-colors">About Zarq <ArrowRight className="w-4 h-4" /></Link></div></div></section>
-
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-gray-900 text-white"><div className="max-w-5xl mx-auto grid md:grid-cols-[0.75fr_1.25fr] gap-10 sm:gap-16 items-start"><div><p className="text-xs font-semibold tracking-[0.2em] text-gray-500 uppercase mb-4">Our impact</p><h2 className="text-4xl sm:text-5xl leading-tight">Technology with a wider purpose.</h2></div><div><p className="text-xl text-gray-200 leading-relaxed mb-5">We don’t measure technology only by what we build, but by what it makes possible.</p><p className="text-gray-400 leading-relaxed mb-8">Through digital services, skills development and STEM initiatives, Zarq works toward a future where more people can access technology, understand it and use it to create new opportunities.</p><Link to="/impact" className="inline-flex items-center gap-2 text-white font-semibold hover:text-[#ffc8dd] transition-colors">Explore our impact <ArrowRight className="w-4 h-4" /></Link></div></div></section>
-
-      <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]"><div className="max-w-4xl mx-auto text-center"><p className="text-xs font-semibold tracking-[0.2em] text-gray-600 uppercase mb-5">Start somewhere useful</p><h2 className="text-4xl sm:text-5xl leading-tight text-gray-950 mb-5">Have an idea, challenge or opportunity?</h2><p className="text-gray-700 text-lg sm:text-xl mb-9">Let’s explore what technology can make possible.</p><div className="flex flex-col sm:flex-row justify-center gap-3"><Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-700 transition-colors">Start a Conversation <ArrowRight className="w-4 h-4" /></Link><Link to="/digital" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-white/70 text-gray-900 font-semibold rounded-full hover:bg-white transition-colors">Explore Services</Link></div></div></section>
+      {/* Audience pathways */}
+      <Section tone="ink">
+        <SectionHeading
+          dark
+          eyebrow="What you can do next"
+          title="Find your way into Zarq."
+          intro="Whether you want to learn, partner, support or build something, there's a clear next step."
+        />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {audiencePaths.map(({ icon: Icon, who, action, to }) => (
+            <Link key={who} to={to} className="group rounded-2xl border border-white/15 p-6 hover:border-white transition-colors">
+              <Icon className="w-6 h-6 text-[#ffc8dd] mb-8" aria-hidden="true" />
+              <p className="text-sm text-gray-400 mb-1">{who}</p>
+              <p className="text-xl font-medium flex items-center gap-2">
+                {action}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </p>
+            </Link>
+          ))}
+        </div>
+      </Section>
     </div>
   );
 }

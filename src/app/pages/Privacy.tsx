@@ -1,18 +1,13 @@
 import { Link } from 'react-router';
 import { useSEO } from '../components/useSEO';
+import { PageHeader } from '../components/zarq/ui';
 
 export default function Privacy() {
   useSEO({ title: 'Privacy Policy', description: `Read the Zarq privacy policy to understand how we collect, use, and protect your personal information on our website and services.`, path: '/privacy' });
 
   return (
     <div>
-      {/* Header */}
-      <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-gray-500 text-sm">Last updated: July 2026</p>
-        </div>
-      </section>
+      <PageHeader eyebrow="Legal · Last updated July 2026" title="Privacy Policy" intro="How Zarq collects, uses and protects your personal information, in line with POPIA." />
 
       {/* Content */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -22,8 +17,8 @@ export default function Privacy() {
             <p className="text-gray-600 leading-relaxed">
               Zarq ("we", "our", or "us") is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
-              provide when you visit our website (<a href="https://zarq.sa-tech.workers.dev" className="text-[#e7c6ff] underline">novatechhub.pages.dev</a>) or
-              contact us about our services and programs.
+              provide when you visit our website (<a href="https://zarq.sa-tech.workers.dev" className="text-gray-950 underline underline-offset-2">zarq.sa-tech.workers.dev</a>) or
+              contact us about our services and programmes.
             </p>
           </div>
 
@@ -54,7 +49,7 @@ export default function Privacy() {
               </p>
               <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm sm:text-base">
                 <li>Respond to your inquiry or service request.</li>
-                <li>Process and follow up on program applications.</li>
+                <li>Process and follow up on programme applications.</li>
                 <li>Send you a quote, invoice, or project update related to work you have engaged us for.</li>
                 <li>Improve our services based on feedback you share.</li>
                 <li>Analyse anonymous website usage to improve the site experience.</li>
@@ -88,7 +83,7 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">6. Children's Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
-                Some of our programs serve young people under 18. Where we collect information from minors, we do so only in the context of program enrollment and with the intent of keeping a parent or guardian informed. We do not use personal data from minors for any commercial purpose.
+                Some of our programmes serve young people under 18. Where we collect information from minors, we do so only in the context of programme enrolment and with the intent of keeping a parent or guardian informed. We do not use personal data from minors for any commercial purpose.
               </p>
             </div>
 
@@ -121,9 +116,9 @@ export default function Privacy() {
                 If you have any questions or concerns about this Privacy Policy, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
-                <li><span className="font-medium">Email:</span> <a href="mailto:lesnovatechub@gmail.com" className="text-[#e7c6ff] underline">lesnovatechub@gmail.com</a></li>
-                <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730286401" className="text-[#e7c6ff] underline">+27 73 028 6401</a></li>
-                <li><span className="font-medium">Instagram:</span> <a href="https://instagram.com/lesedinovatech_hub" target="_blank" rel="noopener noreferrer" className="text-[#e7c6ff] underline">@lesedinovatech_hub</a></li>
+                <li><span className="font-medium">Email:</span> <a href="mailto:lesnovatechub@gmail.com" className="text-gray-950 underline underline-offset-2">lesnovatechub@gmail.com</a></li>
+                <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730286401" className="text-gray-950 underline underline-offset-2">+27 73 028 6401</a></li>
+                <li><span className="font-medium">Instagram:</span> <a href="https://instagram.com/lesedinovatech_hub" target="_blank" rel="noopener noreferrer" className="text-gray-950 underline underline-offset-2">@lesedinovatech_hub</a></li>
               </ul>
             </div>
 
@@ -132,9 +127,9 @@ export default function Privacy() {
           <div className="mt-12 text-center">
             <Link
               to="/contact"
-              className="inline-block px-8 py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation"
+              className="inline-flex px-6 py-3.5 rounded-full bg-gray-950 hover:bg-gray-800 text-white font-medium transition-colors"
             >
-              Contact Us
+              Start a conversation
             </Link>
           </div>
 

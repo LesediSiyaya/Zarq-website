@@ -1,18 +1,33 @@
-import { useState } from 'react';
-import { Mail, Phone, Sparkles, MapPin } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { useSEO } from '../components/useSEO';
+import { PageHeader, Section, Eyebrow } from '../components/zarq/ui';
+import { contact, interestGroups } from '../components/zarq/content';
+
+const allInterests = interestGroups.flatMap((g) => g.options);
+
+const fieldClass =
+  'w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-base focus:border-gray-950 focus:outline-none focus:ring-2 focus:ring-[#ffc8dd] disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors';
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
+  const preselected = allInterests.find((o) => o.key === searchParams.get('interest'))?.value ?? '';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    interest: '',
-    message: ''
+    interest: preselected,
+    message: '',
   });
+  // Keep the selection in sync when a CTA links here while Contact is already open.
+  useEffect(() => {
+    if (preselected) setFormData((f) => ({ ...f, interest: preselected }));
+  }, [preselected]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null);
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,200 +52,187 @@ export default function Contact() {
       if (response.ok && data.success) {
         setSubmitStatus({
           type: 'success',
-          message: 'Thank you for your interest! We have received your application and will contact you soon.'
+          message: 'Thank you. We’ve received your message and will be in touch.',
         });
         setFormData({ name: '', email: '', phone: '', interest: '', message: '' });
       } else {
         setSubmitStatus({
           type: 'error',
-          message: data.error || 'Failed to submit form. Please try again.'
+          message: data.error || 'Failed to submit form. Please try again.',
         });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Failed to submit form. Please check your connection and try again.'
+        message: 'Failed to submit form. Please check your connection and try again.',
       });
     } finally {
       setIsSubmitting(false);
     }
   };
-  useSEO({ title: 'Contact Us – Get in Touch', description: `Contact Zarq to join a program, request a service quote, or learn more. Reach us by email at lesnovatechub@gmail.com or WhatsApp 073 028 6401.`, path: '/contact' });
 
+  useSEO({
+    title: 'Contact | Start a Conversation',
+    description: `Contact Zarq to join a programme, partner, mentor, support Zarq or enquire about Zarq Digital. Email ${contact.email} or call ${contact.phoneDisplay}.`,
+    path: '/contact',
+  });
 
   return (
     <div>
-      {/* Header */}
-      <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-full mb-4">
-            <span className="text-xs sm:text-sm font-medium">We typically respond within one business day</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Ready to start your journey or support our mission? We'd love to hear from you.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="Contact"
+        title="Start a conversation."
+        intro="Whether you want to join, partner, support or work with Zarq, choose what your message is about so it reaches the right place."
+      />
 
-      {/* Contact Form and Info */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
-            {/* Contact Form */}
-            <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8">
-              <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Application Form</h3>
-
-              {submitStatus && (
-                <div className={`mb-4 sm:mb-6 p-4 rounded-lg ${
+      <Section>
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-16 items-start">
+          {/* Form */}
+          <div className="rounded-2xl border border-gray-200 p-6 sm:p-8">
+            {submitStatus && (
+              <div
+                role="status"
+                className={`mb-6 p-4 rounded-xl text-sm ${
                   submitStatus.type === 'success'
                     ? 'bg-green-50 border border-green-200 text-green-800'
                     : 'bg-red-50 border border-red-200 text-red-800'
-                }`}>
-                  <p className="text-sm">{submitStatus.message}</p>
-                </div>
-              )}
+                }`}
+              >
+                {submitStatus.message}
+              </div>
+            )}
 
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <label htmlFor="interest" className="block mb-2 text-sm font-medium">What is this about? *</label>
+                <select
+                  id="interest"
+                  required
+                  disabled={isSubmitting}
+                  value={formData.interest}
+                  onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                  className={fieldClass}
+                >
+                  <option value="">Select an option</option>
+                  {interestGroups.map((group) => (
+                    <optgroup key={group.label} label={group.label}>
+                      {group.options.map((o) => (
+                        <option key={o.key} value={o.value}>{o.value}</option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block mb-2 text-sm font-medium">Full Name *</label>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium">Full name *</label>
                   <input
+                    id="name"
                     type="text"
                     required
+                    autoComplete="name"
                     disabled={isSubmitting}
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-                    placeholder="Your name"
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className={fieldClass}
                   />
                 </div>
                 <div>
-                  <label className="block mb-2 text-sm font-medium">Email Address *</label>
+                  <label htmlFor="phone" className="block mb-2 text-sm font-medium">Phone</label>
                   <input
-                    type="email"
-                    required
-                    disabled={isSubmitting}
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block mb-2 text-sm font-medium">Phone Number</label>
-                  <input
+                    id="phone"
                     type="tel"
+                    autoComplete="tel"
                     disabled={isSubmitting}
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-                    placeholder="+27 XX XXX XXXX"
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className={fieldClass}
+                    placeholder="+27"
                   />
                 </div>
-                <div>
-                  <label className="block mb-2 text-sm font-medium">I'm interested in *</label>
-                  <select
-                    required
-                    disabled={isSubmitting}
-                    value={formData.interest}
-                    onChange={(e) => setFormData({...formData, interest: e.target.value})}
-                    className="w-full px-4 py-3 sm:py-3.5 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation bg-white disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="student">Joining as a Student</option>
-                    <option value="volunteer">Volunteering</option>
-                    <option value="mentor">Becoming a Mentor</option>
-                    <option value="partner">Partnership Opportunities</option>
-                    <option value="sponsor">Sponsorship</option>
-                    <option value="service">Professional Services</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block mb-2 text-sm font-medium">Message</label>
-                  <textarea
-                    disabled={isSubmitting}
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#ffc8dd] focus:outline-none focus:ring-2 focus:ring-[#ffc8dd]/20 text-base touch-manipulation resize-y disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors"
-                    placeholder="Tell us more about your interest..."
-                  />
-                </div>
-                <button
-                  type="submit"
+              </div>
+              <div>
+                <label htmlFor="email" className="block mb-2 text-sm font-medium">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  autoComplete="email"
                   disabled={isSubmitting}
-                  className="w-full px-6 sm:px-8 py-3 sm:py-4 bg-[#ffc8dd] hover:bg-[#ffb3cd] text-gray-900 font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation disabled:bg-gray-300 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit Application'}
-                </button>
-              </form>
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className={fieldClass}
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block mb-2 text-sm font-medium">Message</label>
+                <textarea
+                  id="message"
+                  disabled={isSubmitting}
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  rows={5}
+                  className={`${fieldClass} resize-y`}
+                  placeholder="Tell us a little about yourself or what you need."
+                />
+              </div>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gray-950 hover:bg-gray-800 text-white font-medium transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? 'Sending…' : 'Send message'}
+              </button>
+              <p className="text-xs text-gray-500">
+                We use your details only to respond to your enquiry. See our <a href="/privacy" className="underline">Privacy Policy</a>.
+              </p>
+            </form>
+          </div>
+
+          {/* Details */}
+          <div className="space-y-8">
+            <div>
+              <Eyebrow>Direct contact</Eyebrow>
+              <ul className="space-y-4">
+                <li>
+                  <a href={`mailto:${contact.email}`} className="flex items-center gap-3 hover:underline underline-offset-4">
+                    <Mail className="w-5 h-5 text-gray-500" aria-hidden="true" /> {contact.email}
+                  </a>
+                </li>
+                <li>
+                  <a href={contact.phoneHref} className="flex items-center gap-3 hover:underline underline-offset-4">
+                    <Phone className="w-5 h-5 text-gray-500" aria-hidden="true" /> {contact.phoneDisplay}
+                  </a>
+                </li>
+                <li>
+                  <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:underline underline-offset-4">
+                    <Instagram className="w-5 h-5 text-gray-500" aria-hidden="true" /> {contact.instagramHandle}
+                  </a>
+                </li>
+                <li>
+                  <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-medium transition-colors">
+                    Chat on WhatsApp
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            {/* Contact Information */}
-            <div>
-              <div className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 mb-6">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6">Contact Information</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-gray-900" />
-                    </div>
-                    <div>
-                      <p className="font-medium mb-1">Email</p>
-                      <a href="mailto:lesnovatechub@gmail.com" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
-                        lesnovatechub@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#e7c6ff] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-gray-900" />
-                    </div>
-                    <div>
-                      <p className="font-medium mb-1">Phone</p>
-                      <a href="tel:+27730286401" className="text-gray-600 text-sm hover:text-[#ffc8dd] transition-colors">
-                        073 028 6401
-                      </a>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
-                      <MapPin className="w-5 h-5 text-gray-900" />
-                    </div>
-                    <div>
-                      <p className="font-medium mb-1">Location</p>
-                      <p className="text-gray-600 text-sm">ERF 547 Maluti Township</p>
-                      <p className="text-gray-600 text-sm">Matatiele, 4740</p>
-                      <p className="text-gray-600 text-sm">Eastern Cape, South Africa</p>
-                    </div>
-                  </div>
-                </div>
+            <div className="rounded-2xl bg-stone-50 border border-gray-200 p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-5 h-5 text-gray-500" aria-hidden="true" />
+                <Eyebrow className="">Rooted in Matatiele</Eyebrow>
               </div>
-
-              <div className="bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd] rounded-2xl p-6 sm:p-8 text-center">
-                <Sparkles className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-gray-900" />
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">Join Our Community</h3>
-                <p className="text-gray-700 text-sm mb-3 sm:mb-4">
-                  Be part of the movement to bridge the digital divide and empower the next generation of innovators.
-                </p>
-                <p className="text-sm font-medium mb-5">
-                  Together, we can create lasting change.
-                </p>
-                <a
-                  href="https://wa.me/27730286401"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block px-6 py-3 bg-gray-900 hover:bg-gray-800 text-white text-sm font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95"
-                >
-                  WhatsApp Us
-                </a>
-              </div>
+              <address className="not-italic text-gray-700 leading-relaxed mb-4">
+                {contact.addressLines.map((l) => <span key={l} className="block">{l}</span>)}
+              </address>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                Zarq Hub, a physical access point in Matatiele, is planned but not yet open. Please get in touch before visiting.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
     </div>
   );
 }

@@ -204,4 +204,13 @@
   .font-spec {
     font-family: 'Geist Mono', 'SFMono-Regular', Consolas, monospace;
   }
+
+  /* Subtle Zarq grid: a quiet background texture for page headers. */
+  .zq-grid {
+    background-image:
+      linear-gradient(to right, rgb(17 24 39 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(17 24 39 / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: linear-gradient(to bottom, black 40%, transparent);
+  }
 }

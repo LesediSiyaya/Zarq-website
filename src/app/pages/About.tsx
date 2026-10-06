@@ -1,236 +1,144 @@
-import { Link } from 'react-router';
-import { Target, Heart, Lightbulb, Sparkles, Users } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
+import Journey from '../components/zarq/Journey';
+import { PageHeader, Section, SectionHeading, Eyebrow, CTABand } from '../components/zarq/ui';
+import { founder } from '../components/zarq/content';
+
+const approach = [
+  { step: 'Learn', text: 'Practical, project-based technology education.' },
+  { step: 'Build', text: 'Real projects, not just exercises.' },
+  { step: 'Demonstrate', text: 'Portfolios that show what young people can do.' },
+  { step: 'Connect', text: 'Mentors, networks and industry exposure.' },
+  { step: 'Earn', text: 'Work, income and entrepreneurship.' },
+];
+
+const combines = [
+  'Community access',
+  'Practical technology education',
+  'Project-based learning',
+  'Mentorship',
+  'Entrepreneurship',
+  'Commercial technology services',
+  'Career and opportunity pathways',
+];
 
 export default function About() {
-  useSEO({ title: 'About Us – Our Mission & Founder', description: `Learn about Zarq's mission to bridge the digital divide for rural South African youth, our values, and the story behind our founder Lesedi Siyaya.`, path: '/about' });
+  useSEO({
+    title: 'About Zarq | Our Story, Mission & Founder',
+    description: `Zarq is an early-stage youth technology and digital opportunity enterprise rooted in Matatiele, Eastern Cape, founded by ${founder.name}.`,
+    path: '/about',
+  });
 
   return (
     <div>
-      {/* Header */}
-      <section className="pt-12 pb-8 sm:pb-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-block px-6 py-2 bg-gradient-to-r from-[#caf0f8] to-[#ffc8dd] rounded-full mb-4">
-            <span className="text-sm font-medium text-gray-900">Bridging the digital gap through education and technology</span>
-          </div>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Empowering rural youth through technology education and digital literacy
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        eyebrow="About Zarq"
+        title="Building a pathway from digital exclusion to economic participation."
+        intro="Zarq is an early-stage youth technology and digital opportunity enterprise, rooted in Matatiele in the Eastern Cape."
+      />
 
-      {/* Mission Story */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                Founded by <span className="font-semibold text-[#ffc8dd]">Lesedi Siyaya</span>, the Hub was born from a vision to empower rural youth and bridge the digital divide that separates communities.
-              </p>
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                In many rural areas, young people face limited access to quality education, technology resources, and opportunities to develop digital skills essential for the modern workforce. This creates a cycle of inequality that holds back entire communities.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Our hub provides a welcoming space where youth can learn, grow, and discover their potential in technology. We believe that with the right support, every young person can become an innovator and change-maker in their community.
-              </p>
-            </div>
-
-            <div className="rounded-2xl shadow-lg overflow-hidden">
-              <div className="h-48 sm:h-52 overflow-hidden">
-                <img loading="lazy" decoding="async"
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80"
-                  alt="Young people learning to code on laptops"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-              <div className="bg-gray-50 p-6 sm:p-8 space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-[#caf0f8] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Target className="w-5 h-5 text-gray-900" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Our Vision</h3>
-                    <p className="text-gray-600 text-sm">A future where every youth has equal access to digital opportunities</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-[#e7c6ff] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Heart className="w-5 h-5 text-gray-900" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Our Values</h3>
-                    <p className="text-gray-600 text-sm">Inclusivity, innovation, empowerment, and community transformation</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 bg-[#ffc8dd] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Lightbulb className="w-5 h-5 text-gray-900" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Our Approach</h3>
-                    <p className="text-gray-600 text-sm">Hands-on learning, mentorship, and real-world skills development</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Founder Story */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Meet Our Founder</h2>
-            <p className="text-gray-600">
-              Lesedi Siyaya — Visionary leader committed to bridging the digital divide
+      {/* Story */}
+      <Section id="story">
+        <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
+          <Eyebrow>Our story</Eyebrow>
+          <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+            <p className="text-2xl sm:text-3xl font-brand text-gray-950 leading-snug">
+              There is a gap between what young people are capable of and their access to technology, mentorship and opportunity.
+            </p>
+            <p>
+              In underserved communities, that gap shows up as more than missing devices. It's limited connectivity, little exposure to AI and emerging technology, few mentors, and limited chances to build real projects or learn what a technology career looks like.
+            </p>
+            <p>
+              Zarq exists to close that gap. It combines access, learning, practical creation and opportunity, so young people can move from consuming technology to creating with it.
             </p>
           </div>
-          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-            <div className="grid md:grid-cols-2">
-              {/* Portrait photo */}
-              <div className="relative aspect-[3/4] md:aspect-auto md:min-h-[480px] overflow-hidden">
-                <img loading="lazy" decoding="async"
-                  src="/founder.jpg"
-                  alt="Lesedi Siyaya, Founder of Zarq"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              {/* Bio */}
-              <div className="p-8 sm:p-12 flex flex-col justify-center">
-                <p className="text-xs font-semibold tracking-widest text-[#c77dff] uppercase mb-2">Meet Our Founder</p>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">Lesedi Siyaya</h3>
-                <p className="text-sm font-medium text-gray-500 mb-6">Founder &amp; Director, Zarq</p>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  Lesedi Siyaya founded the Hub with a clear mission: to create equal opportunities for rural youth to access technology education and digital skills training.
-                </p>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  Growing up witnessing the disparities between rural and urban communities, she recognised that access to technology and digital literacy could be the key to unlocking potential and creating sustainable change.
-                </p>
-                <p className="text-gray-700 leading-relaxed">
-                  Through the Hub, her vision is to empower young people not just with technical skills, but with the confidence to pursue careers in technology, start their own ventures, and bring innovation back to their communities.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Our Model */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gray-900">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-3">One Mission. Two Sides.</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Zarq runs on a deliberate model: revenue from professional services funds free community programs. Every client we serve makes another young person's education possible.
+      {/* Vision & mission */}
+      <Section tone="ink" id="vision">
+        <div className="grid md:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden">
+          <div className="bg-gray-950 p-8 sm:p-10">
+            <Eyebrow dark>Vision</Eyebrow>
+            <p className="text-2xl sm:text-3xl font-brand leading-snug">
+              A future where a young person's location or access to technology does not determine their ability to participate in the digital economy.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <div className="w-12 h-12 bg-[#caf0f8] rounded-xl flex items-center justify-center mb-5">
-                <Users className="w-6 h-6 text-gray-900" />
-              </div>
-              <p className="text-xs font-bold tracking-widest text-[#caf0f8] uppercase mb-2">For Youth & Communities</p>
-              <h3 className="text-xl font-bold text-white mb-3">Free Programs</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                Coding, cybersecurity, AI, digital literacy, mentorship — all free. No registration fees, no hidden costs. Open to any young person who wants to learn, regardless of where they come from.
-              </p>
-              <Link to="/programs" className="text-[#caf0f8] text-sm font-medium hover:underline">
-                Explore free programs →
-              </Link>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <div className="w-12 h-12 bg-[#ffc8dd] rounded-xl flex items-center justify-center mb-5">
-                <Sparkles className="w-6 h-6 text-gray-900" />
-              </div>
-              <p className="text-xs font-bold tracking-widest text-[#ffc8dd] uppercase mb-2">For Individuals & Businesses</p>
-              <h3 className="text-xl font-bold text-white mb-3">Professional Services</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                Web design, branding, AI solutions, cybersecurity, and digital strategy — at affordable rates. Revenue from these services directly sustains our free community programs.
-              </p>
-              <Link to="/services" className="text-[#ffc8dd] text-sm font-medium hover:underline">
-                View our services →
-              </Link>
-            </div>
-          </div>
-          <p className="text-center text-gray-500 text-sm mt-8">
-            When you hire Zarq, you're also helping a young person access free tech education.
-          </p>
-        </div>
-      </section>
-
-      {/* Recognition & Partnerships */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <div className="inline-block px-5 py-1.5 bg-gradient-to-r from-[#caf0f8] to-[#e7c6ff] rounded-full mb-4">
-              <span className="text-xs font-semibold tracking-widest text-gray-700 uppercase">Recognition &amp; Partnerships</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-3">Trusted &amp; Recognised</h2>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              Zarq is backed by leading organisations committed to education, youth empowerment, and digital inclusion.
+          <div className="bg-gray-950 p-8 sm:p-10">
+            <Eyebrow dark>Mission</Eyebrow>
+            <p className="text-2xl sm:text-3xl font-brand leading-snug">
+              To give young people, especially those from underserved communities, access to digital tools, practical technology education, mentorship and opportunities to build solutions that shape their futures.
             </p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6">
-            <div className="relative bg-gradient-to-br from-[#caf0f8]/30 to-white border border-[#caf0f8] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-[#caf0f8] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.627 48.627 0 0 1 12 20.904a48.627 48.627 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.57 50.57 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
-                </svg>
-              </div>
-              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Certificate of Mentorship</p>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Study Trust</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Awarded for outstanding mentorship contributions to youth education and academic development.</p>
-            </div>
-            <div className="relative bg-gradient-to-br from-[#e7c6ff]/30 to-white border border-[#e7c6ff] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-[#e7c6ff] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-                </svg>
-              </div>
-              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Certificate of Service</p>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">First National Bank</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Recognised by FNB for dedicated service and meaningful contribution to the community and youth development.</p>
-            </div>
-            <div className="relative bg-gradient-to-br from-[#ffc8dd]/30 to-white border border-[#ffc8dd] rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
-              <div className="w-14 h-14 bg-[#ffc8dd] rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-7 h-7 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-                </svg>
-              </div>
-              <p className="text-xs font-semibold tracking-widest text-gray-400 uppercase mb-1">Academic Sponsorship</p>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">HP Trust</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">Sponsored by HP Trust throughout the BSc in Information Technology degree, supporting the next generation of tech leaders.</p>
-            </div>
-          </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Call to Action */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#caf0f8] via-[#e7c6ff] to-[#ffc8dd]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Join Us in Making a Difference</h2>
-          <p className="text-gray-700 text-lg mb-8">
-            Together, we can create lasting change and empower the next generation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/programs"
-              className="px-8 py-4 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-all transform hover:scale-105 active:scale-95 touch-manipulation text-center"
-            >
-              Explore Programs
-            </Link>
-            <Link
-              to="/contact"
-              className="px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 font-medium rounded-lg transition-all touch-manipulation text-center"
-            >
-              Get Involved
-            </Link>
+      {/* Approach */}
+      <Section id="approach">
+        <SectionHeading
+          eyebrow="Our approach"
+          title="Not another coding school, NGO or agency."
+          intro="What makes Zarq different is the connection between each stage: learning leads to building, building leads to proof, and proof leads to opportunity."
+        />
+        <div className="mb-14"><Journey steps={approach} /></div>
+        <div className="rounded-2xl bg-stone-50 border border-gray-200 p-6 sm:p-8">
+          <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-5">Zarq combines</p>
+          <ul className="flex flex-wrap gap-2">
+            {combines.map((c) => (
+              <li key={c} className="px-4 py-2 rounded-full bg-white border border-gray-200 text-sm">{c}</li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      {/* Why Matatiele */}
+      <Section tone="blush" id="matatiele">
+        <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
+          <Eyebrow>Why Matatiele</Eyebrow>
+          <div>
+            <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Start where the need is. Prove it. Then grow.</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              Zarq is rooted in Matatiele, Eastern Cape. It's where the model will start, be measured and be improved, beginning with a planned Zarq Hub that gives young people a physical place to access technology and learn.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Once the model is proven, the plan is to build partnerships and adapt it for other underserved communities.
+            </p>
           </div>
         </div>
-      </section>
+      </Section>
+
+      {/* Founder */}
+      <Section id="founder">
+        <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-start">
+          <img
+            src="/founder.jpg"
+            alt={`${founder.name}, founder of Zarq`}
+            loading="lazy"
+            decoding="async"
+            className="w-full max-w-sm aspect-[4/5] object-cover object-top rounded-2xl"
+          />
+          <div>
+            <Eyebrow>Founder</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-2">{founder.name}</h2>
+            <p className="text-gray-500 mb-8">{founder.role}</p>
+            <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
+              <p>
+                {founder.name} holds a BSc in Information Technology with a foundation in programming and mathematics. Her practical experience spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
+              </p>
+              <p>
+                She understands how technology is built, and is just as focused on how people get access to it and benefit from it. Zarq brings those two things together: technical capability and a clear understanding of the access problem.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <CTABand
+        eyebrow="Get involved"
+        title="Help build what comes next."
+        intro="Zarq is being built seriously and honestly, one stage at a time. There's a place for young people, schools, mentors, partners and clients."
+        primary={{ to: '/get-involved', label: 'Get involved' }}
+        secondary={{ to: '/contact', label: 'Start a conversation' }}
+      />
     </div>
   );
 }
