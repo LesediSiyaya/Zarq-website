@@ -68,7 +68,6 @@ const globalGraph = [
     worksFor: { '@id': ORG },
     description:
       'Founder of Zarq. Holds a BSc in Information Technology with practical experience in websites, applications, UI/UX, digital products and AI-related work.',
-    image: `${SITE_URL}/founder.jpg`,
   },
   {
     '@type': 'WebSite',

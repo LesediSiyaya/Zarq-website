@@ -163,16 +163,9 @@ export default function Home() {
 
       {/* Founder */}
       <Section>
-        <div className="grid md:grid-cols-[auto_1fr] gap-10 md:gap-16 items-center max-w-5xl">
-          <img
-            src="/founder.jpg"
-            alt={`${founder.name}, founder of Zarq`}
-            loading="lazy"
-            decoding="async"
-            className="w-48 h-48 sm:w-64 sm:h-64 object-cover object-top rounded-2xl"
-          />
+        <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
+          <Eyebrow>Why Zarq</Eyebrow>
           <div>
-            <Eyebrow>Why Zarq</Eyebrow>
             <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Built by someone who understands both the technology and the access gap.</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Zarq was founded by {founder.name}, who holds a BSc in Information Technology and has hands-on experience building websites, applications, digital products and AI-related work.

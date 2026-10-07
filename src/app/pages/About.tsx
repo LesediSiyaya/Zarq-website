@@ -105,17 +105,17 @@ export default function About() {
       {/* Founder */}
       <Section id="founder">
         <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-start">
-          <img
-            src="/founder.jpg"
-            alt={`${founder.name}, founder of Zarq`}
-            loading="lazy"
-            decoding="async"
-            className="w-full max-w-sm aspect-[4/5] object-cover object-top rounded-2xl"
-          />
           <div>
             <Eyebrow>Founder</Eyebrow>
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-2">{founder.name}</h2>
             <p className="text-gray-500 mb-8">{founder.role}</p>
+            <ul className="border-t border-gray-200 divide-y divide-gray-200">
+              {['BSc Information Technology', 'Programming & mathematics foundation', 'Websites, apps & UI/UX', 'Digital products & AI-related work'].map((c) => (
+                <li key={c} className="py-3 text-sm text-gray-700">{c}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
             <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
               <p>
                 {founder.name} holds a BSc in Information Technology with a foundation in programming and mathematics. Her practical experience spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
