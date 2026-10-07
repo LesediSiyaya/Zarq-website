@@ -5,7 +5,7 @@ import Journey from '../components/zarq/Journey';
 import {
   Section, SectionHeading, Container, Eyebrow, ButtonLink, TextLink, StatusBadge, StatusLegend, Card,
 } from '../components/zarq/ui';
-import { academy, ecosystem, tracks, journey, problemPoints, digitalServices, yearOneTargets, founder, coreMessage } from '../components/zarq/content';
+import { academy, ecosystem, tracks, journey, problemPoints, digitalServices, yearOneTargets, founder } from '../components/zarq/content';
 
 const audiencePaths = [
   { icon: GraduationCap, who: 'Young people & families', action: 'Explore Programmes', to: '/programmes' },
@@ -15,11 +15,7 @@ const audiencePaths = [
 ];
 
 export default function Home() {
-  useSEO({
-    title: 'From digital exclusion to economic participation',
-    description: coreMessage,
-    path: '/',
-  });
+  useSEO('/');
 
   const programmes = [academy, ...tracks.filter((t) => t.id === 'youth'), ...ecosystem];
 

@@ -5,12 +5,12 @@
 export type Status = 'current' | 'developing' | 'planned' | 'target';
 
 export const contact = {
-  email: 'lesnovatechub@gmail.com',
+  email: 'admin.zarq@gmail.com',
   phoneDisplay: '073 028 6401',
   phoneHref: 'tel:+27730286401',
   whatsapp: 'https://wa.me/27730286401',
-  instagramHandle: '@lesedinovatech_hub',
-  instagramUrl: 'https://www.instagram.com/lesedinovatech_hub',
+  instagramHandle: '@zarq_sa',
+  instagramUrl: 'https://www.instagram.com/zarq_sa',
   addressLines: ['ERF 547 Maluti Township', 'Matatiele, 4740', 'Eastern Cape, South Africa'],
 };
 
@@ -21,6 +21,17 @@ export const founder = {
 
 export const coreMessage =
   'Zarq helps underserved young people move from digital exclusion to economic participation by giving them access to technology, practical skills, projects, mentorship and opportunity pathways.';
+
+export const vision =
+  "A future where a young person's location or access to technology does not determine their ability to participate in the digital economy.";
+
+export const mission =
+  'To give young people, especially those from underserved communities, access to digital tools, practical technology education, mentorship and opportunities to build solutions that shape their futures.';
+
+export const location = {
+  base: 'Matatiele, Eastern Cape, South Africa',
+  delivery: 'Zarq Digital services can be delivered online. Some Zarq classes are planned to be held online.',
+};
 
 export const journey = [
   { step: 'Access', text: 'Devices, connectivity and a place to learn.' },

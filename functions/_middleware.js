@@ -1,9 +1,11 @@
 export async function onRequest({ request, next, env }) {
   const response = await next();
 
-  // Only intercept 404s — let assets (JS, CSS, images) pass through normally
+  // Every real page is prerendered to its own HTML file at build time, so anything
+  // still not found is a genuine 404: serve the 404 page with a 404 status.
   if (response.status === 404) {
-    return env.ASSETS.fetch(new URL('/', request.url).toString());
+    const notFound = await env.ASSETS.fetch(new URL('/404.html', request.url).toString());
+    return new Response(notFound.body, { status: 404, headers: notFound.headers });
   }
 
   return response;

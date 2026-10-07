@@ -8,7 +8,7 @@ interface FAQItem {
   answer: string;
 }
 
-const groups: { title: string; items: FAQItem[] }[] = [
+export const faqGroups: { title: string; items: FAQItem[] }[] = [
   {
     title: 'About Zarq',
     items: [
@@ -21,6 +21,11 @@ const groups: { title: string; items: FAQItem[] }[] = [
         question: 'Is Zarq up and running?',
         answer:
           'Zarq is in development. Zarq Digital is taking enquiries now. The youth programmes are being developed, starting with a first structured programme, and initiatives such as Zarq Hub, Zarq Labs and Zarq Robotics & STEM are planned. Each programme on this site is clearly marked as current, developing or planned.',
+      },
+      {
+        question: 'Where is Zarq based, and do you work online?',
+        answer:
+          'Zarq is based in Matatiele, Eastern Cape, South Africa. Zarq Digital services can be delivered online, so you don’t need to be in Matatiele to work with us. Some Zarq classes are also planned to be held online.',
       },
       {
         question: 'How is Zarq funded?',
@@ -98,24 +103,21 @@ function FAQAccordion({ item }: { item: FAQItem }) {
         <span className="font-medium text-gray-950 text-base sm:text-lg">{item.question}</span>
         <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
-      {open && <p className="pb-6 -mt-1 text-gray-600 leading-relaxed max-w-2xl">{item.answer}</p>}
+      {/* Answers stay in the HTML (hidden when closed) so crawlers can read them. */}
+      <p hidden={!open} className="pb-6 -mt-1 text-gray-600 leading-relaxed max-w-2xl">{item.answer}</p>
     </div>
   );
 }
 
 export default function FAQ() {
-  useSEO({
-    title: 'FAQ',
-    description: 'Answers to common questions about Zarq, its programmes, Zarq Digital and how to get involved.',
-    path: '/faq',
-  });
+  useSEO('/faq');
 
   return (
     <div>
       <PageHeader eyebrow="FAQ" title="Questions, answered." intro="What people most often ask about Zarq, its programmes and Zarq Digital." />
       <Section>
         <div className="max-w-3xl space-y-14">
-          {groups.map((g) => (
+          {faqGroups.map((g) => (
             <div key={g.title}>
               <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-2">{g.title}</p>
               <div className="border-t border-gray-200">

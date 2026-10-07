@@ -12,11 +12,7 @@ const process = [
 ];
 
 export default function Digital() {
-  useSEO({
-    title: 'Zarq Digital | Websites, Apps, AI & Digital Services',
-    description: 'Zarq Digital builds websites, apps, UI/UX, branding, AI implementation, automation, IT services, cybersecurity and digital strategy for businesses and organisations.',
-    path: '/digital',
-  });
+  useSEO('/digital');
 
   return (
     <div>
@@ -30,6 +26,7 @@ export default function Digital() {
           <span className="inline-flex items-center gap-2 text-sm text-gray-600">
             <StatusBadge status="current" /> Taking enquiries now
           </span>
+          <span className="text-sm text-gray-600">Based in Matatiele, Eastern Cape · Services delivered online</span>
         </div>
       </PageHeader>
 
@@ -98,7 +95,7 @@ export default function Digital() {
             className="!mb-0"
             eyebrow="Who it helps"
             title="Built for organisations that need technology to work."
-            intro="Accessible, practical technology services for organisations of different sizes, including those doing community work."
+            intro="Accessible, practical technology services for organisations of different sizes, including those doing community work. We're based in Matatiele, Eastern Cape, and work with clients online."
           />
           <ul className="divide-y divide-gray-200 border-y border-gray-200">
             {digitalAudiences.map((a) => (

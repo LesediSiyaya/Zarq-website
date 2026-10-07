@@ -5,18 +5,14 @@ import {
 import { academy, tracks, ecosystem } from '../components/zarq/content';
 
 export default function Programmes() {
-  useSEO({
-    title: 'Programmes',
-    description: 'Zarq Academy, Zarq Juniors, Zarq Youth, Zarq Future, Zarq Robotics & STEM, Zarq Labs and the planned Zarq Hub: practical technology learning for young people in Matatiele.',
-    path: '/programmes',
-  });
+  useSEO('/programmes');
 
   return (
     <div>
       <PageHeader
         eyebrow="Programmes"
         title="Learn it. Build it. Use it."
-        intro="Zarq programmes take young people from first access to real projects and opportunity. Zarq is early-stage, so each programme below is clearly marked as developing or planned."
+        intro="Zarq programmes take young people from first access to real projects and opportunity. Programmes are based in Matatiele, Eastern Cape, with some classes planned online. Zarq is early-stage, so each programme below is clearly marked as developing or planned."
       >
         <StatusLegend />
       </PageHeader>

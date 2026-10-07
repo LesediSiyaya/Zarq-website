@@ -71,11 +71,7 @@ const paths: Path[] = [
 ];
 
 export default function GetInvolved() {
-  useSEO({
-    title: 'Get Involved | Join, Partner, Mentor or Support',
-    description: 'Join Zarq as a young person, partner as a school or organisation, become a mentor, support Zarq or work with Zarq Digital.',
-    path: '/get-involved',
-  });
+  useSEO('/get-involved');
 
   return (
     <div>

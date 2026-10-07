@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router";
+import { Navigate, type RouteObject } from "react-router";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,7 +11,8 @@ import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
-export const router = createBrowserRouter([
+// Shared by the browser router (App.tsx) and the build-time prerender (entry-server.tsx).
+export const routes: RouteObject[] = [
   {
     path: "/",
     Component: Layout,
@@ -33,4 +34,4 @@ export const router = createBrowserRouter([
       { path: "*", Component: NotFound },
     ],
   },
-]);
+];

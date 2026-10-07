@@ -4,11 +4,7 @@ import { PageHeader, Section, SectionHeading, StatusBadge, CTABand, Eyebrow } fr
 import { journey, problemPoints, flywheel, yearOneTargets, yearOnePlan } from '../components/zarq/content';
 
 export default function Impact() {
-  useSEO({
-    title: 'Impact | Model, Year 1 Targets & Plan',
-    description: "How Zarq plans to create impact: the problem it addresses, its hybrid impact model, proposed Year 1 targets and the plan to measure results honestly.",
-    path: '/impact',
-  });
+  useSEO('/impact');
 
   return (
     <div>

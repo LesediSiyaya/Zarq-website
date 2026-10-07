@@ -72,11 +72,7 @@ export default function Contact() {
     }
   };
 
-  useSEO({
-    title: 'Contact | Start a Conversation',
-    description: `Contact Zarq to join a programme, partner, mentor, support Zarq or enquire about Zarq Digital. Email ${contact.email} or call ${contact.phoneDisplay}.`,
-    path: '/contact',
-  });
+  useSEO('/contact');
 
   return (
     <div>
@@ -227,7 +223,7 @@ export default function Contact() {
                 {contact.addressLines.map((l) => <span key={l} className="block">{l}</span>)}
               </address>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Zarq Hub, a physical access point in Matatiele, is planned but not yet open. Please get in touch before visiting.
+                Zarq Digital works with clients online, wherever they are. Zarq Hub, a physical access point in Matatiele, is planned but not yet open, so please get in touch before visiting.
               </p>
             </div>
           </div>

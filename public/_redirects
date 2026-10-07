@@ -1,0 +1,5 @@
+# Old URLs from the previous site structure
+/programs   /programmes  301
+/services   /digital     301
+/hub        /programmes#hub       301
+/robotics   /programmes#robotics  301

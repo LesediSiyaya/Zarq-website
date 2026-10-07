@@ -2,7 +2,7 @@ import { useSEO } from '../components/useSEO';
 import { Container, Eyebrow, ButtonLink, TextLink } from '../components/zarq/ui';
 
 export default function NotFound() {
-  useSEO({ title: 'Page not found', description: 'The page you are looking for does not exist. Return to the Zarq homepage.', path: '/404' });
+  useSEO('/404');
 
   return (
     <section className="relative overflow-hidden bg-stone-50 min-h-[70vh] flex items-center">

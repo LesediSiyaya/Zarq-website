@@ -3,7 +3,7 @@ import { useSEO } from '../components/useSEO';
 import { PageHeader } from '../components/zarq/ui';
 
 export default function Privacy() {
-  useSEO({ title: 'Privacy Policy', description: `Read the Zarq privacy policy to understand how we collect, use, and protect your personal information on our website and services.`, path: '/privacy' });
+  useSEO('/privacy');
 
   return (
     <div>
@@ -116,9 +116,9 @@ export default function Privacy() {
                 If you have any questions or concerns about this Privacy Policy, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
-                <li><span className="font-medium">Email:</span> <a href="mailto:lesnovatechub@gmail.com" className="text-gray-950 underline underline-offset-2">lesnovatechub@gmail.com</a></li>
+                <li><span className="font-medium">Email:</span> <a href="mailto:admin.zarq@gmail.com" className="text-gray-950 underline underline-offset-2">admin.zarq@gmail.com</a></li>
                 <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730286401" className="text-gray-950 underline underline-offset-2">+27 73 028 6401</a></li>
-                <li><span className="font-medium">Instagram:</span> <a href="https://instagram.com/lesedinovatech_hub" target="_blank" rel="noopener noreferrer" className="text-gray-950 underline underline-offset-2">@lesedinovatech_hub</a></li>
+                <li><span className="font-medium">Instagram:</span> <a href="https://www.instagram.com/zarq_sa" target="_blank" rel="noopener noreferrer" className="text-gray-950 underline underline-offset-2">@zarq_sa</a></li>
               </ul>
             </div>
 

@@ -1,7 +1,7 @@
 import { useSEO } from '../components/useSEO';
 import Journey from '../components/zarq/Journey';
 import { PageHeader, Section, SectionHeading, Eyebrow, CTABand } from '../components/zarq/ui';
-import { founder } from '../components/zarq/content';
+import { founder, vision, mission } from '../components/zarq/content';
 
 const approach = [
   { step: 'Learn', text: 'Practical, project-based technology education.' },
@@ -22,11 +22,7 @@ const combines = [
 ];
 
 export default function About() {
-  useSEO({
-    title: 'About Zarq | Our Story, Mission & Founder',
-    description: `Zarq is an early-stage youth technology and digital opportunity enterprise rooted in Matatiele, Eastern Cape, founded by ${founder.name}.`,
-    path: '/about',
-  });
+  useSEO('/about');
 
   return (
     <div>
@@ -60,13 +56,13 @@ export default function About() {
           <div className="bg-gray-950 p-8 sm:p-10">
             <Eyebrow dark>Vision</Eyebrow>
             <p className="text-2xl sm:text-3xl font-brand leading-snug">
-              A future where a young person's location or access to technology does not determine their ability to participate in the digital economy.
+              {vision}
             </p>
           </div>
           <div className="bg-gray-950 p-8 sm:p-10">
             <Eyebrow dark>Mission</Eyebrow>
             <p className="text-2xl sm:text-3xl font-brand leading-snug">
-              To give young people, especially those from underserved communities, access to digital tools, practical technology education, mentorship and opportunities to build solutions that shape their futures.
+              {mission}
             </p>
           </div>
         </div>
