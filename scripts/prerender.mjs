@@ -1,7 +1,7 @@
 // Post-build step: turns the single-page app into one static HTML file per route,
 // each with its own metadata and structured data, plus sitemap.xml, robots.txt,
 // llms.txt and llms-full.txt. Crawlers and AI tools that don't run JavaScript
-// can then read every page. Runs after `vite build` and the SSR build (see package.json).
+// can then read every page. Runs automatically at the end of `vite build` (see vite.config.ts).
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
