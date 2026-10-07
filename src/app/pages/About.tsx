@@ -110,7 +110,7 @@ export default function About() {
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-2">{founder.name}</h2>
             <p className="text-gray-500 mb-8">{founder.role}</p>
             <ul className="border-t border-gray-200 divide-y divide-gray-200">
-              {['BSc Information Technology', 'Business Analyst', 'Programming & mathematics foundation', 'Websites, apps & UI/UX', 'Digital products & AI-related work'].map((c) => (
+              {['BSc Information Technology', 'Business analysis', 'Programming & mathematics foundation', 'Websites, apps & UI/UX', 'Digital products & AI-related work'].map((c) => (
                 <li key={c} className="py-3 text-sm text-gray-700">{c}</li>
               ))}
             </ul>
@@ -118,7 +118,7 @@ export default function About() {
           <div>
             <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
               <p>
-                {founder.name} holds a BSc in Information Technology with a foundation in programming and mathematics, and works as a Business Analyst, translating business needs into practical technology solutions. Her experience also spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
+                {founder.name} holds a BSc in Information Technology with a foundation in programming and mathematics, and brings business analysis experience, translating business needs into practical technology solutions. Her experience also spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
               </p>
               <p>
                 She understands how technology is built, and is just as focused on how people get access to it and benefit from it. Zarq brings those two things together: technical capability and a clear understanding of the access problem.
