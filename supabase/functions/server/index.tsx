@@ -75,7 +75,8 @@ app.post("/make-server-e72b99af/contact", async (c) => {
     try {
       const emailPayload = {
         from: 'Zarq <onboarding@resend.dev>',
-        to: ['l_siyaya@icloud.com'],
+        to: ['admin.zarq@gmail.com'],
+        reply_to: email,
         subject: `New ${interest} Inquiry - ${name}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
