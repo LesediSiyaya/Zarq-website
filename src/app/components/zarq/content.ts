@@ -11,7 +11,8 @@ export const contact = {
   whatsapp: 'https://wa.me/27730286401',
   instagramHandle: '@zarq_sa',
   instagramUrl: 'https://www.instagram.com/zarq_sa',
-  addressLines: ['ERF 547 Maluti Township', 'Matatiele, 4740', 'Eastern Cape, South Africa'],
+  // Area only: no street address is published until Zarq has a business premises.
+  addressLines: ['Maluti, Matatiele', 'Eastern Cape, South Africa'],
 };
 
 export const founder = {

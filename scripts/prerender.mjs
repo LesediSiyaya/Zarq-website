@@ -29,9 +29,7 @@ const WEBSITE = `${SITE_URL}/#website`;
 
 const address = {
   '@type': 'PostalAddress',
-  streetAddress: 'ERF 547 Maluti Township',
-  addressLocality: 'Matatiele',
-  postalCode: '4740',
+  addressLocality: 'Maluti, Matatiele',
   addressRegion: 'Eastern Cape',
   addressCountry: 'ZA',
 };
