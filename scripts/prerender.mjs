@@ -67,7 +67,7 @@ const globalGraph = [
     jobTitle: 'Founder',
     worksFor: { '@id': ORG },
     description:
-      'Founder of Zarq. Holds a BSc in Information Technology with practical experience in websites, applications, UI/UX, digital products and AI-related work.',
+      'Founder of Zarq and a Business Analyst. Holds a BSc in Information Technology with practical experience in websites, applications, UI/UX, digital products and AI-related work.',
   },
   {
     '@type': 'WebSite',
@@ -272,7 +272,7 @@ ${c.coreMessage}
 
 - What: an early-stage youth technology and digital opportunity enterprise.
 - Where: ${c.location.base}. ${c.location.delivery}
-- Founder: ${c.founder.name}, who holds a BSc in Information Technology with practical experience in websites, applications, UI/UX, digital products and AI-related work.
+- Founder: ${c.founder.name}, a Business Analyst who holds a BSc in Information Technology with practical experience in websites, applications, UI/UX, digital products and AI-related work.
 - Model: hybrid social-impact and commercial. Zarq Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.
 - Stage: in development. Zarq Digital is taking enquiries now. Youth programmes are being developed, starting with a first structured programme. Zarq Hub (a physical centre in Matatiele) is planned and not yet open.
 
