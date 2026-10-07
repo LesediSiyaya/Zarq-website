@@ -118,7 +118,7 @@ export default function About() {
           <div>
             <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
               <p>
-                {founder.name} holds a BSc in Information Technology with a foundation in programming and mathematics, and brings business analysis experience, translating business needs into practical technology solutions. Her experience also spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
+                With a BSc in Information Technology and a foundation in programming and mathematics, she brings business analysis experience, translating business needs into practical technology solutions. Her work also spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
               </p>
               <p>
                 She understands how technology is built, and is just as focused on how people get access to it and benefit from it. Zarq brings those two things together: technical capability and a clear understanding of the access problem.

@@ -168,10 +168,8 @@ export default function Home() {
           <div>
             <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Built by someone who understands both the technology and the access gap.</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Zarq was founded by {founder.name}, who holds a BSc in Information Technology, brings business analysis experience and has hands-on experience building websites, applications, digital products and AI-related work.
+              Zarq was founded by {founder.name}, who holds a BSc in Information Technology and combines business analysis with hands-on work on websites, applications, digital products and AI.
             </p>
-            <p className="font-medium">{founder.name}</p>
-            <p className="text-sm text-gray-500 mb-6">{founder.role}</p>
             <TextLink to="/about#founder">Read the story</TextLink>
           </div>
         </div>
