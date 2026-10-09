@@ -45,8 +45,8 @@ const globalGraph = [
     '@id': ORG,
     name: 'Zarq',
     url: url('/'),
-    logo: `${SITE_URL}/favicon.svg`,
-    image: `${SITE_URL}/og-image.jpg`,
+    logo: `${SITE_URL}/icon-512.png`,
+    image: `${SITE_URL}/og-zarq.jpg`,
     description: `A youth technology and digital opportunity company based in ${c.location.base}. ${c.coreMessage}`,
     founder: { '@id': FOUNDER },
     address,
@@ -184,10 +184,10 @@ function buildPage(meta, body) {
   html = setTag(html, /<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${pageUrl}" />`);
   html = setTag(html, /<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${title}" />`);
   html = setTag(html, /<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${desc}" />`);
-  html = setTag(html, /<meta property="og:image" [^>]*>/, `<meta property="og:image" content="${SITE_URL}/og-image.jpg" />`);
+  html = setTag(html, /<meta property="og:image" [^>]*>/, `<meta property="og:image" content="${SITE_URL}/og-zarq.jpg" />`);
   html = setTag(html, /<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${title}" />`);
   html = setTag(html, /<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${desc}" />`);
-  html = setTag(html, /<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${SITE_URL}/og-image.jpg" />`);
+  html = setTag(html, /<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${SITE_URL}/og-zarq.jpg" />`);
   html = setTag(
     html,
     /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
