@@ -6,6 +6,9 @@ import Programmes from "./pages/Programmes";
 import Digital from "./pages/Digital";
 import GetInvolved from "./pages/GetInvolved";
 import Partners from "./pages/Partners";
+import Websites from "./pages/services/Websites";
+import CipcRegistration from "./pages/services/CipcRegistration";
+import CodingClasses from "./pages/services/CodingClasses";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
@@ -21,6 +24,9 @@ export const routes: RouteObject[] = [
       { path: "about", Component: About },
       { path: "programmes", Component: Programmes },
       { path: "digital", Component: Digital },
+      { path: "digital/websites", Component: Websites },
+      { path: "digital/cipc-registration", Component: CipcRegistration },
+      { path: "programmes/coding-classes", Component: CodingClasses },
       { path: "get-involved", Component: GetInvolved },
       { path: "partners", Component: Partners },
       { path: "contact", Component: Contact },

@@ -18,6 +18,8 @@ const footerGroups = [
     title: 'Zarq Digital',
     links: [
       { to: '/digital#services', label: 'Services' },
+      { to: '/digital/websites', label: 'Website design' },
+      { to: '/digital/cipc-registration', label: 'CIPC registration' },
       { to: '/digital#pricing', label: 'Pricing' },
       { to: '/digital#process', label: 'How we work' },
       { to: '/digital#client-faq', label: 'Client FAQ' },
@@ -28,6 +30,7 @@ const footerGroups = [
     title: 'Programmes',
     links: [
       { to: '/programmes#academy', label: 'Zarq Academy' },
+      { to: '/programmes/coding-classes', label: 'Free coding classes' },
       { to: '/programmes#tracks', label: 'Juniors, Youth & Future' },
       { to: '/programmes#robotics', label: 'Robotics & STEM' },
       { to: '/programmes#labs', label: 'Zarq Labs' },

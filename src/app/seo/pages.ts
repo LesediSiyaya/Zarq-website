@@ -7,6 +7,7 @@ export interface PageMeta {
   title: string; // " | Zarq" is appended unless the title already contains "Zarq"
   description: string;
   indexable?: boolean;
+  parent?: string; // path of the parent page, for breadcrumbs
 }
 
 export const pages: PageMeta[] = [
@@ -37,6 +38,30 @@ export const pages: PageMeta[] = [
     title: 'Web Design, Apps & CIPC Registration in Matatiele',
     description:
       'Websites from R1,500, apps, branding, AI, CIPC company registration and domains. Transparent pricing, delivered online across South Africa from Matatiele.',
+  },
+  {
+    path: '/digital/websites',
+    name: 'Website design',
+    parent: '/digital',
+    title: 'Website Design in Matatiele & Online | Zarq Digital',
+    description:
+      'Professional, mobile-friendly websites for businesses, schools and organisations, from R1,500. Based in Matatiele, Eastern Cape, working online nationwide.',
+  },
+  {
+    path: '/digital/cipc-registration',
+    name: 'CIPC registration',
+    parent: '/digital',
+    title: 'CIPC Company Registration Help, from R480',
+    description:
+      'Register your Pty Ltd or NPC with CIPC without the hassle. Name reservation, registration and SARS tax number support, done online from Matatiele.',
+  },
+  {
+    path: '/programmes/coding-classes',
+    name: 'Coding classes',
+    parent: '/programmes',
+    title: 'Free Coding Classes for Kids & Youth in Matatiele',
+    description:
+      'Free coding, AI, web development and digital skills classes for young people aged 5 and up, in Matatiele and online. Devices provided. Register your interest.',
   },
   {
     path: '/partners',

@@ -32,11 +32,16 @@ export default function Digital() {
       <Section id="services">
         <SectionHeading eyebrow="Services" title="What we do." />
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-          {digitalServices.map(({ title, text }, i) => (
-            <div key={title} className="bg-white p-6 sm:p-8">
+          {digitalServices.map(({ title, text, href }, i) => (
+            <div key={title} className="bg-white p-6 sm:p-8 flex flex-col">
               <p className="font-spec text-xs text-gray-400 mb-6">{String(i + 1).padStart(2, '0')}</p>
               <h3 className="text-2xl mb-2">{title}</h3>
               <p className="text-gray-600 leading-relaxed">{text}</p>
+              {href && (
+                <Link to={href} className="mt-4 inline-flex items-center gap-2 text-sm font-medium underline-offset-4 hover:underline">
+                  Learn more <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                </Link>
+              )}
             </div>
           ))}
           <Link to="/contact?interest=digital" className="group bg-gray-950 text-white p-6 sm:p-8 flex flex-col justify-between hover:bg-gray-800 transition-colors">

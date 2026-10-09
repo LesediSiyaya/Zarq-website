@@ -131,6 +131,29 @@ const programmeList = [c.academy, ...c.tracks, ...c.ecosystem].map((p, i) => ({
   },
 }));
 
+// Local landing pages: their own FAQ and a Service with that service's published packages.
+const landingFaq = { '/digital/websites': c.websitesFaq, '/digital/cipc-registration': c.cipcFaq, '/programmes/coding-classes': c.codingFaq };
+const serviceFor = (path, name, priceList, description) => ({
+  '@type': 'Service',
+  '@id': `${url(path)}#service`,
+  name,
+  description,
+  provider: { '@id': ORG },
+  areaServed,
+  url: url(path),
+  offers: (c.pricing.find((p) => p.service === priceList)?.tiers ?? []).map((t) => ({
+    '@type': 'Offer',
+    name: `${name}: ${t.tier}`,
+    description: t.desc,
+    price: t.price.replace(/[^0-9]/g, ''),
+    priceCurrency: 'ZAR',
+  })),
+});
+const landingService = {
+  '/digital/websites': serviceFor('/digital/websites', 'Website design', 'Website design & development', 'Mobile-friendly websites for businesses, schools and organisations.'),
+  '/digital/cipc-registration': serviceFor('/digital/cipc-registration', 'CIPC company registration', 'Business registration (CIPC)', 'Pty Ltd and NPC registration with CIPC, including name reservation and SARS support.'),
+};
+
 const pageTypes = { '/about': 'AboutPage', '/contact': 'ContactPage', '/faq': 'FAQPage', '/programmes': 'CollectionPage' };
 
 function pageGraph(meta) {
@@ -148,12 +171,11 @@ function pageGraph(meta) {
     dateModified: today,
   };
   if (meta.path !== '/') {
+    const parent = meta.parent && pages.find((p) => p.path === meta.parent);
+    const trail = [{ name: 'Home', path: '/' }, ...(parent ? [{ name: parent.name, path: parent.path }] : []), { name: meta.name, path: meta.path }];
     webPage.breadcrumb = {
       '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: url('/') },
-        { '@type': 'ListItem', position: 2, name: meta.name, item: pageUrl },
-      ],
+      itemListElement: trail.map((t, i) => ({ '@type': 'ListItem', position: i + 1, name: t.name, item: url(t.path) })),
     };
   }
   if (meta.path === '/faq') {
@@ -161,6 +183,12 @@ function pageGraph(meta) {
       g.items.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: q.answer } }))
     );
   }
+  const pageFaq = landingFaq[meta.path];
+  if (pageFaq) {
+    webPage['@type'] = 'FAQPage';
+    webPage.mainEntity = pageFaq.map((q) => ({ '@type': 'Question', name: q.question, acceptedAnswer: { '@type': 'Answer', text: q.answer } }));
+  }
+  if (landingService[meta.path]) graph.push(landingService[meta.path]);
   if (meta.path === '/programmes') webPage.mainEntity = { '@type': 'ItemList', itemListElement: programmeList };
   if (meta.path === '/about') webPage.mainEntity = { '@id': ORG };
   graph.push(webPage);
@@ -214,7 +242,7 @@ for (const meta of pages) {
 
 // ---------- sitemap.xml & robots.txt ----------
 const indexable = pages.filter((p) => p.indexable !== false);
-const priority = { '/': '1.0', '/programmes': '0.9', '/digital': '0.9', '/privacy': '0.3' };
+const priority = { '/': '1.0', '/programmes': '0.9', '/digital': '0.9', '/digital/websites': '0.8', '/digital/cipc-registration': '0.8', '/programmes/coding-classes': '0.8', '/privacy': '0.3' };
 await writeFile(
   join(dist, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable

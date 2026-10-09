@@ -111,10 +111,19 @@ export default function Home() {
             </div>
           </div>
           <ul className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
-            {digitalServices.map(({ title, from }) => (
-              <li key={title} className="bg-white p-4 sm:p-5">
-                <p className="text-sm sm:text-base font-medium mb-1">{title}</p>
-                <p className="text-xs sm:text-sm text-gray-500">{from}</p>
+            {digitalServices.map(({ title, from, href }) => (
+              <li key={title} className="bg-white">
+                {href ? (
+                  <Link to={href} className="block h-full p-4 sm:p-5 hover:bg-stone-50 transition-colors">
+                    <p className="text-sm sm:text-base font-medium mb-1 underline-offset-4 hover:underline">{title}</p>
+                    <p className="text-xs sm:text-sm text-gray-500">{from}</p>
+                  </Link>
+                ) : (
+                  <div className="p-4 sm:p-5">
+                    <p className="text-sm sm:text-base font-medium mb-1">{title}</p>
+                    <p className="text-xs sm:text-sm text-gray-500">{from}</p>
+                  </div>
+                )}
               </li>
             ))}
             <li className="bg-gray-950">

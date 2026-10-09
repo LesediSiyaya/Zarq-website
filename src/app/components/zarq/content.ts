@@ -122,7 +122,7 @@ export const ecosystem: Programme[] = [
 ];
 
 export const digitalServices = [
-  { title: 'Websites', from: 'From R1,500', text: 'Clear, fast websites that help people find and trust you.' },
+  { title: 'Websites', from: 'From R1,500', href: '/digital/websites', text: 'Clear, fast websites that help people find and trust you.' },
   { title: 'App development', from: 'Quoted per project', text: 'Web and mobile applications built around how your users work.' },
   { title: 'UI/UX design', from: 'From R900', text: 'Interfaces and user journeys that are simple to use.' },
   { title: 'Branding', from: 'From R900', text: 'Visual identity that makes your organisation recognisable.' },
@@ -131,7 +131,7 @@ export const digitalServices = [
   { title: 'IT services', from: 'Quoted per project', text: 'Setup, support and guidance for everyday technology.' },
   { title: 'Cybersecurity', from: 'From R300', text: 'Awareness training and consulting to help you work more safely.' },
   { title: 'Digital strategy', from: 'From R600', text: 'Working out where technology can help you operate and grow.' },
-  { title: 'Business registration (CIPC)', from: 'From R480', text: 'From name reservation to your registration certificate and tax number.' },
+  { title: 'Business registration (CIPC)', from: 'From R480', href: '/digital/cipc-registration', text: 'From name reservation to your registration certificate and tax number.' },
   { title: 'Domain registration & setup', from: 'From R300', text: 'Your domain, DNS and professional email, connected and ready to use.' },
 ];
 
@@ -295,6 +295,49 @@ export const digitalFaq = [
     question: 'Do you work with clients outside Matatiele?',
     answer: 'Yes. All Zarq Digital services are delivered online, so we can work with you anywhere in South Africa.',
   },
+];
+
+// ---------- Local service landing pages ----------
+// Each FAQ list also feeds that page's FAQPage structured data in scripts/prerender.mjs.
+export const websitesFaq = [
+  { question: 'How much does a website cost in South Africa?', answer: 'Our packages start at R1,500 for a one-page site and go up to R6,000 for a full web app, during our launch special. Larger projects are quoted individually. Prices exclude VAT.' },
+  { question: 'Do I need to be in Matatiele?', answer: 'No. We work with clients anywhere in South Africa, online.' },
+  { question: 'Can you help with my domain and email?', answer: 'Yes. We register domains and set up professional email, from R300.' },
+  { question: 'Can you write the content?', answer: 'Yes. We can help with text and branding if you don’t have them yet.' },
+  { question: 'How do payments work?', answer: 'A 50% deposit confirms your booking and lets us start. The balance is due on completion, before your website goes live.' },
+];
+
+export const websiteIncludes = [
+  'Works on phones, tablets and computers',
+  'Basic Google setup: page titles, descriptions and a sitemap',
+  'A contact form or WhatsApp button so customers can reach you',
+  'Two rounds of revisions',
+  '14 days of free support after launch',
+  'Full ownership once the final payment is made',
+];
+
+export const cipcFaq = [
+  { question: 'How long does CIPC registration take?', answer: 'Usually 1–3 weeks, depending on CIPC processing times.' },
+  { question: 'Are CIPC’s fees included?', answer: 'Yes. CIPC’s standard filing fees are included in our package prices. Prices exclude VAT.' },
+  { question: 'Can I register without a name?', answer: 'Yes. Your registration number becomes your company name, and you can add or change the name later.' },
+  { question: 'Do I need to visit an office?', answer: 'No. Everything is done online, wherever you are in South Africa.' },
+  { question: 'What happens after registration?', answer: 'You’ll need a tax number, a business bank account and to file annual returns with CIPC. Our Premium package helps with these first steps.' },
+];
+
+export const cipcNeeds = [
+  'ID copies for all directors',
+  'Contact details and addresses for all directors',
+  'Up to four name options, in order of preference (optional)',
+  'An email address and phone number for CIPC correspondence',
+];
+
+export const codingFaq = [
+  { question: 'How much do classes cost?', answer: 'Zarq classes are free for learners.' },
+  { question: 'Who can join?', answer: 'Young people aged 5 and up. Classes are grouped by age and experience, from Zarq Juniors to Zarq Youth and Zarq Future.' },
+  { question: 'Do I need my own laptop?', answer: 'No. Devices are provided, and learners are welcome to bring their own.' },
+  { question: 'Do I need experience?', answer: 'No. Classes start from the basics.' },
+  { question: 'Where are classes held?', answer: 'In Matatiele and online.' },
+  { question: 'How do I join?', answer: 'Register your interest and we’ll be in touch with programme dates and details. Parents and guardians can register on a young person’s behalf.' },
 ];
 
 // Contact form interest options. `value` is what the enquiry email receives.

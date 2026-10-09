@@ -24,7 +24,10 @@ export default function Programmes() {
             <p className="text-gray-600 leading-relaxed mb-8">
               Learners don't just use technology, they create with it, building projects that grow into a portfolio.
             </p>
-            <ButtonLink to="/contact?interest=youth">Register your interest</ButtonLink>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <ButtonLink to="/contact?interest=youth">Register your interest</ButtonLink>
+              <ButtonLink to="/programmes/coding-classes" variant="secondary">Free coding classes</ButtonLink>
+            </div>
           </div>
           <div>
             <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">Learning areas</p>
