@@ -66,6 +66,42 @@ export default function Partners() {
         </div>
       </Section>
 
+      {/* Concept video (AI-generated, clearly labelled as such) */}
+      <Section id="vision">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-center">
+          <SectionHeading
+            className="!mb-0"
+            eyebrow="Our vision"
+            title="What a Zarq class will look like."
+            intro="Hands-on, project-based and mentored: young people building with real hardware and software, with support at their side."
+          />
+          <figure>
+            <div className="relative rounded-2xl overflow-hidden bg-gray-950">
+              <video
+                src="/media/zarq-class-concept.mp4"
+                poster="/media/zarq-class-concept.jpg"
+                width={576}
+                height={324}
+                className="w-full aspect-video object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                preload="metadata"
+                aria-label="AI-generated concept video of young people building electronics projects with a mentor in a Zarq class"
+              />
+              <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 font-spec text-[11px] uppercase tracking-wider text-gray-950">
+                Concept · AI-generated
+              </span>
+            </div>
+            <figcaption className="mt-3 text-sm text-gray-500">
+              An AI-generated illustration of our vision for Zarq classes. It is not a recording of a real class.
+            </figcaption>
+          </figure>
+        </div>
+      </Section>
+
       {/* Ways to support */}
       <Section id="support">
         <SectionHeading
