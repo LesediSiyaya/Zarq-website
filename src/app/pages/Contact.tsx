@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
-import { projectId, publicAnonKey } from '/utils/supabase/info';
 import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, Eyebrow } from '../components/zarq/ui';
 import { contact, interestGroups } from '../components/zarq/content';
 
 const allInterests = interestGroups.flatMap((g) => g.options);
+
+// Web3Forms delivers each enquiry to admin.zarq@gmail.com. The access key is public by design:
+// it only allows sending submissions to that inbox.
+const WEB3FORMS_ACCESS_KEY = 'd217695d-772d-4c9d-8e01-72119cb30bb5';
 
 const fieldClass =
   'w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-base focus:border-gray-950 focus:outline-none focus:ring-2 focus:ring-[#ffc8dd] disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors';
@@ -26,6 +29,8 @@ export default function Contact() {
   useEffect(() => {
     if (preselected) setFormData((f) => ({ ...f, interest: preselected }));
   }, [preselected]);
+  // Honeypot: hidden from people, so only spam bots fill it in.
+  const [botcheck, setBotcheck] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
 
@@ -35,17 +40,22 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch(
-        `https://${projectId}.supabase.co/functions/v1/make-server-e72b99af/contact`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${publicAnonKey}`,
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `${formData.interest} – ${formData.name}`,
+          from_name: 'Zarq website',
+          replyto: formData.email,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || 'Not given',
+          interest: formData.interest,
+          message: formData.message || '(No message)',
+          botcheck,
+        }),
+      });
 
       const data = await response.json();
 
@@ -58,7 +68,7 @@ export default function Contact() {
       } else {
         setSubmitStatus({
           type: 'error',
-          message: data.error || 'Failed to submit form. Please try again.',
+          message: 'Sorry, your message could not be sent. Please try again, or email us directly.',
         });
       }
     } catch (error) {
@@ -100,6 +110,16 @@ export default function Contact() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                checked={botcheck}
+                onChange={(e) => setBotcheck(e.target.checked)}
+              />
               <div>
                 <label htmlFor="interest" className="block mb-2 text-sm font-medium">What is this about? *</label>
                 <select
