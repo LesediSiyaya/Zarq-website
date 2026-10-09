@@ -4,7 +4,7 @@
 export interface PageMeta {
   path: string;
   name: string; // short name, used in breadcrumbs
-  title: string; // " | Zarq" is appended
+  title: string; // " | Zarq" is appended unless the title already contains "Zarq"
   description: string;
   indexable?: boolean;
 }
@@ -13,57 +13,58 @@ export const pages: PageMeta[] = [
   {
     path: '/',
     name: 'Home',
-    title: 'Web Design, Digital Services & Youth Tech Programmes | Matatiele',
+    title: 'Web Design & Youth Tech Programmes in Matatiele',
     description:
-      'Zarq builds websites, apps and digital solutions for businesses and organisations, and runs practical technology programmes for young people. Based in Matatiele, Eastern Cape; working online nationwide.',
+      'Zarq builds websites, apps and digital solutions for businesses, and runs practical tech programmes for young people. Based in Matatiele, working nationwide.',
   },
   {
     path: '/about',
     name: 'About',
-    title: 'About Zarq | Mission, Impact & Founder Lesedi Siyaya',
+    title: 'About Zarq: Mission, Impact & Founder Lesedi Siyaya',
     description:
       'Zarq is a youth technology and digital opportunity company in Matatiele, Eastern Cape, founded by Lesedi Siyaya. Our story, mission, impact model and goals.',
   },
   {
     path: '/programmes',
     name: 'Programmes',
-    title: 'Youth Tech Programmes: Coding, AI & STEM in Matatiele',
+    title: 'Coding, AI & STEM Classes for Youth in Matatiele',
     description:
-      'Zarq Academy, Juniors, Youth, Future, Robotics & STEM, Labs and Zarq Hub: practical coding, AI and digital skills for young people, in Matatiele and online.',
+      'Practical coding, AI, web development and digital skills for young people in Matatiele and online, through Zarq Academy, learner tracks, Labs and Zarq Hub.',
   },
   {
     path: '/digital',
     name: 'Zarq Digital',
-    title: 'Zarq Digital | Web Design, Apps & CIPC Registration',
+    title: 'Web Design, Apps & CIPC Registration in Matatiele',
     description:
-      'Websites from R1,500, apps, UI/UX, branding, AI, automation, IT, cybersecurity, CIPC business registration and domains. Transparent pricing; delivered online across South Africa.',
+      'Websites from R1,500, apps, branding, AI, CIPC company registration and domains. Transparent pricing, delivered online across South Africa from Matatiele.',
   },
   {
     path: '/partners',
     name: 'Partner with Zarq',
-    title: 'Partner with Zarq | Sponsor Youth Tech Skills in Matatiele',
+    title: 'Partner With Us: Sponsor Youth Tech Skills',
     description:
-      'Sponsor devices, connectivity or a full cohort for young people in Matatiele, Eastern Cape. Partnership options, in-kind support and quarterly impact reporting.',
+      'Sponsor devices, connectivity or a full cohort for young people in Matatiele, Eastern Cape. Partnership options, in-kind support and quarterly impact reports.',
   },
   {
     path: '/get-involved',
     name: 'Get Involved',
-    title: 'Get Involved | Join, Partner, Mentor or Support',
+    title: 'Get Involved: Learn, Mentor, Partner or Support',
     description:
-      'Join Zarq as a young person, partner as a school or organisation, become a mentor, support Zarq or work with Zarq Digital.',
+      'Join a Zarq programme, partner as a school or organisation, mentor young people, sponsor our work or hire Zarq Digital for your next project.',
   },
   {
     path: '/contact',
     name: 'Contact',
-    title: 'Contact Zarq | Matatiele, Eastern Cape',
+    title: 'Contact Us: Matatiele, Eastern Cape',
     description:
-      'Contact Zarq to join a programme, partner, mentor, support Zarq or start a Zarq Digital project. Email admin.zarq@gmail.com or call 073 028 6401.',
+      'Get a quote, join a programme or start a partnership. Email admin.zarq@gmail.com, call or WhatsApp 073 028 6401. Based in Matatiele, working online.',
   },
   {
     path: '/faq',
     name: 'FAQ',
-    title: 'FAQ | Programmes, Services & Getting Involved',
-    description: 'Answers to common questions about Zarq, its programmes, Zarq Digital services and how to get involved.',
+    title: 'FAQ: Services, Programmes & Partnerships',
+    description:
+      'Answers to common questions about Zarq Digital services and pricing, Zarq programmes for young people, partnerships and how to get in touch.',
   },
   {
     path: '/privacy',
@@ -82,4 +83,5 @@ export const pages: PageMeta[] = [
 
 export const pageMeta = (path: string): PageMeta => pages.find((p) => p.path === path) ?? pages[pages.length - 1];
 
-export const fullTitle = (meta: PageMeta) => `${meta.title} | Zarq`;
+// Append the brand unless the title already names it, so results never read "Zarq | ... | Zarq".
+export const fullTitle = (meta: PageMeta) => (/\bZarq\b/.test(meta.title) ? meta.title : `${meta.title} | Zarq`);
