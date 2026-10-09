@@ -72,7 +72,7 @@ export default function About() {
       <Section id="approach">
         <SectionHeading
           eyebrow="Our approach"
-          title="Not another coding school, NGO or agency."
+          title="More than a programme. A pathway."
           intro="What makes Zarq different is the connection between each stage: learning leads to building, building leads to proof, and proof leads to opportunity."
         />
         <div className="mb-14"><Journey steps={approach} /></div>
