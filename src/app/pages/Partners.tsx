@@ -1,3 +1,4 @@
+import { Download } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import Journey from '../components/zarq/Journey';
 import { PageHeader, Section, SectionHeading, Eyebrow, CTABand, ButtonLink } from '../components/zarq/ui';
@@ -6,6 +7,21 @@ import {
 } from '../components/zarq/content';
 
 const partnerLink = '/contact?interest=partner';
+const packUrl = '/zarq-partner-pack.pdf';
+
+function PackDownload({ dark = false }: { dark?: boolean }) {
+  return (
+    <a
+      href={packUrl}
+      download="Zarq_Partner_Pack_2026.pdf"
+      className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm sm:text-base transition-colors ${
+        dark ? 'border border-white/30 text-white hover:border-white' : 'border border-gray-300 text-gray-950 hover:border-gray-950'
+      }`}
+    >
+      <Download className="w-4 h-4" aria-hidden="true" /> Download the partner pack (PDF)
+    </a>
+  );
+}
 
 const whyZarq = [
   { title: 'Practical, not theoretical.', text: 'Young people learn by building real projects that grow into a portfolio they can show to employers and clients.' },
@@ -25,7 +41,7 @@ export default function Partners() {
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <ButtonLink to={partnerLink}>Start a partnership conversation</ButtonLink>
-          <ButtonLink to="#support" variant="secondary">Ways to support</ButtonLink>
+          <PackDownload />
         </div>
       </PageHeader>
 
@@ -199,6 +215,17 @@ export default function Partners() {
               She founded Zarq to give young people in her community the access, skills and opportunities that turn digital ability into a future.
             </p>
           </div>
+        </div>
+      </Section>
+
+      {/* Partner pack */}
+      <Section tone="paper" id="pack">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <div className="max-w-xl">
+            <h2 className="text-3xl sm:text-4xl leading-tight mb-3">Take it to your team.</h2>
+            <p className="text-gray-600 leading-relaxed">Our six-page partner pack covers the need, our approach, ways to support, reporting and goals. Share it with your CSI, ESG or leadership team.</p>
+          </div>
+          <PackDownload />
         </div>
       </Section>
 
