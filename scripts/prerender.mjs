@@ -47,7 +47,7 @@ const globalGraph = [
     url: url('/'),
     logo: `${SITE_URL}/favicon.svg`,
     image: `${SITE_URL}/og-image.jpg`,
-    description: `An early-stage youth technology and digital opportunity enterprise based in ${c.location.base}. ${c.coreMessage}`,
+    description: `A youth technology and digital opportunity company based in ${c.location.base}. ${c.coreMessage}`,
     founder: { '@id': FOUNDER },
     address,
     areaServed,
@@ -116,14 +116,15 @@ const digitalService = {
     .map((s) => ({ '@type': 'Offer', itemOffered: { '@type': 'Service', name: s.title, description: s.text } })),
 };
 
-const statusText = { current: 'Current: exists today.', developing: 'Developing: being built now.', planned: 'Planned: a future initiative, not yet running.' };
+// Availability wording, kept accurate so search engines and AI tools don't overstate what is running.
+const availability = { current: 'Available now', developing: 'Registrations of interest open', planned: 'Coming soon' };
 const programmeList = [c.academy, ...c.tracks, ...c.ecosystem].map((p, i) => ({
   '@type': 'ListItem',
   position: i + 1,
   item: {
     '@type': p.id === 'hub' ? 'Place' : 'EducationalOccupationalProgram',
     name: p.name,
-    description: `${p.summary} Status: ${statusText[p.status]}`,
+    description: `${p.summary} Availability: ${availability[p.status]}.`,
     url: `${url('/programmes')}#${p.id}`,
     ...(p.id === 'hub' ? {} : { provider: { '@id': ORG } }),
   },
@@ -229,14 +230,13 @@ await writeFile(
 );
 
 // ---------- llms.txt & llms-full.txt ----------
-const statusWord = { current: 'Current', developing: 'Developing', planned: 'Planned' };
 const llms = `# Zarq
 
 > ${c.coreMessage}
 
-Zarq is an early-stage youth technology and digital opportunity enterprise based in ${c.location.base}, founded by ${c.founder.name}. It is a hybrid social-impact and commercial enterprise: Zarq Digital sells technology services, and that revenue plus partnerships help fund accessible youth programmes. ${c.location.delivery}
+Zarq is a youth technology and digital opportunity company based in ${c.location.base}, founded by ${c.founder.name}. It is a hybrid social-impact and commercial company: Zarq Digital sells technology services (websites, apps, branding, AI, CIPC registration and more, with published prices), and that revenue plus partnerships help fund accessible youth programmes. ${c.location.delivery}
 
-Zarq is honest about its stage: programmes are marked as current, developing or planned, and impact figures are Year 1 targets, not results.
+Programme availability is stated accurately: each programme is listed as available now, open for registrations of interest, or coming soon. Impact figures are goals, not results.
 
 ## Pages
 
@@ -244,7 +244,7 @@ ${indexable.map((p) => `- [${p.name}](${url(p.path)}): ${p.description}`).join('
 
 ## Details
 
-- [Full fact sheet](${SITE_URL}/llms-full.txt): services and prices, programmes and their status, targets, FAQ and contact details in one plain-text file.
+- [Full fact sheet](${SITE_URL}/llms-full.txt): services, prices and client terms, programmes and their availability, goals, FAQ and contact details in one plain-text file.
 
 ## Contact
 
@@ -255,7 +255,7 @@ ${indexable.map((p) => `- [${p.name}](${url(p.path)}): ${p.description}`).join('
 `;
 
 const programmesMd = [c.academy, ...c.tracks, ...c.ecosystem]
-  .map((p) => `- **${p.name}** (${statusWord[p.status]}): ${p.summary}${p.points ? ` Learning areas: ${p.points.join(', ')}.` : ''}`)
+  .map((p) => `- **${p.name}** (${availability[p.status]}): ${p.summary}${p.points ? ` Learning areas: ${p.points.join(', ')}.` : ''}`)
   .join('\n');
 
 const pricingMd = c.pricing
@@ -270,11 +270,11 @@ Last updated: ${today}. Website: ${url('/')}
 
 ${c.coreMessage}
 
-- What: an early-stage youth technology and digital opportunity enterprise.
+- What: a youth technology and digital opportunity company with two offers: Zarq Digital (technology services for businesses and organisations) and Zarq programmes (technology education for young people).
 - Where: ${c.location.base}. ${c.location.delivery}
 - Founder: ${c.founder.name}, who holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.
 - Model: hybrid social-impact and commercial. Zarq Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.
-- Stage: in development. Zarq Digital is taking enquiries now. Youth programmes are being developed, starting with a first structured programme. Zarq Hub (a physical centre in Matatiele) is planned and not yet open.
+- Availability: Zarq Digital services are available now. Young people can register their interest in Zarq programmes. Zarq Hub, a dedicated technology space in Matatiele, is coming soon and is not yet open.
 
 ## Vision
 
@@ -294,7 +294,7 @@ ${programmesMd}
 
 ## Zarq Digital (technology services)
 
-Zarq Digital is the commercial arm of Zarq, based in Matatiele, Eastern Cape, with services delivered online. It works with ${c.digitalAudiences.join('; ').toLowerCase()}.
+Zarq Digital is the commercial arm of Zarq, based in Matatiele, Eastern Cape, working with clients online across South Africa. It works with ${c.digitalAudiences.join('; ').toLowerCase()}.
 
 Services:
 
@@ -302,17 +302,17 @@ ${c.digitalServices.map((s) => `- ${s.title}: ${s.text}`).join('\n')}
 
 ## Zarq Digital pricing
 
-Current pricing is an introductory launch special (${c.pricingNote.toLowerCase()}). All prices exclude VAT. Custom quotes are available for larger projects. App development and IT services are not in the price list; contact Zarq to discuss them.
+Current prices include a launch special (${c.pricingNote.toLowerCase()}). All prices exclude VAT. Larger or custom projects are quoted individually, and quotes are valid for 30 days. App development and IT services are quoted per project.
 
 ${pricingMd}
 
-## Year 1 targets (targets, not results)
+## Zarq Digital client FAQ
+
+${c.digitalFaq.map((q) => `**${q.question}**\n${q.answer}`).join('\n\n')}
+
+## Goals for the first year of programmes (goals, not results)
 
 ${c.yearOneTargets.map((t) => `- ${t.value} ${t.label}`).join('\n')}
-
-## Year 1 plan
-
-${c.yearOnePlan.map((p, i) => `${i + 1}. ${p.phase} (${p.months}): ${p.text}`).join('\n')}
 
 ## Ways to get involved
 

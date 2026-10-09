@@ -4,14 +4,25 @@ import { Menu, X, Instagram, ChevronUp } from 'lucide-react';
 import { contact, coreMessage } from './zarq/content';
 
 const navLinks = [
-  { path: '/programmes', label: 'Programmes' },
   { path: '/digital', label: 'Zarq Digital' },
-  { path: '/impact', label: 'Impact' },
+  { path: '/programmes', label: 'Programmes' },
   { path: '/about', label: 'About' },
   { path: '/get-involved', label: 'Get Involved' },
 ];
 
+const quoteLink = '/contact?interest=digital';
+
 const footerGroups = [
+  {
+    title: 'Zarq Digital',
+    links: [
+      { to: '/digital#services', label: 'Services' },
+      { to: '/digital#pricing', label: 'Pricing' },
+      { to: '/digital#process', label: 'How we work' },
+      { to: '/digital#client-faq', label: 'Client FAQ' },
+      { to: quoteLink, label: 'Get a quote' },
+    ],
+  },
   {
     title: 'Programmes',
     links: [
@@ -23,18 +34,10 @@ const footerGroups = [
     ],
   },
   {
-    title: 'Zarq Digital',
-    links: [
-      { to: '/digital#services', label: 'Services' },
-      { to: '/digital#process', label: 'How we work' },
-      { to: '/contact?interest=digital', label: 'Work with Zarq' },
-    ],
-  },
-  {
     title: 'Zarq',
     links: [
       { to: '/about', label: 'About' },
-      { to: '/impact', label: 'Impact' },
+      { to: '/about#impact', label: 'Our impact' },
       { to: '/get-involved', label: 'Get Involved' },
       { to: '/faq', label: 'FAQ' },
       { to: '/contact', label: 'Contact' },
@@ -129,10 +132,10 @@ export default function Layout() {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to={quoteLink}
                 className="px-5 py-2 bg-gray-950 hover:bg-gray-800 text-white text-sm font-medium rounded-full transition-colors"
               >
-                Contact
+                Get a quote
               </Link>
             </div>
 
@@ -165,8 +168,8 @@ export default function Layout() {
                   {label}
                 </Link>
               ))}
-              <Link to="/contact" className="block mt-2 px-3 py-3 rounded-lg bg-gray-950 text-white text-center font-medium">
-                Contact
+              <Link to={quoteLink} className="block mt-2 px-3 py-3 rounded-lg bg-gray-950 text-white text-center font-medium">
+                Get a quote
               </Link>
             </div>
           </div>
@@ -213,8 +216,8 @@ export default function Layout() {
           {/* Updates signup */}
           <div className="rounded-2xl bg-stone-50 border border-gray-200 p-6 flex flex-col md:flex-row md:items-center gap-5 mb-10">
             <div className="flex-1">
-              <p className="font-medium mb-1">Follow Zarq as it launches</p>
-              <p className="text-sm text-gray-600">Occasional updates on programmes, partnerships and progress.</p>
+              <p className="font-medium mb-1">Stay in the loop</p>
+              <p className="text-sm text-gray-600">Occasional updates on services, offers, programmes and partnerships.</p>
             </div>
             {newsletterDone ? (
               <p className="text-sm font-medium">✓ Thanks, we’ll keep you posted.</p>

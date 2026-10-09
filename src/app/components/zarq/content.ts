@@ -1,6 +1,7 @@
 // Single source for Zarq facts and copy used across pages.
 // Everything here traces back to the Zarq Website Design & Content Master Brief.
-// When evidence becomes available, update statuses here rather than in page files.
+// Statuses are not shown as labels on the site; they keep availability wording accurate
+// (page copy, structured data and llms.txt). Update them here when a programme launches.
 
 export type Status = 'current' | 'developing' | 'planned' | 'target';
 
@@ -31,7 +32,7 @@ export const mission =
 
 export const location = {
   base: 'Matatiele, Eastern Cape, South Africa',
-  delivery: 'Zarq Digital services can be delivered online. Some Zarq classes are planned to be held online.',
+  delivery: 'Zarq Digital works with clients online across South Africa. Zarq programmes are delivered in Matatiele and online.',
 };
 
 export const journey = [
@@ -87,7 +88,7 @@ export const tracks: Programme[] = [
     id: 'youth',
     name: 'Zarq Youth',
     status: 'developing',
-    summary: 'Practical skills, projects and mentorship for young people. The focus of the first structured programme.',
+    summary: 'Practical skills, projects and mentorship for young people. Registrations of interest are open.',
   },
   {
     id: 'future',
@@ -114,22 +115,22 @@ export const ecosystem: Programme[] = [
     id: 'hub',
     name: 'Zarq Hub',
     status: 'planned',
-    summary: 'A planned physical access point in Matatiele for devices, connectivity, learning, mentorship, workshops and project development.',
+    summary: 'A dedicated technology space coming to Matatiele, with devices, connectivity, workshops, mentorship and room to build.',
   },
 ];
 
 export const digitalServices = [
-  { title: 'Websites', text: 'Clear, fast websites that help people find and trust you.' },
-  { title: 'App development', text: 'Web and mobile applications built around how your users work.' },
-  { title: 'UI/UX design', text: 'Interfaces and user journeys that are simple to use.' },
-  { title: 'Branding', text: 'Visual identity that makes your organisation recognisable.' },
-  { title: 'AI implementation', text: 'Practical ways to put AI tools to work in your organisation.' },
-  { title: 'Automation', text: 'Fewer repetitive tasks through connected tools and workflows.' },
-  { title: 'IT services', text: 'Setup, support and guidance for everyday technology.' },
-  { title: 'Cybersecurity', text: 'Awareness training and consulting to help you work more safely.' },
-  { title: 'Digital strategy', text: 'Working out where technology can help you operate and grow.' },
-  { title: 'Business registration (CIPC)', text: 'From name reservation to your registration certificate and tax number.' },
-  { title: 'Domain registration & setup', text: 'Your domain, DNS and professional email, connected and ready to use.' },
+  { title: 'Websites', from: 'From R1,500', text: 'Clear, fast websites that help people find and trust you.' },
+  { title: 'App development', from: 'Quoted per project', text: 'Web and mobile applications built around how your users work.' },
+  { title: 'UI/UX design', from: 'From R900', text: 'Interfaces and user journeys that are simple to use.' },
+  { title: 'Branding', from: 'From R900', text: 'Visual identity that makes your organisation recognisable.' },
+  { title: 'AI implementation', from: 'From R1,200', text: 'Practical ways to put AI tools to work in your organisation.' },
+  { title: 'Automation', from: 'From R1,200', text: 'Fewer repetitive tasks through connected tools and workflows.' },
+  { title: 'IT services', from: 'Quoted per project', text: 'Setup, support and guidance for everyday technology.' },
+  { title: 'Cybersecurity', from: 'From R300', text: 'Awareness training and consulting to help you work more safely.' },
+  { title: 'Digital strategy', from: 'From R600', text: 'Working out where technology can help you operate and grow.' },
+  { title: 'Business registration (CIPC)', from: 'From R480', text: 'From name reservation to your registration certificate and tax number.' },
+  { title: 'Domain registration & setup', from: 'From R300', text: 'Your domain, DNS and professional email, connected and ready to use.' },
 ];
 
 // Zarq Digital pricing, carried over unchanged from the previous site.
@@ -197,23 +198,58 @@ export const flywheel = [
   'A stronger network and reputation bring more customers and partners',
 ];
 
+// Shown on About as "Our goals" for the first year of programmes.
 export const yearOneTargets = [
   { value: '30–50', label: 'young people reached' },
-  { value: '20–40', label: 'structured programme completions' },
+  { value: '20–40', label: 'programme completions' },
   { value: '15+', label: 'technology projects' },
   { value: '20+', label: 'mentorship sessions' },
   { value: '4+', label: 'community workshops' },
   { value: '5–10', label: 'devices made available' },
   { value: '2–3', label: 'school or community partnerships' },
   { value: '20+', label: 'young people with career or industry exposure' },
-  { value: '2–5', label: 'initial paid or part-time opportunities, where viable' },
+  { value: '2–5', label: 'paid or part-time opportunities' },
 ];
 
-export const yearOnePlan = [
-  { phase: 'Foundation', months: 'Months 1–3', text: 'Formalise operations, develop curriculum, set up systems, secure priority equipment, develop partnerships and begin finding commercial clients.' },
-  { phase: 'Pilot', months: 'Months 4–6', text: 'Launch the first structured youth programme, provide mentorship, build practical projects and take on early commercial clients.' },
-  { phase: 'Validate', months: 'Months 7–9', text: 'Improve the programme, develop the second cohort, strengthen partnerships and grow Zarq Digital.' },
-  { phase: 'Scale readiness', months: 'Months 10–12', text: 'Measure outcomes, strengthen opportunity pathways, review financial performance and prepare a Year 2 expansion plan.' },
+
+// Zarq Digital client FAQ: standard South African small-business terms, approved by Zarq.
+export const digitalFaq = [
+  {
+    question: 'How much does a project cost?',
+    answer: 'Our packages and prices are listed above. For anything larger or different, we’ll send a written quote after a short conversation. Quotes are valid for 30 days.',
+  },
+  {
+    question: 'How do payments work?',
+    answer: 'A 50% deposit confirms your booking and lets us start. The balance is due on completion, before handover or going live. Smaller services under R1,000 are paid upfront. We accept EFT, and we issue an invoice for every payment.',
+  },
+  {
+    question: 'How long will it take?',
+    answer: 'Once we’ve received your deposit and content, a Starter website takes 5–7 working days, a Standard website 2–3 weeks and a Premium website or web app 4–8 weeks. Branding takes 1–2 weeks, and domain and email setup 1–2 working days. CIPC registration depends on CIPC processing times, usually 1–3 weeks.',
+  },
+  {
+    question: 'What do you need from me?',
+    answer: 'Your logo (if you have one), text, photos and any examples you like. Not sure? We can help with content and branding too.',
+  },
+  {
+    question: 'How many revisions are included?',
+    answer: 'Two rounds of revisions are included in every package. Extra changes or new features are quoted separately.',
+  },
+  {
+    question: 'Do I own my website?',
+    answer: 'Yes. Once the final payment is made, the website, design files and content are yours.',
+  },
+  {
+    question: 'Are hosting and domain fees included?',
+    answer: 'Domain registration and hosting are billed separately at cost and renew annually. We’ll explain the options before you commit.',
+  },
+  {
+    question: 'What happens after launch?',
+    answer: 'You get 14 days of free support for fixes and small adjustments. After that, we offer support and maintenance on request.',
+  },
+  {
+    question: 'Do you work with clients outside Matatiele?',
+    answer: 'Yes. All Zarq Digital services are delivered online, so we can work with you anywhere in South Africa.',
+  },
 ];
 
 // Contact form interest options. `value` is what the enquiry email receives.

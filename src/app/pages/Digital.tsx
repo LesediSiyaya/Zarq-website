@@ -1,8 +1,9 @@
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
-import { PageHeader, Section, SectionHeading, StatusBadge, CTABand, ButtonLink, Eyebrow } from '../components/zarq/ui';
-import { digitalServices, digitalAudiences, founder, pricing, pricingNote } from '../components/zarq/content';
+import { PageHeader, Section, SectionHeading, CTABand, ButtonLink, Eyebrow } from '../components/zarq/ui';
+import { digitalServices, digitalAudiences, digitalFaq, pricing, pricingNote } from '../components/zarq/content';
+import { FAQAccordion } from '../components/zarq/FAQAccordion';
 
 const process = [
   { step: 'Conversation', text: 'Tell us what you need and what you’re trying to achieve.' },
@@ -19,14 +20,11 @@ export default function Digital() {
       <PageHeader
         eyebrow="Zarq Digital"
         title="Practical technology for businesses and organisations."
-        intro="Zarq Digital is the commercial technology arm of Zarq. We design and build digital solutions, and the work helps sustain Zarq’s youth programmes."
+        intro="We design, build and support websites, apps and digital solutions for businesses, schools and organisations across South Africa. Every project also helps fund Zarq’s youth technology programmes."
       >
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          <ButtonLink to="/contact?interest=digital">Work with Zarq</ButtonLink>
-          <span className="inline-flex items-center gap-2 text-sm text-gray-600">
-            <StatusBadge status="current" /> Taking enquiries now
-          </span>
-          <span className="text-sm text-gray-600">Based in Matatiele, Eastern Cape · Services delivered online</span>
+          <ButtonLink to="/contact?interest=digital">Get a quote</ButtonLink>
+          <span className="text-sm text-gray-600">Based in Matatiele, Eastern Cape · Working with clients online, nationwide</span>
         </div>
       </PageHeader>
 
@@ -59,8 +57,8 @@ export default function Digital() {
           <SectionHeading
             className="!mb-0"
             eyebrow="Pricing"
-            title="Transparent pricing."
-            intro="Introductory rates to help you get started."
+            title="Simple, transparent pricing."
+            intro="Three packages per service. Pick what fits, or ask for a custom quote."
           />
           <span className="self-start md:self-auto inline-flex px-3 py-1.5 rounded-full bg-[#ffc8dd] text-sm font-medium">{pricingNote}</span>
         </div>
@@ -85,7 +83,7 @@ export default function Digital() {
             </div>
           ))}
         </div>
-        <p className="mt-8 text-sm text-gray-500">All prices exclude VAT. Custom quotes available for larger projects.</p>
+        <p className="mt-8 text-sm text-gray-500">All prices exclude VAT. Larger or custom projects are quoted individually. Quotes are valid for 30 days.</p>
       </Section>
 
       {/* Who it helps */}
@@ -93,9 +91,9 @@ export default function Digital() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <SectionHeading
             className="!mb-0"
-            eyebrow="Who it helps"
+            eyebrow="Who we work with"
             title="Built for organisations that need technology to work."
-            intro="Accessible, practical technology services for organisations of different sizes, including those doing community work. We're based in Matatiele, Eastern Cape, and work with clients online."
+            intro="Small businesses, schools, NGOs, corporates and foundations: practical technology at the right scale and the right price. We work with clients online, wherever they are."
           />
           <ul className="divide-y divide-gray-200 border-y border-gray-200">
             {digitalAudiences.map((a) => (
@@ -125,14 +123,14 @@ export default function Digital() {
       <Section tone="blush">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
-            <Eyebrow>Technical capability</Eyebrow>
+            <Eyebrow>Expertise</Eyebrow>
             <h3 className="text-3xl leading-tight mb-4">Built on real experience.</h3>
             <p className="text-gray-700 leading-relaxed">
-              Zarq Digital is led by founder {founder.name}, who holds a BSc in Information Technology with a foundation in programming and mathematics, and has practical experience across websites, applications, UI/UX, digital products and AI-related work.
+              Zarq Digital is led by a BSc Information Technology graduate with a foundation in programming and mathematics and experience in business analysis: translating business needs into technology that works. Our work spans websites, applications, UI/UX, digital products and AI.
             </p>
           </div>
           <div>
-            <Eyebrow>Work with purpose</Eyebrow>
+            <Eyebrow>Purpose</Eyebrow>
             <h3 className="text-3xl leading-tight mb-4">Your project supports young people.</h3>
             <p className="text-gray-700 leading-relaxed">
               Revenue from Zarq Digital helps fund the infrastructure behind Zarq’s youth programmes, from devices and connectivity to learning and mentorship.
@@ -141,12 +139,27 @@ export default function Digital() {
         </div>
       </Section>
 
+      {/* Client FAQ */}
+      <Section id="client-faq">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-10 lg:gap-16 items-start">
+          <SectionHeading
+            className="!mb-0"
+            eyebrow="Client FAQ"
+            title="Good to know before we start."
+            intro="Payments, timelines, revisions and what happens after launch."
+          />
+          <div className="border-t border-gray-200">
+            {digitalFaq.map((item) => <FAQAccordion key={item.question} item={item} />)}
+          </div>
+        </div>
+      </Section>
+
       <CTABand
         eyebrow="Work with Zarq"
         title="Have a project in mind?"
-        intro="Tell us about it. We’ll get back to you to talk through what you need."
-        primary={{ to: '/contact?interest=digital', label: 'Start a conversation' }}
-        secondary={{ to: '/impact', label: 'See how Zarq works' }}
+        intro="Tell us what you need. We’ll come back to you with a clear scope and quote."
+        primary={{ to: '/contact?interest=digital', label: 'Get a quote' }}
+        secondary={{ to: '/about#impact', label: 'See how Zarq works' }}
       />
     </div>
   );

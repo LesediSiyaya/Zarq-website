@@ -223,7 +223,7 @@ export default function Contact() {
                 {contact.addressLines.map((l) => <span key={l} className="block">{l}</span>)}
               </address>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Zarq Digital works with clients online, wherever they are. Zarq Hub, a physical access point in Matatiele, is planned but not yet open, so please get in touch before visiting.
+                Zarq Digital works with clients online, wherever they are. Zarq Hub is coming to Matatiele, so for in-person meetings please get in touch first.
               </p>
             </div>
           </div>

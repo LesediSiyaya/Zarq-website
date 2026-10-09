@@ -13,37 +13,30 @@ export const pages: PageMeta[] = [
   {
     path: '/',
     name: 'Home',
-    title: 'Youth Technology Enterprise in Matatiele, Eastern Cape',
+    title: 'Web Design, Digital Services & Youth Tech Programmes | Matatiele',
     description:
-      'Zarq helps underserved young people move from digital exclusion to economic participation through access to technology, practical skills, projects, mentorship and opportunity pathways.',
+      'Zarq builds websites, apps and digital solutions for businesses and organisations, and runs practical technology programmes for young people. Based in Matatiele, Eastern Cape; working online nationwide.',
   },
   {
     path: '/about',
     name: 'About',
-    title: 'About Zarq | Story, Mission & Founder Lesedi Siyaya',
+    title: 'About Zarq | Mission, Impact & Founder Lesedi Siyaya',
     description:
-      'Zarq is an early-stage youth technology and digital opportunity enterprise rooted in Matatiele, Eastern Cape, founded by Lesedi Siyaya.',
+      'Zarq is a youth technology and digital opportunity company in Matatiele, Eastern Cape, founded by Lesedi Siyaya. Our story, mission, impact model and goals.',
   },
   {
     path: '/programmes',
     name: 'Programmes',
     title: 'Youth Tech Programmes: Coding, AI & STEM in Matatiele',
     description:
-      'Zarq Academy, Juniors, Youth, Future, Robotics & STEM, Labs and the planned Zarq Hub: practical coding, AI and digital skills for young people in Matatiele, with some classes planned online.',
+      'Zarq Academy, Juniors, Youth, Future, Robotics & STEM, Labs and Zarq Hub: practical coding, AI and digital skills for young people, in Matatiele and online.',
   },
   {
     path: '/digital',
     name: 'Zarq Digital',
     title: 'Zarq Digital | Web Design, Apps & CIPC Registration',
     description:
-      'Websites, apps, UI/UX, branding, AI, automation, IT, cybersecurity, CIPC business registration and domains. Based in Matatiele, Eastern Cape; services delivered online.',
-  },
-  {
-    path: '/impact',
-    name: 'Impact',
-    title: 'Impact | Model, Year 1 Targets & Plan',
-    description:
-      'How Zarq plans to create impact: the problem it addresses, its hybrid impact model, proposed Year 1 targets and the plan to measure results honestly.',
+      'Websites from R1,500, apps, UI/UX, branding, AI, automation, IT, cybersecurity, CIPC business registration and domains. Transparent pricing; delivered online across South Africa.',
   },
   {
     path: '/get-involved',

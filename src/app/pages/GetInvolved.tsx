@@ -19,7 +19,7 @@ const paths: Path[] = [
     icon: GraduationCap,
     who: 'Young people & families',
     title: 'Join Zarq',
-    text: 'Register your interest in Zarq programmes. We’ll contact you as the first structured youth programme opens.',
+    text: 'Register your interest in Zarq programmes. We’ll be in touch with programme dates and details.',
     how: ['Learn practical digital and AI skills', 'Build real projects', 'Get mentorship and career exposure'],
     cta: { label: 'Join Zarq', to: '/contact?interest=youth' },
   },
@@ -29,7 +29,7 @@ const paths: Path[] = [
     who: 'Schools & educational organisations',
     title: 'Partner with Zarq',
     text: 'Work with Zarq to bring practical technology learning, workshops and STEM exposure to your learners.',
-    how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM (planned)'],
+    how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM'],
     cta: { label: 'Partner with Zarq', to: '/contact?interest=school' },
   },
   {
@@ -46,7 +46,7 @@ const paths: Path[] = [
     icon: Handshake,
     who: 'Corporates, CSI/ESG, NGOs & foundations',
     title: 'Partner With Us',
-    text: 'Help build a measurable pathway from digital exclusion to economic participation, starting in Matatiele.',
+    text: 'Help build a measurable pathway from digital exclusion to economic participation, in Matatiele and beyond.',
     how: ['Programme partnerships', 'CSI and ESG alignment', 'Shared, transparent reporting'],
     cta: { label: 'Partner With Us', to: '/contact?interest=partner' },
   },
@@ -78,7 +78,7 @@ export default function GetInvolved() {
       <PageHeader
         eyebrow="Get involved"
         title="There's a place for you in what Zarq is building."
-        intro="Zarq is in its early stages. The people and organisations who get involved now will help shape how it grows."
+        intro="Learners, schools, mentors, partners, sponsors and clients all play a part in what Zarq does. Find your way in."
       >
         <nav aria-label="Jump to" className="flex flex-wrap gap-2">
           {paths.map(({ id, title }) => (

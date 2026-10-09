@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Programmes from "./pages/Programmes";
 import Digital from "./pages/Digital";
-import Impact from "./pages/Impact";
 import GetInvolved from "./pages/GetInvolved";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
@@ -21,7 +20,6 @@ export const routes: RouteObject[] = [
       { path: "about", Component: About },
       { path: "programmes", Component: Programmes },
       { path: "digital", Component: Digital },
-      { path: "impact", Component: Impact },
       { path: "get-involved", Component: GetInvolved },
       { path: "contact", Component: Contact },
       { path: "faq", Component: FAQ },
@@ -31,6 +29,7 @@ export const routes: RouteObject[] = [
       { path: "services", element: <Navigate to="/digital" replace /> },
       { path: "hub", element: <Navigate to="/programmes#hub" replace /> },
       { path: "robotics", element: <Navigate to="/programmes#robotics" replace /> },
+      { path: "impact", element: <Navigate to="/about#impact" replace /> },
       { path: "*", Component: NotFound },
     ],
   },

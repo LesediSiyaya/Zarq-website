@@ -1,12 +1,6 @@
-import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, CTABand } from '../components/zarq/ui';
-
-interface FAQItem {
-  question: string;
-  answer: string;
-}
+import { FAQAccordion, type FAQItem } from '../components/zarq/FAQAccordion';
 
 export const faqGroups: { title: string; items: FAQItem[] }[] = [
   {
@@ -15,17 +9,17 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'What is Zarq?',
         answer:
-          'Zarq is an early-stage youth technology and digital opportunity enterprise rooted in Matatiele, Eastern Cape. It helps underserved young people move from digital exclusion to economic participation through access to technology, practical skills, projects, mentorship and opportunity pathways.',
+          'Zarq is a youth technology and digital opportunity company based in Matatiele, Eastern Cape. Zarq Digital provides technology services to businesses and organisations, and Zarq programmes give young people access to technology, practical skills, projects, mentorship and opportunity.',
       },
       {
-        question: 'Is Zarq up and running?',
+        question: 'What can I sign up for?',
         answer:
-          'Zarq is in development. Zarq Digital is taking enquiries now. The youth programmes are being developed, starting with a first structured programme, and initiatives such as Zarq Hub, Zarq Labs and Zarq Robotics & STEM are planned. Each programme on this site is clearly marked as current, developing or planned.',
+          'Businesses can work with Zarq Digital today. Young people and parents can register their interest in Zarq programmes. Schools, mentors and partners can get in touch through Get Involved.',
       },
       {
         question: 'Where is Zarq based, and do you work online?',
         answer:
-          'Zarq is based in Matatiele, Eastern Cape, South Africa. Zarq Digital services can be delivered online, so you don’t need to be in Matatiele to work with us. Some Zarq classes are also planned to be held online.',
+          'Zarq is based in Matatiele, Eastern Cape, South Africa. Zarq Digital works with clients online, so you don’t need to be in Matatiele to work with us. Zarq programmes are delivered in Matatiele and online.',
       },
       {
         question: 'How is Zarq funded?',
@@ -45,12 +39,12 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'How do I join?',
         answer:
-          'Register your interest through the contact form and choose “Joining a programme”. We’ll be in touch as the first structured programme opens. Parents and guardians are welcome to enquire on behalf of a young person.',
+          'Register your interest through the contact form and choose “Joining a programme”. We’ll be in touch with programme dates and details. Parents and guardians are welcome to enquire on behalf of a young person.',
       },
       {
         question: 'Is there a Zarq centre I can visit?',
         answer:
-          'Not yet. Zarq Hub, a physical access point in Matatiele for devices, connectivity, learning and mentorship, is planned. We’ll share updates as it develops.',
+          'Zarq Hub, a dedicated technology space in Matatiele, is coming. Until it opens, please get in touch before visiting, and we’ll arrange to meet.',
       },
     ],
   },
@@ -60,7 +54,7 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'What does Zarq Digital do?',
         answer:
-          'Websites, app development, UI/UX design, branding, AI implementation, automation, IT services, cybersecurity awareness and consulting, digital strategy, business registration (CIPC) and domain registration. Pricing is listed on the Zarq Digital page.',
+          'Websites, app development, UI/UX design, branding, AI implementation, automation, IT services, cybersecurity awareness and consulting, digital strategy, business registration (CIPC) and domain registration. Packages, pricing and a client FAQ (payments, timelines, revisions) are on the Zarq Digital page.',
       },
       {
         question: 'How do I get started on a project?',
@@ -85,29 +79,11 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'Will you share results?',
         answer:
-          'Yes. Our Impact page lists proposed Year 1 targets. As programmes run, we’ll publish verified outcomes there, and we won’t present targets as achievements.',
+          'Yes. Our goals are on the About page, and we report on progress openly with our partners.',
       },
     ],
   },
 ];
-
-function FAQAccordion({ item }: { item: FAQItem }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-gray-200">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left"
-        aria-expanded={open}
-      >
-        <span className="font-medium text-gray-950 text-base sm:text-lg">{item.question}</span>
-        <ChevronDown className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
-      </button>
-      {/* Answers stay in the HTML (hidden when closed) so crawlers can read them. */}
-      <p hidden={!open} className="pb-6 -mt-1 text-gray-600 leading-relaxed max-w-2xl">{item.answer}</p>
-    </div>
-  );
-}
 
 export default function FAQ() {
   useSEO('/faq');

@@ -1,7 +1,7 @@
 import { useSEO } from '../components/useSEO';
 import Journey from '../components/zarq/Journey';
 import { PageHeader, Section, SectionHeading, Eyebrow, CTABand } from '../components/zarq/ui';
-import { founder, vision, mission } from '../components/zarq/content';
+import { founder, vision, mission, problemPoints, flywheel, yearOneTargets } from '../components/zarq/content';
 
 const approach = [
   { step: 'Learn', text: 'Practical, project-based technology education.' },
@@ -29,7 +29,7 @@ export default function About() {
       <PageHeader
         eyebrow="About Zarq"
         title="Building a pathway from digital exclusion to economic participation."
-        intro="Zarq is an early-stage youth technology and digital opportunity enterprise, rooted in Matatiele in the Eastern Cape."
+        intro="Zarq is a youth technology and digital opportunity company based in Matatiele, Eastern Cape. We combine commercial technology services with practical youth programmes, and each one makes the other stronger."
       />
 
       {/* Story */}
@@ -86,17 +86,79 @@ export default function About() {
         </div>
       </Section>
 
-      {/* Why Matatiele */}
+      {/* Impact (formerly its own page; /impact redirects here) */}
+      <Section tone="paper" id="impact">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          <SectionHeading
+            className="!mb-0"
+            eyebrow="Our impact"
+            title="Measured by what young people go on to do."
+            intro="Using technology isn't the same as having access to opportunity. Young people in underserved communities often miss out on the tools, skills and networks that turn digital ability into income and careers."
+          />
+          <div>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What's often out of reach</p>
+            <ul className="divide-y divide-gray-200 border-y border-gray-200">
+              {problemPoints.map((p) => (
+                <li key={p} className="py-4 text-lg">{p}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Section>
+
+      {/* How Zarq sustains itself */}
+      <Section tone="ink" id="model">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Eyebrow dark>How Zarq sustains itself</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">Commercial work and impact, by design.</h2>
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
+              Zarq is a hybrid social-impact and commercial technology company. Commercial services earn revenue. Funding and partnerships make youth programmes accessible.
+            </p>
+            <p className="text-gray-400 leading-relaxed">
+              As capability and impact grow, so do Zarq's reputation and partnerships, which brings in more customers and support.
+            </p>
+          </div>
+          <ol className="space-y-px rounded-2xl overflow-hidden bg-white/10">
+            {flywheel.map((item, i) => (
+              <li key={item} className="bg-gray-950 flex items-center gap-4 p-4 sm:p-5">
+                <span className="font-spec text-xs text-gray-500 w-6">{String(i + 1).padStart(2, '0')}</span>
+                <span className="text-gray-100">{item}</span>
+              </li>
+            ))}
+            <li className="bg-[#ffc8dd] text-gray-950 p-4 sm:p-5 font-spec text-xs uppercase tracking-[0.14em]">
+              ↻ and the cycle continues
+            </li>
+          </ol>
+        </div>
+      </Section>
+
+      {/* Goals */}
+      <Section id="goals">
+        <SectionHeading
+          eyebrow="Our goals"
+          title="What we're working towards."
+          intro="Our goals for the first year of Zarq programmes."
+        />
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+          {yearOneTargets.map(({ value, label }) => (
+            <div key={label} className="rounded-2xl border border-gray-200 p-5 sm:p-6">
+              <p className="font-brand text-4xl sm:text-5xl leading-none mb-2">{value}</p>
+              <p className="text-sm text-gray-600">{label}</p>
+            </div>
+          ))}
+        </div>
+        <p className="mt-8 text-sm text-gray-500">We report on progress openly with our partners.</p>
+      </Section>
+
+      {/* Rooted in Matatiele */}
       <Section tone="blush" id="matatiele">
         <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
-          <Eyebrow>Why Matatiele</Eyebrow>
+          <Eyebrow>Where we work</Eyebrow>
           <div>
-            <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Start where the need is. Prove it. Then grow.</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Zarq is rooted in Matatiele, Eastern Cape. It's where the model will start, be measured and be improved, beginning with a planned Zarq Hub that gives young people a physical place to access technology and learn.
-            </p>
+            <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Rooted in Matatiele, working everywhere.</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Once the model is proven, the plan is to build partnerships and adapt it for other underserved communities.
+              Matatiele is home. It's where our programmes are based and where Zarq Hub is coming, giving young people a dedicated place to access technology and learn. Zarq Digital works with clients online across South Africa, and our model is designed to grow into other communities through partnerships.
             </p>
           </div>
         </div>
@@ -131,7 +193,7 @@ export default function About() {
       <CTABand
         eyebrow="Get involved"
         title="Help build what comes next."
-        intro="Zarq is being built seriously and honestly, one stage at a time. There's a place for young people, schools, mentors, partners and clients."
+        intro="There's a place at Zarq for young people, schools, mentors, partners and clients."
         primary={{ to: '/get-involved', label: 'Get involved' }}
         secondary={{ to: '/contact', label: 'Start a conversation' }}
       />

@@ -1,7 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
-import type { Status } from './content';
 
 // Shared building blocks for every Zarq page. Keep visual decisions here so pages stay consistent.
 
@@ -62,40 +61,6 @@ export function SectionHeading({
       {eyebrow && <Eyebrow dark={dark}>{eyebrow}</Eyebrow>}
       <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-4">{title}</h2>
       {intro && <p className={`text-base sm:text-lg leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-600'}`}>{intro}</p>}
-    </div>
-  );
-}
-
-const statusStyles: Record<Status, { label: string; className: string }> = {
-  current: { label: 'Current', className: 'bg-gray-950 text-white border-gray-950' },
-  developing: { label: 'Developing', className: 'bg-[#ffc8dd] text-gray-950 border-[#ffc8dd]' },
-  planned: { label: 'Planned', className: 'bg-transparent text-gray-700 border-gray-400 border-dashed' },
-  target: { label: 'Year 1 target', className: 'bg-[#e7c6ff] text-gray-950 border-[#e7c6ff]' },
-};
-
-export function StatusBadge({ status, className = '' }: { status: Status; className?: string }) {
-  const { label, className: style } = statusStyles[status];
-  return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border font-spec text-[11px] uppercase tracking-wider ${style} ${className}`}>
-      {label}
-    </span>
-  );
-}
-
-export function StatusLegend({ dark = false }: { dark?: boolean }) {
-  const items: { status: Status; text: string }[] = [
-    { status: 'current', text: 'Exists today' },
-    { status: 'developing', text: 'Being built now' },
-    { status: 'planned', text: 'Future initiative' },
-  ];
-  return (
-    <div className={`flex flex-wrap gap-x-6 gap-y-3 text-sm ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-      {items.map(({ status, text }) => (
-        <span key={status} className="inline-flex items-center gap-2">
-          <StatusBadge status={status} className={dark && status === 'planned' ? 'text-gray-300 border-gray-500' : ''} />
-          {text}
-        </span>
-      ))}
     </div>
   );
 }
