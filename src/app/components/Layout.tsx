@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
 import { Menu, X, Instagram, ChevronUp } from 'lucide-react';
 import { contact, coreMessage } from './zarq/content';
+import { sendToInbox } from './zarq/web3forms';
 
 const navLinks = [
   { path: '/digital', label: 'Zarq Digital' },
@@ -48,7 +49,9 @@ const footerGroups = [
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterDone, setNewsletterDone] = useState(false);
+  const [newsletterState, setNewsletterState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
+  // Honeypot: hidden from people, so only spam bots fill it in.
+  const [newsletterBot, setNewsletterBot] = useState(false);
   const [showConsent, setShowConsent] = useState(() => {
     try { return !localStorage.getItem('lesedi_popia_consent'); } catch { return true; }
   });
@@ -76,15 +79,24 @@ export default function Layout() {
     setMenuOpen(false);
   }, [location.pathname]);
 
-  const handleNewsletter = (e: React.FormEvent) => {
+  const handleNewsletter = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newsletterEmail) return;
-    window.open(
-      `mailto:${contact.email}?subject=Zarq Updates&body=Please add me to the Zarq updates list: ${encodeURIComponent(newsletterEmail)}`,
-      '_blank'
-    );
-    setNewsletterDone(true);
-    setNewsletterEmail('');
+    setNewsletterState('sending');
+    try {
+      const sent = await sendToInbox({
+        subject: `Updates sign-up – ${newsletterEmail}`,
+        replyto: newsletterEmail,
+        email: newsletterEmail,
+        request: 'Please add me to the Zarq updates list.',
+        page: location.pathname,
+        botcheck: newsletterBot,
+      });
+      setNewsletterState(sent ? 'done' : 'error');
+      if (sent) setNewsletterEmail('');
+    } catch {
+      setNewsletterState('error');
+    }
   };
 
   const acceptConsent = () => {
@@ -219,10 +231,21 @@ export default function Layout() {
               <p className="font-medium mb-1">Stay in the loop</p>
               <p className="text-sm text-gray-600">Occasional updates on services, offers, programmes and partnerships.</p>
             </div>
-            {newsletterDone ? (
-              <p className="text-sm font-medium">✓ Thanks, we’ll keep you posted.</p>
+            {newsletterState === 'done' ? (
+              <p className="text-sm font-medium" role="status">✓ Thanks, you’re on the list.</p>
             ) : (
-              <form onSubmit={handleNewsletter} className="flex gap-2 w-full md:w-auto">
+              <div className="w-full md:w-auto">
+              <form onSubmit={handleNewsletter} className="flex gap-2">
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  checked={newsletterBot}
+                  onChange={(e) => setNewsletterBot(e.target.checked)}
+                />
                 <label htmlFor="updates-email" className="sr-only">Email address</label>
                 <input
                   id="updates-email"
@@ -230,13 +253,24 @@ export default function Layout() {
                   required
                   placeholder="Your email address"
                   value={newsletterEmail}
+                  disabled={newsletterState === 'sending'}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
                   className="flex-1 md:w-64 px-4 py-2.5 rounded-full bg-white text-sm border border-gray-300 focus:outline-none focus:border-gray-950"
                 />
-                <button type="submit" className="px-5 py-2.5 bg-gray-950 hover:bg-gray-800 text-white text-sm font-medium rounded-full transition-colors flex-shrink-0">
-                  Subscribe
+                <button
+                  type="submit"
+                  disabled={newsletterState === 'sending'}
+                  className="px-5 py-2.5 bg-gray-950 hover:bg-gray-800 text-white text-sm font-medium rounded-full transition-colors flex-shrink-0 disabled:bg-gray-400"
+                >
+                  {newsletterState === 'sending' ? 'Sending…' : 'Subscribe'}
                 </button>
               </form>
+              {newsletterState === 'error' && (
+                <p className="mt-2 text-sm text-red-700 md:max-w-sm" role="status">
+                  Sorry, that didn’t go through. Please try again or email {contact.email}.
+                </p>
+              )}
+              </div>
             )}
           </div>
 

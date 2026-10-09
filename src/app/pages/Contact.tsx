@@ -4,12 +4,9 @@ import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, Eyebrow } from '../components/zarq/ui';
 import { contact, interestGroups } from '../components/zarq/content';
+import { sendToInbox } from '../components/zarq/web3forms';
 
 const allInterests = interestGroups.flatMap((g) => g.options);
-
-// Web3Forms delivers each enquiry to admin.zarq@gmail.com. The access key is public by design:
-// it only allows sending submissions to that inbox.
-const WEB3FORMS_ACCESS_KEY = 'd217695d-772d-4c9d-8e01-72119cb30bb5';
 
 const fieldClass =
   'w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-base focus:border-gray-950 focus:outline-none focus:ring-2 focus:ring-[#ffc8dd] disabled:bg-gray-100 disabled:cursor-not-allowed transition-colors';
@@ -40,26 +37,18 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `${formData.interest} – ${formData.name}`,
-          from_name: 'Zarq website',
-          replyto: formData.email,
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone || 'Not given',
-          interest: formData.interest,
-          message: formData.message || '(No message)',
-          botcheck,
-        }),
+      const sent = await sendToInbox({
+        subject: `${formData.interest} – ${formData.name}`,
+        replyto: formData.email,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || 'Not given',
+        interest: formData.interest,
+        message: formData.message || '(No message)',
+        botcheck,
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
+      if (sent) {
         setSubmitStatus({
           type: 'success',
           message: 'Thank you. We’ve received your message and will be in touch.',

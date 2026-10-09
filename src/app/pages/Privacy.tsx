@@ -62,7 +62,7 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">3. Sharing of Your Information</h2>
               <p className="text-gray-600 leading-relaxed">
-                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent. Messages sent through our contact form are delivered to our inbox by our form provider, Web3Forms, which processes them only to pass them on to us. Anonymous usage statistics collected through Google Analytics may be processed by Google in accordance with their privacy policy.
+                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent. Messages and sign-ups sent through our website forms are delivered to our inbox by our form provider, Web3Forms, which processes them only to pass them on to us. Anonymous usage statistics collected through Google Analytics may be processed by Google in accordance with their privacy policy.
               </p>
             </div>
 
