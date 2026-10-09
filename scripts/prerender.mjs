@@ -65,6 +65,7 @@ const globalGraph = [
     '@id': FOUNDER,
     name: c.founder.name,
     jobTitle: 'Founder',
+    image: `${SITE_URL}${c.founder.photo}`,
     worksFor: { '@id': ORG },
     description:
       'Founder of Zarq. Holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.',

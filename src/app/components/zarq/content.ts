@@ -19,6 +19,8 @@ export const contact = {
 export const founder = {
   name: 'Lesedi Siyaya',
   role: 'Founder, Zarq',
+  photo: '/founder-lesedi.jpg',
+  photoAlt: 'Lesedi Siyaya, founder of Zarq, at her graduation',
 };
 
 export const coreMessage =
@@ -211,6 +213,49 @@ export const yearOneTargets = [
   { value: '2–5', label: 'paid or part-time opportunities' },
 ];
 
+
+// ---------- Partner with Zarq (/partners) ----------
+// Every figure here has a published source. Check and update the year when new data is released.
+export const needStats = [
+  { value: '47.4%', label: 'of young South Africans aged 15–34 are unemployed', source: 'Stats SA, Quarterly Labour Force Survey, Q2 2026' },
+  { value: '13.3%', label: 'of Eastern Cape households own a computer', source: 'Stats SA, Census 2022' },
+  { value: '34.3%', label: 'of Eastern Cape households have no internet access', source: 'Stats SA, Census 2022' },
+  { value: '7.3%', label: 'of adults in Matatiele hold a higher education qualification', source: 'Stats SA, Census 2022' },
+];
+
+// Indicative amounts based on current South African retail prices; Zarq confirms quotes per partner.
+export const supportOptions = [
+  { title: 'Connect a learning space', amount: '± R7,200', per: 'per year', text: 'Uncapped internet for a Zarq learning space for twelve months, so learners can research, code and build online.' },
+  { title: 'Equip a learner', amount: '± R7,000', per: 'per laptop', text: 'A refurbished business-grade laptop with warranty, used by learners in class and for their projects.' },
+  { title: 'Build the device bank', amount: '± R35,000–R70,000', per: '5–10 laptops', text: 'A shared bank of laptops for Zarq programmes, matching our first-year goal of 5–10 devices.' },
+  { title: 'Sponsor a cohort', amount: 'Tailored', per: 'per programme', text: 'Fund a full programme intake: learning, materials, mentorship and project work. We’ll scope the budget with you.' },
+  { title: 'Founding partner of Zarq Hub', amount: 'Let’s talk', per: 'flagship', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
+];
+
+export const inKindOptions = [
+  'Donate working laptops or tablets',
+  'Sponsor data or connectivity',
+  'Offer venue space for classes and workshops',
+  'Volunteer staff as mentors or guest speakers',
+];
+
+export const partnerBenefits = [
+  { title: 'Quarterly impact reports', text: 'Clear updates on activity and progress against our goals, with stories and project work.' },
+  { title: 'Recognition', text: 'Acknowledgement on our website and social media, with your approval.' },
+  { title: 'Staff engagement', text: 'Mentoring, guest talks and volunteering opportunities for your team.' },
+  { title: 'Site visits', text: 'See the programmes in action and meet the young people involved.' },
+  { title: 'A say in the work', text: 'Help shape programmes so they meet real needs in the community and in industry.' },
+];
+
+export const reportingMetrics = [
+  'Young people reached',
+  'Programme completions',
+  'Technology projects built',
+  'Mentorship sessions held',
+  'Devices made available',
+  'School and community partnerships',
+  'Career exposure and opportunities',
+];
 
 // Zarq Digital client FAQ: standard South African small-business terms, approved by Zarq.
 export const digitalFaq = [

@@ -48,7 +48,7 @@ const paths: Path[] = [
     title: 'Partner With Us',
     text: 'Help build a measurable pathway from digital exclusion to economic participation, in Matatiele and beyond.',
     how: ['Programme partnerships', 'CSI and ESG alignment', 'Shared, transparent reporting'],
-    cta: { label: 'Partner With Us', to: '/contact?interest=partner' },
+    cta: { label: 'Partner With Us', to: '/partners' },
   },
   {
     id: 'supporters',
@@ -57,7 +57,7 @@ const paths: Path[] = [
     title: 'Support Zarq',
     text: 'Support the equipment, connectivity and resources that make accessible youth programmes possible.',
     how: ['Devices and equipment', 'Connectivity and resources', 'Programme funding'],
-    cta: { label: 'Support Zarq', to: '/contact?interest=support' },
+    cta: { label: 'Ways to support', to: '/partners#support' },
   },
   {
     id: 'business',

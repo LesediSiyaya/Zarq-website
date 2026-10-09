@@ -168,6 +168,14 @@ export default function About() {
       <Section id="founder">
         <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-10 md:gap-16 items-start">
           <div>
+            <img
+              src={founder.photo}
+              alt={founder.photoAlt}
+              width={900}
+              height={1352}
+              loading="lazy"
+              className="w-full max-w-xs rounded-2xl object-cover aspect-[4/5] mb-8"
+            />
             <Eyebrow>Founder</Eyebrow>
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-2">{founder.name}</h2>
             <p className="text-gray-500 mb-8">{founder.role}</p>

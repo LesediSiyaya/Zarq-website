@@ -40,6 +40,7 @@ const footerGroups = [
       { to: '/about', label: 'About' },
       { to: '/about#impact', label: 'Our impact' },
       { to: '/get-involved', label: 'Get Involved' },
+      { to: '/partners', label: 'Partner with us' },
       { to: '/faq', label: 'FAQ' },
       { to: '/contact', label: 'Contact' },
     ],

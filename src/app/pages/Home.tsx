@@ -10,7 +10,7 @@ import { academy, ecosystem, tracks, journey, problemPoints, digitalServices, pr
 const audiencePaths = [
   { icon: GraduationCap, who: 'Young people & families', action: 'Explore Programmes', to: '/programmes' },
   { icon: School, who: 'Schools', action: 'Partner with Zarq', to: '/get-involved#schools' },
-  { icon: Handshake, who: 'Funders & partners', action: 'Support Zarq', to: '/get-involved#partners' },
+  { icon: Handshake, who: 'Funders & sponsors', action: 'Fund our programmes', to: '/partners' },
   { icon: Briefcase, who: 'Businesses & organisations', action: 'Work with Zarq', to: '/digital' },
 ];
 

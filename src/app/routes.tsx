@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Programmes from "./pages/Programmes";
 import Digital from "./pages/Digital";
 import GetInvolved from "./pages/GetInvolved";
+import Partners from "./pages/Partners";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
@@ -21,6 +22,7 @@ export const routes: RouteObject[] = [
       { path: "programmes", Component: Programmes },
       { path: "digital", Component: Digital },
       { path: "get-involved", Component: GetInvolved },
+      { path: "partners", Component: Partners },
       { path: "contact", Component: Contact },
       { path: "faq", Component: FAQ },
       { path: "privacy", Component: Privacy },

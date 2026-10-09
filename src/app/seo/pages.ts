@@ -39,6 +39,13 @@ export const pages: PageMeta[] = [
       'Websites from R1,500, apps, UI/UX, branding, AI, automation, IT, cybersecurity, CIPC business registration and domains. Transparent pricing; delivered online across South Africa.',
   },
   {
+    path: '/partners',
+    name: 'Partner with Zarq',
+    title: 'Partner with Zarq | Sponsor Youth Tech Skills in Matatiele',
+    description:
+      'Sponsor devices, connectivity or a full cohort for young people in Matatiele, Eastern Cape. Indicative costs, quarterly impact reporting and partnership options.',
+  },
+  {
     path: '/get-involved',
     name: 'Get Involved',
     title: 'Get Involved | Join, Partner, Mentor or Support',
