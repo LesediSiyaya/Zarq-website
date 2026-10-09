@@ -43,7 +43,7 @@ export const pages: PageMeta[] = [
     name: 'Partner with Zarq',
     title: 'Partner with Zarq | Sponsor Youth Tech Skills in Matatiele',
     description:
-      'Sponsor devices, connectivity or a full cohort for young people in Matatiele, Eastern Cape. Indicative costs, quarterly impact reporting and partnership options.',
+      'Sponsor devices, connectivity or a full cohort for young people in Matatiele, Eastern Cape. Partnership options, in-kind support and quarterly impact reporting.',
   },
   {
     path: '/get-involved',

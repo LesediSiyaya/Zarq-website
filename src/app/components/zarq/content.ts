@@ -223,13 +223,13 @@ export const needStats = [
   { value: '7.3%', label: 'of adults in Matatiele hold a higher education qualification', source: 'Stats SA, Census 2022' },
 ];
 
-// Indicative amounts based on current South African retail prices; Zarq confirms quotes per partner.
+// No amounts are published; budgets are agreed with each partner.
 export const supportOptions = [
-  { title: 'Connect a learning space', amount: '± R7,200', per: 'per year', text: 'Uncapped internet for a Zarq learning space for twelve months, so learners can research, code and build online.' },
-  { title: 'Equip a learner', amount: '± R7,000', per: 'per laptop', text: 'A refurbished business-grade laptop with warranty, used by learners in class and for their projects.' },
-  { title: 'Build the device bank', amount: '± R35,000–R70,000', per: '5–10 laptops', text: 'A shared bank of laptops for Zarq programmes, matching our first-year goal of 5–10 devices.' },
-  { title: 'Sponsor a cohort', amount: 'Tailored', per: 'per programme', text: 'Fund a full programme intake: learning, materials, mentorship and project work. We’ll scope the budget with you.' },
-  { title: 'Founding partner of Zarq Hub', amount: 'Let’s talk', per: 'flagship', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
+  { title: 'Connect a learning space', text: 'Uncapped internet for a Zarq learning space for twelve months, so learners can research, code and build online.' },
+  { title: 'Equip a learner', text: 'A refurbished business-grade laptop with warranty, used by learners in class and for their projects.' },
+  { title: 'Build the device bank', text: 'A shared bank of laptops for Zarq programmes, matching our first-year goal of 5–10 devices.' },
+  { title: 'Sponsor a cohort', text: 'Fund a full programme intake: learning, materials, mentorship and project work. We’ll scope the budget with you.' },
+  { title: 'Founding partner of Zarq Hub', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
 ];
 
 export const inKindOptions = [

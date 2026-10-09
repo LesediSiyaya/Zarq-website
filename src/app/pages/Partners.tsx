@@ -107,17 +107,16 @@ export default function Partners() {
         <SectionHeading
           eyebrow="Ways to support"
           title="What your support makes possible."
-          intro="Choose a focus, or combine them. Amounts are indicative, based on current South African prices; we’ll confirm a clear quote and budget with you."
+          intro="Choose a focus, or combine them. We’ll put together a clear plan and budget with you."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {supportOptions.map(({ title, amount, per, text }, i) => (
+          {supportOptions.map(({ title, text }, i) => (
             <div
               key={title}
               className={`rounded-2xl p-6 sm:p-8 flex flex-col ${i === supportOptions.length - 1 ? 'bg-gray-950 text-white md:col-span-2' : 'border border-gray-200'}`}
             >
-              <h3 className="text-2xl mb-4">{title}</h3>
-              <p className="font-brand text-4xl leading-none mb-1">{amount}</p>
-              <p className={`font-spec text-[11px] uppercase tracking-wider mb-5 ${i === supportOptions.length - 1 ? 'text-gray-400' : 'text-gray-500'}`}>{per}</p>
+              <p className={`font-spec text-xs mb-6 ${i === supportOptions.length - 1 ? 'text-gray-500' : 'text-gray-400'}`}>{String(i + 1).padStart(2, '0')}</p>
+              <h3 className="text-2xl mb-3">{title}</h3>
               <p className={`leading-relaxed ${i === supportOptions.length - 1 ? 'text-gray-300' : 'text-gray-600'}`}>{text}</p>
             </div>
           ))}
