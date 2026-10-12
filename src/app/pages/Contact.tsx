@@ -80,7 +80,7 @@ export default function Contact() {
       <PageHeader
         eyebrow="Contact"
         title="Start a conversation."
-        intro="Whether you want to join, partner, support or work with Zarq, choose what your message is about so it reaches the right place."
+        intro="Get a quote, join a programme or start a partnership. Choose what your message is about so it reaches the right person."
       />
 
       <Section>

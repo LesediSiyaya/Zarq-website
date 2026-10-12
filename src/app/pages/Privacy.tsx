@@ -30,7 +30,7 @@ export default function Privacy() {
                 We only collect information you voluntarily give us. This may include:
               </p>
               <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm sm:text-base">
-                <li>Your name and contact details (email address and/or phone number) when you submit an inquiry via our contact form or reach out by email or WhatsApp.</li>
+                <li>Your name and contact details (email address and/or phone number) when you submit an enquiry via our contact form or reach out by email or WhatsApp.</li>
                 <li>Information about your project or service request that you choose to share.</li>
                 <li>Programme registration details, such as a learner’s name, age group and a parent or guardian’s contact details.</li>
                 <li>Your email address if you sign up for updates.</li>
@@ -49,7 +49,7 @@ export default function Privacy() {
                 Information you provide is used solely to:
               </p>
               <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm sm:text-base">
-                <li>Respond to your inquiry or service request.</li>
+                <li>Respond to your enquiry or service request.</li>
                 <li>Process and follow up on programme registrations, and keep parents and guardians informed.</li>
                 <li>Send you updates, only if you signed up for them. You can unsubscribe at any time.</li>
                 <li>Send you a quote, invoice, or project update related to work you have engaged us for.</li>
@@ -83,7 +83,7 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-3">6. Children's Privacy</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">6. Children’s Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
                 Zarq programmes are open to young people aged 5 and up. For anyone under 18, registration must be made or approved by a parent or guardian, and we keep them informed. We collect only what we need to run the programme, and we never use children’s personal information for commercial purposes.
               </p>

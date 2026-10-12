@@ -24,7 +24,7 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'How is Zarq funded?',
         answer:
-          'Zarq is a hybrid social-impact and commercial enterprise. Zarq Digital earns revenue from technology services, and funding and partnerships help make youth programmes accessible.',
+          'Zarq is a hybrid social-impact and commercial company. Zarq Digital earns revenue from technology services, and funding and partnerships help make youth programmes accessible.',
       },
     ],
   },
@@ -34,7 +34,7 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
       {
         question: 'Who are the programmes for?',
         answer:
-          'Young people in underserved communities, especially those with limited access to devices, connectivity and technology opportunities. That includes younger learners who need early exposure to digital skills and STEM, and young people interested in technology careers, entrepreneurship and digital work.',
+          'Young people aged 5 and up. Classes are free. They’re designed for young people in underserved communities, especially those with limited access to devices, connectivity and technology opportunities. That includes younger learners who need early exposure to digital skills and STEM, and young people interested in technology careers, entrepreneurship and digital work.',
       },
       {
         question: 'How do I join?',

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
 import { Menu, X, Instagram, ChevronUp } from 'lucide-react';
-import { contact, coreMessage } from './zarq/content';
+import { contact, footerBlurb } from './zarq/content';
 import { sendToInbox } from './zarq/web3forms';
 import { getConsent, setConsent, loadAnalytics, track } from './zarq/analytics';
 
@@ -209,7 +209,7 @@ export default function Layout() {
           <div className="grid gap-10 lg:grid-cols-[1.3fr_2fr] mb-12">
             <div>
               <Link to="/" className="font-brand text-4xl tracking-tight">ZARQ</Link>
-              <p className="text-gray-600 text-sm leading-relaxed mt-4 max-w-sm">{coreMessage}</p>
+              <p className="text-gray-600 text-sm leading-relaxed mt-4 max-w-sm">{footerBlurb}</p>
               <div className="mt-6 space-y-2 text-sm">
                 <a href={`mailto:${contact.email}`} className="block text-gray-700 hover:text-gray-950">{contact.email}</a>
                 <a href={contact.phoneHref} className="block text-gray-700 hover:text-gray-950">{contact.phoneDisplay}</a>

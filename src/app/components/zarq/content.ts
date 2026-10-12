@@ -26,8 +26,12 @@ export const founder = {
 export const coreMessage =
   'Zarq helps underserved young people move from digital exclusion to economic participation by giving them access to technology, practical skills, projects, mentorship and opportunity pathways.';
 
+// Footer description: covers both sides of Zarq.
+export const footerBlurb =
+  'Zarq builds websites and digital solutions for businesses and organisations, and gives young people in Matatiele free access to technology, skills, mentorship and opportunity.';
+
 export const vision =
-  "A future where a young person's location or access to technology does not determine their ability to participate in the digital economy.";
+  "A future where a young person’s location or access to technology does not determine their ability to participate in the digital economy.";
 
 export const mission =
   'To give young people, especially those from underserved communities, access to digital tools, practical technology education, mentorship and opportunities to build solutions that shape their futures.';
@@ -142,7 +146,7 @@ export const pricing = [
   { service: 'Website design & development', tiers: [
     { tier: 'Starter', price: 'R1,500', was: 'R2,500', desc: 'Landing page, mobile-friendly' },
     { tier: 'Standard', price: 'R3,000', was: 'R5,000', desc: 'Multi-page site + contact form' },
-    { tier: 'Premium', price: 'R6,000', was: 'R10,000', desc: 'Full web app + SEO optimised' },
+    { tier: 'Premium', price: 'R6,000', was: 'R10,000', desc: 'Full web app + search optimisation' },
   ] },
   { service: 'UI/UX design', tiers: [
     { tier: 'Starter', price: 'R900', was: 'R1,500', desc: 'Wireframes + basic mockup' },
@@ -171,7 +175,7 @@ export const pricing = [
   ] },
   { service: 'Business registration (CIPC)', tiers: [
     { tier: 'Starter', price: 'R480', was: 'R800', desc: 'Name reservation + CIPC guidance' },
-    { tier: 'Standard', price: 'R900', was: 'R1,500', desc: 'Full PTY Ltd / NPC registration' },
+    { tier: 'Standard', price: 'R900', was: 'R1,500', desc: 'Full Pty Ltd or NPC registration' },
     { tier: 'Premium', price: 'R1,800', was: 'R3,000', desc: 'Registration + SARS + compliance' },
   ] },
   { service: 'Domain registration', tiers: [
@@ -265,7 +269,7 @@ export const digitalFaq = [
   },
   {
     question: 'How do payments work?',
-    answer: 'A 50% deposit confirms your booking and lets us start. The balance is due on completion, before handover or going live. Smaller services under R1,000 are paid upfront. We accept EFT, and we issue an invoice for every payment.',
+    answer: 'A 50% deposit confirms your booking and lets us start. The balance is due on completion, before handover or going live. Services under R1,000 are paid upfront. We accept EFT, and we issue an invoice for every payment.',
   },
   {
     question: 'How long will it take?',

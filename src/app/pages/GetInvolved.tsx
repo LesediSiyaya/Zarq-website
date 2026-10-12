@@ -19,7 +19,7 @@ const paths: Path[] = [
     icon: GraduationCap,
     who: 'Young people & families',
     title: 'Join Zarq',
-    text: 'Register your interest in Zarq programmes. We’ll be in touch with programme dates and details.',
+    text: 'Register your interest in Zarq’s free programmes. We’ll be in touch with programme dates and details.',
     how: ['Learn practical digital and AI skills', 'Build real projects', 'Get mentorship and career exposure'],
     cta: { label: 'Join Zarq', to: '/contact?interest=youth' },
   },
@@ -27,28 +27,28 @@ const paths: Path[] = [
     id: 'schools',
     icon: School,
     who: 'Schools & educational organisations',
-    title: 'Partner with Zarq',
+    title: 'Partner as a school',
     text: 'Work with Zarq to bring practical technology learning, workshops and STEM exposure to your learners.',
     how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM'],
-    cta: { label: 'Partner with Zarq', to: '/contact?interest=school' },
+    cta: { label: 'Partner as a school', to: '/contact?interest=school' },
   },
   {
     id: 'mentors',
     icon: UserRound,
     who: 'Technology professionals',
-    title: 'Become a Mentor',
+    title: 'Become a mentor',
     text: 'Share your experience with young people who are learning to build with technology.',
     how: ['Mentorship sessions', 'Project feedback', 'Career and industry insight'],
-    cta: { label: 'Become a Mentor', to: '/contact?interest=mentor' },
+    cta: { label: 'Become a mentor', to: '/contact?interest=mentor' },
   },
   {
     id: 'partners',
     icon: Handshake,
     who: 'Corporates, CSI/ESG, NGOs & foundations',
-    title: 'Partner With Us',
+    title: 'Partner with us',
     text: 'Help build a measurable pathway from digital exclusion to economic participation, in Matatiele and beyond.',
     how: ['Programme partnerships', 'CSI and ESG alignment', 'Shared, transparent reporting'],
-    cta: { label: 'Partner With Us', to: '/partners' },
+    cta: { label: 'Partner with us', to: '/partners' },
   },
   {
     id: 'supporters',
@@ -63,10 +63,10 @@ const paths: Path[] = [
     id: 'business',
     icon: Briefcase,
     who: 'Businesses & organisations',
-    title: 'Work With Zarq',
+    title: 'Work with Zarq',
     text: 'Hire Zarq Digital for websites, apps, AI, automation and more. Your project helps sustain youth programmes.',
     how: ['Websites and apps', 'AI and automation', 'IT, cybersecurity and strategy'],
-    cta: { label: 'Work With Zarq', to: '/digital' },
+    cta: { label: 'Work with Zarq', to: '/digital' },
   },
 ];
 
@@ -77,7 +77,7 @@ export default function GetInvolved() {
     <div>
       <PageHeader
         eyebrow="Get involved"
-        title="There's a place for you in what Zarq is building."
+        title="There’s a place for you at Zarq."
         intro="Learners, schools, mentors, partners, sponsors and clients all play a part in what Zarq does. Find your way in."
       >
         <nav aria-label="Jump to" className="flex flex-wrap gap-2">

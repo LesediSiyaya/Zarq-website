@@ -12,7 +12,7 @@ export default function Programmes() {
       <PageHeader
         eyebrow="Programmes"
         title="Learn it. Build it. Use it."
-        intro="Zarq programmes take young people from first access to real projects and opportunity. Learning is practical and project-based, delivered in Matatiele and online."
+        intro="Zarq programmes take young people from first access to real projects and opportunity. Learning is practical, project-based and free for learners, in Matatiele and online."
       />
 
       {/* Academy */}
@@ -22,7 +22,7 @@ export default function Programmes() {
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">{academy.name}</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-5">{academy.summary}</p>
             <p className="text-gray-600 leading-relaxed mb-8">
-              Learners don't just use technology, they create with it, building projects that grow into a portfolio.
+              Learners don’t just use technology, they create with it, building projects that grow into a portfolio.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <ButtonLink to="/contact?interest=youth">Register your interest</ButtonLink>
@@ -83,7 +83,7 @@ export default function Programmes() {
       <CTABand
         eyebrow="Join Zarq"
         title="Start your Zarq journey."
-        intro="Register your interest and we'll be in touch with programme dates and details. Parents and guardians are welcome to enquire too."
+        intro="Register your interest and we’ll be in touch with programme dates and details. Parents and guardians are welcome to enquire too."
         primary={{ to: '/contact?interest=youth', label: 'Register your interest' }}
         secondary={{ to: '/get-involved', label: 'Other ways to get involved' }}
       />

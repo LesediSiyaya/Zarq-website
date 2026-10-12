@@ -41,7 +41,7 @@ export default function About() {
               There is a gap between what young people are capable of and their access to technology, mentorship and opportunity.
             </p>
             <p>
-              In underserved communities, that gap shows up as more than missing devices. It's limited connectivity, little exposure to AI and emerging technology, few mentors, and limited chances to build real projects or learn what a technology career looks like.
+              In underserved communities, that gap shows up as more than missing devices. It’s limited connectivity, little exposure to AI and emerging technology, few mentors, and limited chances to build real projects or learn what a technology career looks like.
             </p>
             <p>
               Zarq exists to close that gap. It combines access, learning, practical creation and opportunity, so young people can move from consuming technology to creating with it.
@@ -93,10 +93,10 @@ export default function About() {
             className="!mb-0"
             eyebrow="Our impact"
             title="Measured by what young people go on to do."
-            intro="Using technology isn't the same as having access to opportunity. Young people in underserved communities often miss out on the tools, skills and networks that turn digital ability into income and careers."
+            intro="Using technology isn’t the same as having access to opportunity. Young people in underserved communities often miss out on the tools, skills and networks that turn digital ability into income and careers."
           />
           <div>
-            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What's often out of reach</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What’s often out of reach</p>
             <ul className="divide-y divide-gray-200 border-y border-gray-200">
               {problemPoints.map((p) => (
                 <li key={p} className="py-4 text-lg">{p}</li>
@@ -116,7 +116,7 @@ export default function About() {
               Zarq is a hybrid social-impact and commercial technology company. Commercial services earn revenue. Funding and partnerships make youth programmes accessible.
             </p>
             <p className="text-gray-400 leading-relaxed">
-              As capability and impact grow, so do Zarq's reputation and partnerships, which brings in more customers and support.
+              As capability and impact grow, so do Zarq’s reputation and partnerships, which brings in more customers and support.
             </p>
           </div>
           <ol className="space-y-px rounded-2xl overflow-hidden bg-white/10">
@@ -137,7 +137,7 @@ export default function About() {
       <Section id="goals">
         <SectionHeading
           eyebrow="Our goals"
-          title="What we're working towards."
+          title="What we’re working towards."
           intro="Our goals for the first year of Zarq programmes."
         />
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
@@ -158,7 +158,7 @@ export default function About() {
           <div>
             <h2 className="text-3xl sm:text-4xl leading-tight mb-5">Rooted in Matatiele, working everywhere.</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              Matatiele is home. It's where our programmes are based and where Zarq Hub is coming, giving young people a dedicated place to access technology and learn. Zarq Digital works with clients online across South Africa, and our model is designed to grow into other communities through partnerships.
+              Matatiele is home. It’s where our programmes are based and where Zarq Hub is coming, giving young people a dedicated place to access technology and learn. Zarq Digital works with clients online across South Africa, and our model is designed to grow into other communities through partnerships.
             </p>
           </div>
         </div>
@@ -188,7 +188,7 @@ export default function About() {
           <div>
             <div className="space-y-5 text-lg text-gray-700 leading-relaxed">
               <p>
-                With a BSc in Information Technology and a foundation in programming and mathematics, she brings business analysis experience, translating business needs into practical technology solutions. Her work also spans websites, applications, UI/UX, digital products, AI-related work, innovation programmes and professional technology environments.
+                Lesedi translates business needs into practical technology: websites, applications, digital products and AI-powered tools. She brings the discipline of business analysis to every project, so the technology solves the real problem.
               </p>
               <p>
                 She understands how technology is built, and is just as focused on how people get access to it and benefit from it. Zarq brings those two things together: technical capability and a clear understanding of the access problem.
@@ -201,7 +201,7 @@ export default function About() {
       <CTABand
         eyebrow="Get involved"
         title="Help build what comes next."
-        intro="There's a place at Zarq for young people, schools, mentors, partners and clients."
+        intro="There’s a place at Zarq for young people, schools, mentors, partners and clients."
         primary={{ to: '/get-involved', label: 'Get involved' }}
         secondary={{ to: '/contact', label: 'Start a conversation' }}
       />

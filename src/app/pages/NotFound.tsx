@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="zq-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
       <Container className="relative py-20">
         <Eyebrow>404 · Page not found</Eyebrow>
-        <h1 className="text-5xl sm:text-7xl leading-[0.98] text-gray-950 max-w-3xl mb-6">This path doesn't lead anywhere, yet.</h1>
+        <h1 className="text-5xl sm:text-7xl leading-[0.98] text-gray-950 max-w-3xl mb-6">This path doesn’t lead anywhere, yet.</h1>
         <p className="text-lg text-gray-600 max-w-xl mb-8">The page may have moved as the site was restructured.</p>
         <div className="flex flex-col sm:flex-row gap-3 mb-10">
           <ButtonLink to="/">Back to home</ButtonLink>

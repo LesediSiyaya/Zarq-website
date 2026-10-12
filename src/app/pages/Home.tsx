@@ -8,8 +8,8 @@ import {
 import { academy, ecosystem, tracks, journey, problemPoints, digitalServices, pricingNote } from '../components/zarq/content';
 
 const audiencePaths = [
-  { icon: GraduationCap, who: 'Young people & families', action: 'Explore Programmes', to: '/programmes' },
-  { icon: School, who: 'Schools', action: 'Partner with Zarq', to: '/get-involved#schools' },
+  { icon: GraduationCap, who: 'Young people & families', action: 'Explore programmes', to: '/programmes' },
+  { icon: School, who: 'Schools', action: 'Partner as a school', to: '/get-involved#schools' },
   { icon: Handshake, who: 'Funders & sponsors', action: 'Fund our programmes', to: '/partners' },
   { icon: Briefcase, who: 'Businesses & organisations', action: 'Work with Zarq', to: '/digital' },
 ];
@@ -172,14 +172,14 @@ export default function Home() {
       <Section tone="ink">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div>
-            <Eyebrow dark>Why it matters</Eyebrow>
-            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-6">It's bigger than device access.</h2>
+            <Eyebrow dark>Why we do this</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-6">It’s bigger than device access.</h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               A young person can use a phone every day and still have little chance to learn how technology is built, develop a portfolio, meet mentors or turn digital skills into income.
             </p>
           </div>
           <div>
-            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What's often out of reach</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What’s often out of reach</p>
             <ul className="grid sm:grid-cols-2 gap-px bg-white/10 rounded-2xl overflow-hidden">
               {problemPoints.map((point) => (
                 <li key={point} className="bg-gray-950 p-5 text-gray-200">{point}</li>
@@ -196,7 +196,7 @@ export default function Home() {
             className="!mb-0"
             eyebrow="Programmes"
             title="Learn it. Build it. Use it."
-            intro="Zarq programmes take young people from first access to real projects and opportunity, in Matatiele and online."
+            intro="Zarq programmes take young people from first access to real projects and opportunity. Free for learners, in Matatiele and online."
           />
           <TextLink to="/programmes">All programmes</TextLink>
         </div>
@@ -219,7 +219,7 @@ export default function Home() {
           dark
           eyebrow="What you can do next"
           title="Find your way into Zarq."
-          intro="Whether you want to learn, partner, support or build something, there's a clear next step."
+          intro="Whether you want to learn, partner, support or build something, there’s a clear next step."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {audiencePaths.map(({ icon: Icon, who, action, to }) => (
