@@ -12,6 +12,7 @@ import CodingClasses from "./pages/services/CodingClasses";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 // Shared by the browser router (App.tsx) and the build-time prerender (entry-server.tsx).
@@ -32,6 +33,7 @@ export const routes: RouteObject[] = [
       { path: "contact", Component: Contact },
       { path: "faq", Component: FAQ },
       { path: "privacy", Component: Privacy },
+      { path: "terms", Component: Terms },
       // Legacy URLs kept working after the restructure.
       { path: "programs", element: <Navigate to="/programmes" replace /> },
       { path: "services", element: <Navigate to="/digital" replace /> },

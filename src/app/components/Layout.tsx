@@ -3,6 +3,7 @@ import { Outlet, Link, useLocation } from 'react-router';
 import { Menu, X, Instagram, ChevronUp } from 'lucide-react';
 import { contact, coreMessage } from './zarq/content';
 import { sendToInbox } from './zarq/web3forms';
+import { getConsent, setConsent, loadAnalytics, track } from './zarq/analytics';
 
 const navLinks = [
   { path: '/digital', label: 'Zarq Digital' },
@@ -56,9 +57,11 @@ export default function Layout() {
   const [newsletterState, setNewsletterState] = useState<'idle' | 'sending' | 'done' | 'error'>('idle');
   // Honeypot: hidden from people, so only spam bots fill it in.
   const [newsletterBot, setNewsletterBot] = useState(false);
-  const [showConsent, setShowConsent] = useState(() => {
-    try { return !localStorage.getItem('lesedi_popia_consent'); } catch { return true; }
-  });
+  // Ask before analytics; until the visitor answers, nothing is sent to Google.
+  const [showConsent, setShowConsent] = useState(() => getConsent() === null);
+  useEffect(() => {
+    if (getConsent() === 'granted') loadAnalytics();
+  }, []);
   const [whatsappOpen, setWhatsappOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const location = useLocation();
@@ -97,14 +100,17 @@ export default function Layout() {
         botcheck: newsletterBot,
       });
       setNewsletterState(sent ? 'done' : 'error');
-      if (sent) setNewsletterEmail('');
+      if (sent) {
+        setNewsletterEmail('');
+        track('sign_up', { method: 'footer_updates' });
+      }
     } catch {
       setNewsletterState('error');
     }
   };
 
-  const acceptConsent = () => {
-    try { localStorage.setItem('lesedi_popia_consent', '1'); } catch {}
+  const answerConsent = (granted: boolean) => {
+    setConsent(granted ? 'granted' : 'denied');
     setShowConsent(false);
   };
 
@@ -280,7 +286,11 @@ export default function Layout() {
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm text-gray-500">
             <p>&copy; {new Date().getFullYear()} Zarq. Rooted in Matatiele.</p>
-            <Link to="/privacy" className="hover:text-gray-950">Privacy Policy</Link>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              <Link to="/terms" className="hover:text-gray-950">Terms of Service</Link>
+              <Link to="/privacy" className="hover:text-gray-950">Privacy Policy</Link>
+              <button type="button" onClick={() => setShowConsent(true)} className="hover:text-gray-950">Analytics settings</button>
+            </div>
           </div>
         </div>
       </footer>
@@ -292,6 +302,7 @@ export default function Layout() {
             href={contact.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => track('whatsapp_click', { location: 'floating_button' })}
             className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-medium px-4 py-3 rounded-full shadow-lg transition-colors"
           >
             {whatsappIcon}
@@ -313,16 +324,23 @@ export default function Layout() {
         <div className="fixed bottom-0 inset-x-0 z-50 bg-gray-950 text-white px-4 py-4 sm:py-3" role="region" aria-label="Privacy notice">
           <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6">
             <p className="text-xs sm:text-sm text-gray-300 flex-1 leading-relaxed">
-              We collect information you submit through our forms to respond to your enquiry, in line with South Africa's{' '}
-              <span className="font-medium text-white">POPIA</span>. By continuing, you acknowledge our{' '}
+              May we use Google Analytics to see how visitors use this site? It helps us improve it. We only use details you send through our forms to reply to you. See our{' '}
               <Link to="/privacy" className="underline hover:text-white">Privacy Policy</Link>.
             </p>
-            <button
-              onClick={acceptConsent}
-              className="px-5 py-2 bg-white hover:bg-gray-100 text-gray-950 text-xs sm:text-sm font-medium rounded-full transition-colors flex-shrink-0"
-            >
-              I understand
-            </button>
+            <div className="flex gap-2 flex-shrink-0">
+              <button
+                onClick={() => answerConsent(false)}
+                className="px-5 py-2 border border-white/30 hover:border-white text-white text-xs sm:text-sm font-medium rounded-full transition-colors"
+              >
+                No thanks
+              </button>
+              <button
+                onClick={() => answerConsent(true)}
+                className="px-5 py-2 bg-white hover:bg-gray-100 text-gray-950 text-xs sm:text-sm font-medium rounded-full transition-colors"
+              >
+                Allow analytics
+              </button>
+            </div>
           </div>
         </div>
       )}

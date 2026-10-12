@@ -1,5 +1,6 @@
 import { Download } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
+import { track } from '../components/zarq/analytics';
 import Journey from '../components/zarq/Journey';
 import { PageHeader, Section, SectionHeading, Eyebrow, CTABand, ButtonLink } from '../components/zarq/ui';
 import {
@@ -14,6 +15,7 @@ function PackDownload({ dark = false }: { dark?: boolean }) {
     <a
       href={packUrl}
       download="Zarq_Partner_Pack_2026.pdf"
+      onClick={() => track('partner_pack_download')}
       className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm sm:text-base transition-colors ${
         dark ? 'border border-white/30 text-white hover:border-white' : 'border border-gray-300 text-gray-950 hover:border-gray-950'
       }`}

@@ -92,6 +92,12 @@ export const pages: PageMeta[] = [
       'Answers to common questions about Zarq Digital services and pricing, Zarq programmes for young people, partnerships and how to get in touch.',
   },
   {
+    path: '/terms',
+    name: 'Terms of Service',
+    title: 'Terms of Service',
+    description: 'The terms for Zarq Digital services: quotes, payments, timelines, revisions, ownership, cancellations and support.',
+  },
+  {
     path: '/privacy',
     name: 'Privacy Policy',
     title: 'Privacy Policy',

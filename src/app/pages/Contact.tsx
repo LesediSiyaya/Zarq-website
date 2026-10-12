@@ -5,6 +5,7 @@ import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, Eyebrow } from '../components/zarq/ui';
 import { contact, interestGroups } from '../components/zarq/content';
 import { sendToInbox } from '../components/zarq/web3forms';
+import { track } from '../components/zarq/analytics';
 
 const allInterests = interestGroups.flatMap((g) => g.options);
 
@@ -49,6 +50,7 @@ export default function Contact() {
       });
 
       if (sent) {
+        track('generate_lead', { interest: formData.interest });
         setSubmitStatus({
           type: 'success',
           message: 'Thank you. We’ve received your message and will be in touch.',
@@ -216,7 +218,7 @@ export default function Contact() {
                   </a>
                 </li>
                 <li>
-                  <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-medium transition-colors">
+                  <a href={contact.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => track('whatsapp_click', { location: 'contact_page' })} className="inline-flex items-center gap-2 mt-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#1ebe5d] text-white text-sm font-medium transition-colors">
                     Chat on WhatsApp
                   </a>
                 </li>

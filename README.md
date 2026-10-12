@@ -1,11 +1,15 @@
+# Zarq Website
 
-  # Zarq Website
+The website for Zarq: Zarq Digital technology services and Zarq youth technology programmes, from Matatiele, Eastern Cape.
 
-  This is a code bundle for Zarq Website. The original project is available at https://www.figma.com/design/Iy4GbosxcxwoiWBw9wkkZB/Lesedi-NovaTech-Hub-Website.
+## Running the code
 
-  ## Running the code
+- `npm i` installs the dependencies.
+- `npm run dev` starts the development server.
+- `npm run build` builds the site into `dist/`, prerendering every page to static HTML and generating the sitemap, robots.txt, llms.txt and llms-full.txt.
 
-  Run `npm i` to install the dependencies.
+## Where things live
 
-  Run `npm run dev` to start the development server.
-  
+- Site copy and facts: `src/app/components/zarq/content.ts`
+- Page titles and descriptions: `src/app/seo/pages.ts`
+- Site address: `src/app/seo/site.ts` (`SITE_URL`) and `functions/_middleware.js`

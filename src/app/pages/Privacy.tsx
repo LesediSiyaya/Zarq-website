@@ -7,7 +7,7 @@ export default function Privacy() {
 
   return (
     <div>
-      <PageHeader eyebrow="Legal · Last updated July 2026" title="Privacy Policy" intro="How Zarq collects, uses and protects your personal information, in line with POPIA." />
+      <PageHeader eyebrow="Legal · Last updated October 2026" title="Privacy Policy" intro="How Zarq collects, uses and protects your personal information, in line with POPIA." />
 
       {/* Content */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -32,13 +32,14 @@ export default function Privacy() {
               <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm sm:text-base">
                 <li>Your name and contact details (email address and/or phone number) when you submit an inquiry via our contact form or reach out by email or WhatsApp.</li>
                 <li>Information about your project or service request that you choose to share.</li>
-                <li>Program application details such as your location and areas of interest.</li>
+                <li>Programme registration details, such as a learner’s name, age group and a parent or guardian’s contact details.</li>
+                <li>Your email address if you sign up for updates.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-3">
-                We also collect anonymised usage data through Google Analytics (GA4) to understand how visitors use our website. This data does not identify you personally and is used solely to improve the website experience. You can opt out of Google Analytics tracking via your browser settings or a browser extension.
+                <span className="font-medium text-gray-800">Analytics, only with your consent.</span> If you choose “Allow analytics”, we use Google Analytics (GA4) to understand how visitors use our website, for example which pages are visited and when someone sends an enquiry. If you choose “No thanks”, Google Analytics is not loaded. You can change your choice at any time using “Analytics settings” at the bottom of every page.
               </p>
               <p className="text-gray-600 leading-relaxed mt-3">
-                Standard technical data such as IP addresses and page visit logs may also be collected automatically by our hosting provider, Cloudflare Pages, as part of normal web traffic processing.
+                Standard technical data such as IP addresses and page request logs may also be processed by our hosting provider, Cloudflare, as part of delivering and securing the website.
               </p>
             </div>
 
@@ -49,10 +50,11 @@ export default function Privacy() {
               </p>
               <ul className="list-disc list-outside ml-5 space-y-1 text-gray-600 text-sm sm:text-base">
                 <li>Respond to your inquiry or service request.</li>
-                <li>Process and follow up on programme applications.</li>
+                <li>Process and follow up on programme registrations, and keep parents and guardians informed.</li>
+                <li>Send you updates, only if you signed up for them. You can unsubscribe at any time.</li>
                 <li>Send you a quote, invoice, or project update related to work you have engaged us for.</li>
                 <li>Improve our services based on feedback you share.</li>
-                <li>Analyse anonymous website usage to improve the site experience.</li>
+                <li>Understand website usage to improve the site, only if you allowed analytics.</li>
               </ul>
               <p className="text-gray-600 leading-relaxed mt-3">
                 We will not add you to a mailing list or send you unsolicited marketing communications without your explicit consent.
@@ -62,14 +64,14 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">3. Sharing of Your Information</h2>
               <p className="text-gray-600 leading-relaxed">
-                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent. Messages and sign-ups sent through our website forms are delivered to our inbox by our form provider, Web3Forms, which processes them only to pass them on to us. Anonymous usage statistics collected through Google Analytics may be processed by Google in accordance with their privacy policy.
+                We do not sell, trade, or rent your personal information to third parties. Your details are kept within our internal operations and will not be disclosed to outside parties except where required by law or with your consent. Messages and sign-ups sent through our website forms are delivered to our inbox by our form provider, Web3Forms, which processes them only to pass them on to us. If you allow analytics, usage data is processed by Google under its own privacy policy. Our website is hosted by Cloudflare.
               </p>
             </div>
 
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">4. Data Security</h2>
               <p className="text-gray-600 leading-relaxed">
-                We take reasonable steps to protect the information you share with us. Our website is hosted on Cloudflare Pages, which provides industry-standard security including HTTPS encryption for all data in transit. Communications via WhatsApp and email are subject to the security practices of those platforms. We do not store sensitive financial information such as banking or card details.
+                We take reasonable steps to protect the information you share with us. Our website is hosted by Cloudflare and uses HTTPS encryption for all data in transit. Communications via WhatsApp and email are subject to the security practices of those platforms. We do not store sensitive financial information such as banking or card details.
               </p>
             </div>
 
@@ -83,12 +85,19 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">6. Children's Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
-                Some of our programmes serve young people under 18. Where we collect information from minors, we do so only in the context of programme enrolment and with the intent of keeping a parent or guardian informed. We do not use personal data from minors for any commercial purpose.
+                Zarq programmes are open to young people aged 5 and up. For anyone under 18, registration must be made or approved by a parent or guardian, and we keep them informed. We collect only what we need to run the programme, and we never use children’s personal information for commercial purposes.
               </p>
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-3">7. Your Rights (POPIA)</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">7. How Long We Keep Information</h2>
+              <p className="text-gray-600 leading-relaxed">
+                We keep enquiries for up to 24 months after our last contact with you, unless you become a client. Client and programme records are kept for as long as needed to deliver the service and as required by law, for example tax records. Update sign-ups are kept until you unsubscribe. After that, we delete the information.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">8. Your Rights (POPIA)</h2>
               <p className="text-gray-600 leading-relaxed mb-3">
                 In line with the Protection of Personal Information Act (POPIA) of South Africa, you have the right to:
               </p>
@@ -104,16 +113,16 @@ export default function Privacy() {
             </div>
 
             <div>
-              <h2 className="text-xl font-bold text-gray-900 mb-3">8. Changes to This Policy</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">9. Changes to This Policy</h2>
               <p className="text-gray-600 leading-relaxed">
                 We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date at the top. We encourage you to review it periodically.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-6">
-              <h2 className="text-xl font-bold text-gray-900 mb-3">9. Contact Us</h2>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">10. Contact Us</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                If you have any questions or concerns about this Privacy Policy, please get in touch:
+                Our Information Officer is Lesedi Siyaya, founder of Zarq. For questions about this Privacy Policy or to exercise your rights, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
                 <li><span className="font-medium">Email:</span> <a href="mailto:admin.zarq@gmail.com" className="text-gray-950 underline underline-offset-2">admin.zarq@gmail.com</a></li>
