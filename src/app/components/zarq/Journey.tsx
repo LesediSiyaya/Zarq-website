@@ -1,4 +1,4 @@
-// The Zarq pathway visual: a row of modular blocks joined by a line, showing
+// The ZARQ pathway visual: a row of modular blocks joined by a line, showing
 // movement from access to opportunity. Stacks vertically on small screens.
 
 interface Step {

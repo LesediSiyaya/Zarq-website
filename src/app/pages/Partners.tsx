@@ -14,7 +14,7 @@ function PackDownload({ dark = false }: { dark?: boolean }) {
   return (
     <a
       href={packUrl}
-      download="Zarq_Partner_Pack_2026.pdf"
+      download="ZARQ_Partner_Pack_2026.pdf"
       onClick={() => track('partner_pack_download')}
       className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-medium text-sm sm:text-base transition-colors ${
         dark ? 'border border-white/30 text-white hover:border-white' : 'border border-gray-300 text-gray-950 hover:border-gray-950'
@@ -27,8 +27,8 @@ function PackDownload({ dark = false }: { dark?: boolean }) {
 
 const whyZarq = [
   { title: 'Practical, not theoretical.', text: 'Young people learn by building real projects that grow into a portfolio they can show to employers and clients.' },
-  { title: 'Rooted where the need is.', text: 'Zarq is based in Matatiele, so programmes are shaped by the community they serve.' },
-  { title: 'Built to last.', text: 'Zarq Digital earns revenue from technology services, so programmes don’t depend on donations alone.' },
+  { title: 'Rooted where the need is.', text: 'ZARQ is based in Matatiele, so programmes are shaped by the community they serve.' },
+  { title: 'Built to last.', text: 'ZARQ Digital earns revenue from technology services, so programmes don’t depend on donations alone.' },
 ];
 
 export default function Partners() {
@@ -37,9 +37,9 @@ export default function Partners() {
   return (
     <div>
       <PageHeader
-        eyebrow="Partner with Zarq"
+        eyebrow="Partner with ZARQ"
         title="Invest in young people’s digital futures."
-        intro="Zarq gives young people in Matatiele access to technology, practical skills, real projects and mentorship. Partners help us reach more of them, faster, and see exactly what their support achieves."
+        intro="ZARQ gives young people in Matatiele access to technology, practical skills, real projects and mentorship. Partners help us reach more of them, faster, and see exactly what their support achieves."
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <ButtonLink to={partnerLink}>Start a partnership conversation</ButtonLink>
@@ -83,10 +83,10 @@ export default function Partners() {
         </div>
       </Section>
 
-      {/* Why Zarq */}
+      {/* Why ZARQ */}
       <Section tone="paper" id="why">
         <SectionHeading
-          eyebrow="Why Zarq"
+          eyebrow="Why ZARQ"
           title="A pathway from access to opportunity."
           intro="Each stage builds on the last, so support doesn’t stop at a one-off workshop."
         />
@@ -108,7 +108,7 @@ export default function Partners() {
           <SectionHeading
             className="!mb-0"
             eyebrow="Our vision"
-            title="What a Zarq class will look like."
+            title="What a ZARQ class will look like."
             intro="Hands-on, project-based and mentored: young people building with real hardware and software, with support at their side."
           />
           <figure>
@@ -125,11 +125,11 @@ export default function Partners() {
                 playsInline
                 controls
                 preload="metadata"
-                aria-label="AI-generated concept video of young people building electronics projects with a mentor in a Zarq class"
+                aria-label="AI-generated concept video of young people building electronics projects with a mentor in a ZARQ class"
               />
             </div>
             <figcaption className="mt-3 text-sm text-gray-500">
-              An AI-generated illustration of our vision for Zarq classes. It is not a recording of a real class.
+              An AI-generated illustration of our vision for ZARQ classes. It is not a recording of a real class.
             </figcaption>
           </figure>
         </div>
@@ -171,7 +171,7 @@ export default function Partners() {
             <Eyebrow dark>Accountability</Eyebrow>
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">Your support goes to programmes. We show you how.</h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              Partner funding is kept separate from Zarq Digital’s commercial income and used for the programme it was given for. Every quarter, partners receive a report against the measures below.
+              Partner funding is kept separate from ZARQ Digital’s commercial income and used for the programme it was given for. Every quarter, partners receive a report against the measures below.
             </p>
             <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">What we report on</p>
             <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
@@ -184,7 +184,7 @@ export default function Partners() {
             </ul>
           </div>
           <div>
-            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">How Zarq sustains itself</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-4">How ZARQ sustains itself</p>
             <ol className="space-y-px rounded-2xl overflow-hidden bg-white/10">
               {flywheel.map((item, i) => (
                 <li key={item} className="bg-gray-950 flex items-center gap-4 p-4">
@@ -229,7 +229,7 @@ export default function Partners() {
               Lesedi holds a BSc in Information Technology and brings business analysis experience, translating business needs into practical technology solutions. Her work spans websites, applications, UI/UX, digital products and AI.
             </p>
             <p className="text-lg text-gray-700 leading-relaxed">
-              She founded Zarq to give young people in her community the access, skills and opportunities that turn digital ability into a future.
+              She founded ZARQ to give young people in her community the access, skills and opportunities that turn digital ability into a future.
             </p>
           </div>
         </div>
@@ -247,7 +247,7 @@ export default function Partners() {
       </Section>
 
       <CTABand
-        eyebrow="Partner with Zarq"
+        eyebrow="Partner with ZARQ"
         title="Let’s build this together."
         intro="Tell us what matters to your organisation. We’ll come back with options, a budget and a clear plan for reporting."
         primary={{ to: partnerLink, label: 'Start a partnership conversation' }}

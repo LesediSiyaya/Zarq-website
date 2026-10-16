@@ -6,7 +6,7 @@ import { sendToInbox } from './zarq/web3forms';
 import { getConsent, setConsent, loadAnalytics, track } from './zarq/analytics';
 
 const navLinks = [
-  { path: '/digital', label: 'Zarq Digital' },
+  { path: '/digital', label: 'ZARQ Digital' },
   { path: '/programmes', label: 'Programmes' },
   { path: '/about', label: 'About' },
   { path: '/get-involved', label: 'Get Involved' },
@@ -16,7 +16,7 @@ const quoteLink = '/contact?interest=digital';
 
 const footerGroups = [
   {
-    title: 'Zarq Digital',
+    title: 'ZARQ Digital',
     links: [
       { to: '/digital#services', label: 'Services' },
       { to: '/digital/websites', label: 'Website design' },
@@ -30,16 +30,16 @@ const footerGroups = [
   {
     title: 'Programmes',
     links: [
-      { to: '/programmes#academy', label: 'Zarq Academy' },
+      { to: '/programmes#academy', label: 'ZARQ Academy' },
       { to: '/programmes/coding-classes', label: 'Free coding classes' },
       { to: '/programmes#tracks', label: 'Juniors, Youth & Future' },
       { to: '/programmes#robotics', label: 'Robotics & STEM' },
-      { to: '/programmes#labs', label: 'Zarq Labs' },
-      { to: '/programmes#hub', label: 'Zarq Hub' },
+      { to: '/programmes#labs', label: 'ZARQ Labs' },
+      { to: '/programmes#hub', label: 'ZARQ Hub' },
     ],
   },
   {
-    title: 'Zarq',
+    title: 'ZARQ',
     links: [
       { to: '/about', label: 'About' },
       { to: '/about#impact', label: 'Our impact' },
@@ -95,7 +95,7 @@ export default function Layout() {
         subject: `Updates sign-up – ${newsletterEmail}`,
         replyto: newsletterEmail,
         email: newsletterEmail,
-        request: 'Please add me to the Zarq updates list.',
+        request: 'Please add me to the ZARQ updates list.',
         page: location.pathname,
         botcheck: newsletterBot,
       });
@@ -136,7 +136,7 @@ export default function Layout() {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50" aria-label="Main">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link to="/" className="font-brand text-3xl tracking-tight text-gray-950 hover:opacity-70 transition-opacity" aria-label="Zarq home">
+            <Link to="/" className="font-brand text-3xl tracking-tight text-gray-950 hover:opacity-70 transition-opacity" aria-label="ZARQ home">
               ZARQ
             </Link>
 

@@ -18,17 +18,17 @@ const paths: Path[] = [
     id: 'youth',
     icon: GraduationCap,
     who: 'Young people & families',
-    title: 'Join Zarq',
-    text: 'Register your interest in Zarq’s free programmes. We’ll be in touch with programme dates and details.',
+    title: 'Join ZARQ',
+    text: 'Register your interest in ZARQ’s free programmes. We’ll be in touch with programme dates and details.',
     how: ['Learn practical digital and AI skills', 'Build real projects', 'Get mentorship and career exposure'],
-    cta: { label: 'Join Zarq', to: '/contact?interest=youth' },
+    cta: { label: 'Join ZARQ', to: '/contact?interest=youth' },
   },
   {
     id: 'schools',
     icon: School,
     who: 'Schools & educational organisations',
     title: 'Partner as a school',
-    text: 'Work with Zarq to bring practical technology learning, workshops and STEM exposure to your learners.',
+    text: 'Work with ZARQ to bring practical technology learning, workshops and STEM exposure to your learners.',
     how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM'],
     cta: { label: 'Partner as a school', to: '/contact?interest=school' },
   },
@@ -54,7 +54,7 @@ const paths: Path[] = [
     id: 'supporters',
     icon: HeartHandshake,
     who: 'Sponsors & supporters',
-    title: 'Support Zarq',
+    title: 'Support ZARQ',
     text: 'Support the equipment, connectivity and resources that make accessible youth programmes possible.',
     how: ['Devices and equipment', 'Connectivity and resources', 'Programme funding'],
     cta: { label: 'Ways to support', to: '/partners#support' },
@@ -63,10 +63,10 @@ const paths: Path[] = [
     id: 'business',
     icon: Briefcase,
     who: 'Businesses & organisations',
-    title: 'Work with Zarq',
-    text: 'Hire Zarq Digital for websites, apps, AI, automation and more. Your project helps sustain youth programmes.',
+    title: 'Work with ZARQ',
+    text: 'Hire ZARQ Digital for websites, apps, AI, automation and more. Your project helps sustain youth programmes.',
     how: ['Websites and apps', 'AI and automation', 'IT, cybersecurity and strategy'],
-    cta: { label: 'Work with Zarq', to: '/digital' },
+    cta: { label: 'Work with ZARQ', to: '/digital' },
   },
 ];
 
@@ -77,8 +77,8 @@ export default function GetInvolved() {
     <div>
       <PageHeader
         eyebrow="Get involved"
-        title="There’s a place for you at Zarq."
-        intro="Learners, schools, mentors, partners, sponsors and clients all play a part in what Zarq does. Find your way in."
+        title="There’s a place for you at ZARQ."
+        intro="Learners, schools, mentors, partners, sponsors and clients all play a part in what ZARQ does. Find your way in."
       >
         <nav aria-label="Jump to" className="flex flex-wrap gap-2">
           {paths.map(({ id, title }) => (

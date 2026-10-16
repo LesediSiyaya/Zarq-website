@@ -20,9 +20,9 @@ export default function CodingClasses() {
   return (
     <div>
       <PageHeader
-        eyebrow="Zarq Academy · Youth programmes"
+        eyebrow="ZARQ Academy · Youth programmes"
         title="Coding and digital skills classes for young people in Matatiele."
-        intro="Zarq classes teach practical technology skills (coding, AI, web development and more) through real projects and mentorship, so young people can create with technology, not just use it."
+        intro="ZARQ classes teach practical technology skills (coding, AI, web development and more) through real projects and mentorship, so young people can create with technology, not just use it."
       >
         <div className="flex flex-col sm:flex-row gap-3">
           <ButtonLink to={join}>Register your interest</ButtonLink>
@@ -78,8 +78,8 @@ export default function CodingClasses() {
       <FAQSection items={codingFaq} />
 
       <CTABand
-        eyebrow="Join Zarq"
-        title="Start your Zarq journey."
+        eyebrow="Join ZARQ"
+        title="Start your ZARQ journey."
         intro="Register your interest and we’ll be in touch with programme dates and details."
         primary={{ to: join, label: 'Register your interest' }}
         secondary={{ to: '/programmes', label: 'All programmes' }}

@@ -11,21 +11,21 @@ const audiencePaths = [
   { icon: GraduationCap, who: 'Young people & families', action: 'Explore programmes', to: '/programmes' },
   { icon: School, who: 'Schools', action: 'Partner as a school', to: '/get-involved#schools' },
   { icon: Handshake, who: 'Funders & sponsors', action: 'Fund our programmes', to: '/partners' },
-  { icon: Briefcase, who: 'Businesses & organisations', action: 'Work with Zarq', to: '/digital' },
+  { icon: Briefcase, who: 'Businesses & organisations', action: 'Work with ZARQ', to: '/digital' },
 ];
 
 const offers = [
   {
     who: 'For businesses & organisations',
-    name: 'Zarq Digital',
+    name: 'ZARQ Digital',
     text: 'Websites, apps, UI/UX, branding, AI and automation, IT and cybersecurity, digital strategy, plus CIPC business registration and domain setup. Delivered online, anywhere in South Africa.',
     link: { to: '/digital', label: 'See services & pricing' },
     dark: true,
   },
   {
     who: 'For young people',
-    name: 'Zarq programmes',
-    text: 'Practical digital, AI and technology skills, real projects and mentorship, through Zarq Academy and our learner tracks.',
+    name: 'ZARQ programmes',
+    text: 'Practical digital, AI and technology skills, real projects and mentorship, through ZARQ Academy and our learner tracks.',
     link: { to: '/programmes', label: 'Explore programmes' },
     dark: false,
   },
@@ -34,7 +34,7 @@ const offers = [
 const reasons = [
   { title: 'Practical and affordable.', text: 'Clear scopes, transparent prices and solutions you can actually use and maintain.' },
   { title: 'Qualified and hands-on.', text: 'Led by a BSc Information Technology graduate with business analysis experience, so we understand the business problem as well as the technology.' },
-  { title: 'Purpose built in.', text: 'Revenue from every Zarq Digital project helps fund devices, connectivity, learning and mentorship for young people.' },
+  { title: 'Purpose built in.', text: 'Revenue from every ZARQ Digital project helps fund devices, connectivity, learning and mentorship for young people.' },
 ];
 
 const process = [
@@ -61,7 +61,7 @@ export default function Home() {
             From digital exclusion to economic participation.
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mb-9">
-            Zarq is a technology company with a clear purpose. We build websites, apps and digital solutions for businesses and organisations, and we use that work to give young people access to technology, practical skills and real opportunity.
+            ZARQ is a technology company with a clear purpose. We build websites, apps and digital solutions for businesses and organisations, and we use that work to give young people access to technology, practical skills and real opportunity.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-14 sm:mb-20">
             <ButtonLink to="/contact?interest=digital">Get a quote</ButtonLink>
@@ -94,11 +94,11 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Zarq Digital */}
+      {/* ZARQ Digital */}
       <Section tone="paper">
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
           <div>
-            <Eyebrow>Zarq Digital</Eyebrow>
+            <Eyebrow>ZARQ Digital</Eyebrow>
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">Technology that works for your business.</h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               From your first website to automating the work that slows you down, we design, build and support practical technology at prices that make sense for small businesses, schools and organisations.
@@ -135,9 +135,9 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Why Zarq */}
+      {/* Why ZARQ */}
       <Section>
-        <SectionHeading eyebrow="Why Zarq" title="Work that pays it forward." />
+        <SectionHeading eyebrow="Why ZARQ" title="Work that pays it forward." />
         <div className="grid md:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
           {reasons.map(({ title, text }, i) => (
             <div key={title} className="bg-white p-6 sm:p-8">
@@ -196,7 +196,7 @@ export default function Home() {
             className="!mb-0"
             eyebrow="Programmes"
             title="Learn it. Build it. Use it."
-            intro="Zarq programmes take young people from first access to real projects and opportunity. Free for learners, in Matatiele and online."
+            intro="ZARQ programmes take young people from first access to real projects and opportunity. Free for learners, in Matatiele and online."
           />
           <TextLink to="/programmes">All programmes</TextLink>
         </div>
@@ -218,7 +218,7 @@ export default function Home() {
         <SectionHeading
           dark
           eyebrow="What you can do next"
-          title="Find your way into Zarq."
+          title="Find your way into ZARQ."
           intro="Whether you want to learn, partner, support or build something, there’s a clear next step."
         />
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

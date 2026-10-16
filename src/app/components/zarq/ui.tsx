@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 
-// Shared building blocks for every Zarq page. Keep visual decisions here so pages stay consistent.
+// Shared building blocks for every ZARQ page. Keep visual decisions here so pages stay consistent.
 
 export function Container({ children, className = '' }: { children: ReactNode; className?: string }) {
   return <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${className}`}>{children}</div>;

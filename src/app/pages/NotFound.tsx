@@ -17,7 +17,7 @@ export default function NotFound() {
         </div>
         <div className="flex flex-wrap gap-6">
           <TextLink to="/programmes">Programmes</TextLink>
-          <TextLink to="/digital">Zarq Digital</TextLink>
+          <TextLink to="/digital">ZARQ Digital</TextLink>
           <TextLink to="/get-involved">Get involved</TextLink>
         </div>
       </Container>

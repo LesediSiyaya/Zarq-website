@@ -18,9 +18,9 @@ export default function Digital() {
   return (
     <div>
       <PageHeader
-        eyebrow="Zarq Digital"
+        eyebrow="ZARQ Digital"
         title="Practical technology for businesses and organisations."
-        intro="We design, build and support websites, apps and digital solutions for businesses, schools and organisations across South Africa. Every project also helps fund Zarq’s youth technology programmes."
+        intro="We design, build and support websites, apps and digital solutions for businesses, schools and organisations across South Africa. Every project also helps fund ZARQ’s youth technology programmes."
       >
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <ButtonLink to="/contact?interest=digital">Get a quote</ButtonLink>
@@ -125,21 +125,21 @@ export default function Digital() {
         </ol>
       </Section>
 
-      {/* Why Zarq Digital */}
+      {/* Why ZARQ Digital */}
       <Section tone="blush">
         <div className="grid md:grid-cols-2 gap-10 md:gap-16">
           <div>
             <Eyebrow>Expertise</Eyebrow>
             <h3 className="text-3xl leading-tight mb-4">Built on real experience.</h3>
             <p className="text-gray-700 leading-relaxed">
-              Zarq Digital is led by a BSc Information Technology graduate with a foundation in programming and mathematics and experience in business analysis: translating business needs into technology that works. Our work spans websites, applications, UI/UX, digital products and AI.
+              ZARQ Digital is led by a BSc Information Technology graduate with a foundation in programming and mathematics and experience in business analysis: translating business needs into technology that works. Our work spans websites, applications, UI/UX, digital products and AI.
             </p>
           </div>
           <div>
             <Eyebrow>Purpose</Eyebrow>
             <h3 className="text-3xl leading-tight mb-4">Your project supports young people.</h3>
             <p className="text-gray-700 leading-relaxed">
-              Revenue from Zarq Digital helps fund the infrastructure behind Zarq’s youth programmes, from devices and connectivity to learning and mentorship.
+              Revenue from ZARQ Digital helps fund the infrastructure behind ZARQ’s youth programmes, from devices and connectivity to learning and mentorship.
             </p>
           </div>
         </div>
@@ -161,11 +161,11 @@ export default function Digital() {
       </Section>
 
       <CTABand
-        eyebrow="Work with Zarq"
+        eyebrow="Work with ZARQ"
         title="Have a project in mind?"
         intro="Tell us what you need. We’ll come back to you with a clear scope and quote."
         primary={{ to: '/contact?interest=digital', label: 'Get a quote' }}
-        secondary={{ to: '/about#impact', label: 'See how Zarq works' }}
+        secondary={{ to: '/about#impact', label: 'See how ZARQ works' }}
       />
     </div>
   );

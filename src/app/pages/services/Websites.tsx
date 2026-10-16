@@ -31,7 +31,7 @@ export default function Websites() {
   return (
     <div>
       <PageHeader
-        eyebrow="Zarq Digital · Website design"
+        eyebrow="ZARQ Digital · Website design"
         title="Website design in Matatiele, and anywhere online."
         intro="We design and build clear, fast, mobile-friendly websites that help people find you, trust you and get in touch. We’re based in Matatiele, Eastern Cape, and work with clients across South Africa online."
       >
@@ -83,11 +83,11 @@ export default function Websites() {
 
       <Section tone="blush" id="example">
         <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-8 md:gap-16">
-          <Eyebrow>Built by Zarq</Eyebrow>
+          <Eyebrow>Built by ZARQ</Eyebrow>
           <div>
             <h2 className="text-3xl sm:text-4xl leading-tight mb-5">You’re looking at our work.</h2>
             <p className="text-lg text-gray-700 leading-relaxed">
-              This website was designed, built and optimised for search by Zarq Digital. It’s fast, works on any device and is readable by Google and AI assistants, which is the same standard we bring to every client site.
+              This website was designed, built and optimised for search by ZARQ Digital. It’s fast, works on any device and is readable by Google and AI assistants, which is the same standard we bring to every client site.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Websites() {
         title="Ready for a website that works for your business?"
         intro="Tell us what you need. We’ll come back to you with a clear scope and quote."
         primary={{ to: quote, label: 'Get a quote' }}
-        secondary={{ to: '/digital', label: 'All Zarq Digital services' }}
+        secondary={{ to: '/digital', label: 'All ZARQ Digital services' }}
       />
     </div>
   );

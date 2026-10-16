@@ -12,7 +12,7 @@ export default function Programmes() {
       <PageHeader
         eyebrow="Programmes"
         title="Learn it. Build it. Use it."
-        intro="Zarq programmes take young people from first access to real projects and opportunity. Learning is practical, project-based and free for learners, in Matatiele and online."
+        intro="ZARQ programmes take young people from first access to real projects and opportunity. Learning is practical, project-based and free for learners, in Matatiele and online."
       />
 
       {/* Academy */}
@@ -45,7 +45,7 @@ export default function Programmes() {
         <SectionHeading
           eyebrow="Learner tracks"
           title="A track for each stage."
-          intro="Zarq Academy is organised around where a young person is starting from and where they want to go next."
+          intro="ZARQ Academy is organised around where a young person is starting from and where they want to go next."
         />
         <div className="grid md:grid-cols-3 gap-4">
           {tracks.map((t) => (
@@ -64,7 +64,7 @@ export default function Programmes() {
         <SectionHeading
           eyebrow="Beyond the classroom"
           title="Where learning turns into building."
-          intro="Zarq extends learning into hands-on STEM, real project work and a dedicated place to learn."
+          intro="ZARQ extends learning into hands-on STEM, real project work and a dedicated place to learn."
         />
         <div className="space-y-4">
           {ecosystem.map((p) => (
@@ -81,8 +81,8 @@ export default function Programmes() {
       </Section>
 
       <CTABand
-        eyebrow="Join Zarq"
-        title="Start your Zarq journey."
+        eyebrow="Join ZARQ"
+        title="Start your ZARQ journey."
         intro="Register your interest and we’ll be in touch with programme dates and details. Parents and guardians are welcome to enquire too."
         primary={{ to: '/contact?interest=youth', label: 'Register your interest' }}
         secondary={{ to: '/get-involved', label: 'Other ways to get involved' }}

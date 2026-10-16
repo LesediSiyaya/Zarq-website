@@ -1,5 +1,5 @@
-// Single source for Zarq facts and copy used across pages.
-// Everything here traces back to the Zarq Website Design & Content Master Brief.
+// Single source for ZARQ facts and copy used across pages.
+// Everything here traces back to the ZARQ Website Design & Content Master Brief.
 // Statuses are not shown as labels on the site; they keep availability wording accurate
 // (page copy, structured data and llms.txt). Update them here when a programme launches.
 
@@ -12,14 +12,14 @@ export const contact = {
   whatsapp: 'https://wa.me/27730286401',
   instagramHandle: '@zarq_sa',
   instagramUrl: 'https://www.instagram.com/zarq_sa',
-  // Area only: no street address is published until Zarq has a business premises.
+  // Area only: no street address is published until ZARQ has a business premises.
   addressLines: ['Maluti, Matatiele', 'Eastern Cape, South Africa'],
 };
 
 // Registered company details (CIPC registration certificate and B-BBEE affidavit).
 // The B-BBEE affidavit is renewed every year: update `bbbee` if the level changes.
 export const company = {
-  legalName: 'Zarq (Pty) Ltd',
+  legalName: 'ZARQ (PTY) LTD', // exactly as on the CIPC certificate
   regNo: '2026/828877/07',
   bbbee: 'Level 1 B-BBEE contributor',
   bbbeeDetail: '135% procurement recognition',
@@ -27,17 +27,17 @@ export const company = {
 
 export const founder = {
   name: 'Lesedi Siyaya',
-  role: 'Founder, Zarq',
+  role: 'Founder, ZARQ',
   photo: '/founder-lesedi.jpg',
-  photoAlt: 'Lesedi Siyaya, founder of Zarq, at her graduation',
+  photoAlt: 'Lesedi Siyaya, founder of ZARQ, at her graduation',
 };
 
 export const coreMessage =
-  'Zarq helps underserved young people move from digital exclusion to economic participation by giving them access to technology, practical skills, projects, mentorship and opportunity pathways.';
+  'ZARQ helps underserved young people move from digital exclusion to economic participation by giving them access to technology, practical skills, projects, mentorship and opportunity pathways.';
 
-// Footer description: covers both sides of Zarq.
+// Footer description: covers both sides of ZARQ.
 export const footerBlurb =
-  'Zarq builds websites and digital solutions for businesses and organisations, and gives young people in Matatiele free access to technology, skills, mentorship and opportunity.';
+  'ZARQ builds websites and digital solutions for businesses and organisations, and gives young people in Matatiele free access to technology, skills, mentorship and opportunity.';
 
 export const vision =
   "A future where a young person’s location or access to technology does not determine their ability to participate in the digital economy.";
@@ -47,7 +47,7 @@ export const mission =
 
 export const location = {
   base: 'Matatiele, Eastern Cape, South Africa',
-  delivery: 'Zarq Digital works with clients online across South Africa. Zarq programmes are delivered in Matatiele and online.',
+  delivery: 'ZARQ Digital works with clients online across South Africa. ZARQ programmes are delivered in Matatiele and online.',
 };
 
 export const journey = [
@@ -77,9 +77,9 @@ export interface Programme {
 
 export const academy: Programme = {
   id: 'academy',
-  name: 'Zarq Academy',
+  name: 'ZARQ Academy',
   status: 'developing',
-  summary: 'The learning core of Zarq: structured, practical technology education.',
+  summary: 'The learning core of ZARQ: structured, practical technology education.',
   points: [
     'Digital literacy',
     'AI literacy',
@@ -95,19 +95,19 @@ export const academy: Programme = {
 export const tracks: Programme[] = [
   {
     id: 'juniors',
-    name: 'Zarq Juniors',
+    name: 'ZARQ Juniors',
     status: 'planned',
     summary: 'Early exposure to digital skills and STEM for younger learners.',
   },
   {
     id: 'youth',
-    name: 'Zarq Youth',
+    name: 'ZARQ Youth',
     status: 'developing',
     summary: 'Practical skills, projects and mentorship for young people. Registrations of interest are open.',
   },
   {
     id: 'future',
-    name: 'Zarq Future',
+    name: 'ZARQ Future',
     status: 'planned',
     summary: 'Career exposure, entrepreneurship and pathways into education, employment and digital work.',
   },
@@ -116,19 +116,19 @@ export const tracks: Programme[] = [
 export const ecosystem: Programme[] = [
   {
     id: 'robotics',
-    name: 'Zarq Robotics & STEM',
+    name: 'ZARQ Robotics & STEM',
     status: 'planned',
     summary: 'Robotics, STEM challenges, creative technology and problem-solving for younger learners.',
   },
   {
     id: 'labs',
-    name: 'Zarq Labs',
+    name: 'ZARQ Labs',
     status: 'planned',
     summary: 'Practical project-building, community problem-solving, portfolios and innovation.',
   },
   {
     id: 'hub',
-    name: 'Zarq Hub',
+    name: 'ZARQ Hub',
     status: 'planned',
     summary: 'A dedicated technology space coming to Matatiele, with devices, connectivity, workshops, mentorship and room to build.',
   },
@@ -148,7 +148,7 @@ export const digitalServices = [
   { title: 'Domain registration & setup', from: 'From R300', text: 'Your domain, DNS and professional email, connected and ready to use.' },
 ];
 
-// Zarq Digital pricing, carried over unchanged from the previous site.
+// ZARQ Digital pricing, carried over unchanged from the previous site.
 export const pricingNote = 'Launch special: 40% off all services';
 
 export const pricing = [
@@ -204,7 +204,7 @@ export const digitalAudiences = [
 ];
 
 export const flywheel = [
-  'Zarq Digital earns revenue',
+  'ZARQ Digital earns revenue',
   'Revenue and partnerships fund infrastructure',
   'Infrastructure powers youth programmes',
   'Young people become technology creators',
@@ -227,7 +227,7 @@ export const yearOneTargets = [
 ];
 
 
-// ---------- Partner with Zarq (/partners) ----------
+// ---------- Partner with ZARQ (/partners) ----------
 // Every figure here has a published source. Check and update the year when new data is released.
 export const needStats = [
   { value: '47.4%', label: 'of young South Africans aged 15–34 are unemployed', source: 'Stats SA, Quarterly Labour Force Survey, Q2 2026' },
@@ -238,11 +238,11 @@ export const needStats = [
 
 // No amounts are published; budgets are agreed with each partner.
 export const supportOptions = [
-  { title: 'Connect a learning space', text: 'Uncapped internet for a Zarq learning space for twelve months, so learners can research, code and build online.' },
+  { title: 'Connect a learning space', text: 'Uncapped internet for a ZARQ learning space for twelve months, so learners can research, code and build online.' },
   { title: 'Equip a learner', text: 'A refurbished business-grade laptop with warranty, used by learners in class and for their projects.' },
-  { title: 'Build the device bank', text: 'A shared bank of laptops for Zarq programmes, matching our first-year goal of 5–10 devices.' },
+  { title: 'Build the device bank', text: 'A shared bank of laptops for ZARQ programmes, matching our first-year goal of 5–10 devices.' },
   { title: 'Sponsor a cohort', text: 'Fund a full programme intake: learning, materials, mentorship and project work. We’ll scope the budget with you.' },
-  { title: 'Founding partner of Zarq Hub', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
+  { title: 'Founding partner of ZARQ Hub', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
 ];
 
 export const inKindOptions = [
@@ -270,7 +270,7 @@ export const reportingMetrics = [
   'Career exposure and opportunities',
 ];
 
-// Zarq Digital client FAQ: standard South African small-business terms, approved by Zarq.
+// ZARQ Digital client FAQ: standard South African small-business terms, approved by ZARQ.
 export const digitalFaq = [
   {
     question: 'How much does a project cost?',
@@ -306,7 +306,7 @@ export const digitalFaq = [
   },
   {
     question: 'Do you work with clients outside Matatiele?',
-    answer: 'Yes. All Zarq Digital services are delivered online, so we can work with you anywhere in South Africa.',
+    answer: 'Yes. All ZARQ Digital services are delivered online, so we can work with you anywhere in South Africa.',
   },
 ];
 
@@ -345,8 +345,8 @@ export const cipcNeeds = [
 ];
 
 export const codingFaq = [
-  { question: 'How much do classes cost?', answer: 'Zarq classes are free for learners.' },
-  { question: 'Who can join?', answer: 'Young people aged 5 and up. Classes are grouped by age and experience, from Zarq Juniors to Zarq Youth and Zarq Future.' },
+  { question: 'How much do classes cost?', answer: 'ZARQ classes are free for learners.' },
+  { question: 'Who can join?', answer: 'Young people aged 5 and up. Classes are grouped by age and experience, from ZARQ Juniors to ZARQ Youth and ZARQ Future.' },
   { question: 'Do I need my own laptop?', answer: 'No. Devices are provided, and learners are welcome to bring their own.' },
   { question: 'Do I need experience?', answer: 'No. Classes start from the basics.' },
   { question: 'Where are classes held?', answer: 'In Matatiele and online.' },
@@ -368,12 +368,12 @@ export const interestGroups = [
       { key: 'school', value: 'School partnership' },
       { key: 'mentor', value: 'Becoming a mentor' },
       { key: 'partner', value: 'Partnership (CSI, NGO, foundation)' },
-      { key: 'support', value: 'Supporting or sponsoring Zarq' },
+      { key: 'support', value: 'Supporting or sponsoring ZARQ' },
     ],
   },
   {
-    label: 'Zarq Digital',
-    options: [{ key: 'digital', value: 'Zarq Digital project' }],
+    label: 'ZARQ Digital',
+    options: [{ key: 'digital', value: 'ZARQ Digital project' }],
   },
   {
     label: 'Other',

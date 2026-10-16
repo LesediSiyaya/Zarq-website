@@ -7,8 +7,8 @@ const sections: { title: string; body: string[] }[] = [
   {
     title: '1. About these terms',
     body: [
-      `These terms apply to the technology services that ${company.legalName} (registration number ${company.regNo}), trading as Zarq (“Zarq”, “we”), provides through Zarq Digital, including website design and development, app development, UI/UX design, branding, AI and automation, IT services, cybersecurity, digital strategy, CIPC business registration and domain registration. By accepting a quote or paying a deposit, you agree to these terms.`,
-      'Zarq’s youth programmes are covered in section 13.',
+      `These terms apply to the technology services that ${company.legalName} (registration number ${company.regNo}), trading as ZARQ (“ZARQ”, “we”), provides through ZARQ Digital, including website design and development, app development, UI/UX design, branding, AI and automation, IT services, cybersecurity, digital strategy, CIPC business registration and domain registration. By accepting a quote or paying a deposit, you agree to these terms.`,
+      'ZARQ’s youth programmes are covered in section 13.',
     ],
   },
   {
@@ -86,9 +86,9 @@ const sections: { title: string; body: string[] }[] = [
     ],
   },
   {
-    title: '13. Zarq programmes',
+    title: '13. ZARQ programmes',
     body: [
-      'Zarq programmes are free for learners. Young people under 18 need the consent of a parent or guardian to take part, and we share programme dates, times and requirements before anything starts. Learners are expected to treat others, and any devices provided, with respect.',
+      'ZARQ programmes are free for learners. Young people under 18 need the consent of a parent or guardian to take part, and we share programme dates, times and requirements before anything starts. Learners are expected to treat others, and any devices provided, with respect.',
     ],
   },
   {
@@ -104,7 +104,7 @@ export default function Terms() {
 
   return (
     <div>
-      <PageHeader eyebrow="Legal · Last updated October 2026" title="Terms of Service" intro="The terms that apply when you work with Zarq Digital, in plain language." />
+      <PageHeader eyebrow="Legal · Last updated October 2026" title="Terms of Service" intro="The terms that apply when you work with ZARQ Digital, in plain language." />
 
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto space-y-8">
@@ -127,7 +127,7 @@ export default function Terms() {
           </div>
 
           <p className="text-sm text-gray-500">
-            See also our <Link to="/privacy" className="underline underline-offset-2">Privacy Policy</Link> and the <Link to="/digital#client-faq" className="underline underline-offset-2">Zarq Digital client FAQ</Link>.
+            See also our <Link to="/privacy" className="underline underline-offset-2">Privacy Policy</Link> and the <Link to="/digital#client-faq" className="underline underline-offset-2">ZARQ Digital client FAQ</Link>.
           </p>
         </div>
       </section>

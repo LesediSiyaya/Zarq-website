@@ -45,7 +45,7 @@ const globalGraph = [
     legalName: c.company.legalName,
     identifier: { '@type': 'PropertyValue', name: 'CIPC registration number', value: c.company.regNo },
     '@id': ORG,
-    name: 'Zarq',
+    name: 'ZARQ',
     url: url('/'),
     logo: `${SITE_URL}/icon-512.png`,
     image: `${SITE_URL}/og-zarq.jpg`,
@@ -70,13 +70,13 @@ const globalGraph = [
     image: `${SITE_URL}${c.founder.photo}`,
     worksFor: { '@id': ORG },
     description:
-      'Founder of Zarq. Holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.',
+      'Founder of ZARQ. Holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.',
   },
   {
     '@type': 'WebSite',
     '@id': WEBSITE,
     url: url('/'),
-    name: 'Zarq',
+    name: 'ZARQ',
     inLanguage: 'en-ZA',
     publisher: { '@id': ORG },
   },
@@ -86,10 +86,10 @@ const allPrices = c.pricing.flatMap((p) => p.tiers.map((t) => rands(t.price)));
 const digitalService = {
   '@type': 'ProfessionalService',
   '@id': DIGITAL,
-  name: 'Zarq Digital',
+  name: 'ZARQ Digital',
   url: url('/digital'),
   description:
-    'The commercial technology arm of Zarq. Based in Matatiele, Eastern Cape, with services delivered online. Revenue helps sustain Zarq youth programmes.',
+    'The commercial technology arm of ZARQ. Based in Matatiele, Eastern Cape, with services delivered online. Revenue helps sustain ZARQ youth programmes.',
   parentOrganization: { '@id': ORG },
   address,
   areaServed,
@@ -99,7 +99,7 @@ const digitalService = {
   availableChannel: { '@type': 'ServiceChannel', serviceUrl: url('/contact'), name: 'Online and in Matatiele' },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Zarq Digital services',
+    name: 'ZARQ Digital services',
     itemListElement: c.pricing.map((p) => ({
       '@type': 'OfferCatalog',
       name: p.service,
@@ -257,17 +257,17 @@ await writeFile(
 const aiBots = ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'PerplexityBot', 'Google-Extended', 'Applebot-Extended', 'Bingbot'];
 await writeFile(
   join(dist, 'robots.txt'),
-  `# Zarq welcomes search engines and AI assistants.\nUser-agent: *\nAllow: /\n\n${aiBots
+  `# ZARQ welcomes search engines and AI assistants.\nUser-agent: *\nAllow: /\n\n${aiBots
     .map((b) => `User-agent: ${b}\nAllow: /`)
     .join('\n\n')}\n\nSitemap: ${SITE_URL}/sitemap.xml\n`
 );
 
 // ---------- llms.txt & llms-full.txt ----------
-const llms = `# Zarq
+const llms = `# ZARQ
 
 > ${c.coreMessage}
 
-Zarq is a youth technology and digital opportunity company based in ${c.location.base}, founded by ${c.founder.name}. It is a hybrid social-impact and commercial company: Zarq Digital sells technology services (websites, apps, branding, AI, CIPC registration and more, with published prices), and that revenue plus partnerships help fund accessible youth programmes. ${c.location.delivery}
+ZARQ is a youth technology and digital opportunity company based in ${c.location.base}, founded by ${c.founder.name}. It is a hybrid social-impact and commercial company: ZARQ Digital sells technology services (websites, apps, branding, AI, CIPC registration and more, with published prices), and that revenue plus partnerships help fund accessible youth programmes. ${c.location.delivery}
 
 Programme availability is stated accurately: each programme is listed as available now, open for registrations of interest, or coming soon. Impact figures are goals, not results.
 
@@ -295,7 +295,7 @@ const pricingMd = c.pricing
   .map((p) => `### ${p.service}\n\n${p.tiers.map((t) => `- ${t.tier}: ${t.price} (regular price ${t.was}) – ${t.desc}`).join('\n')}`)
   .join('\n\n');
 
-const llmsFull = `# Zarq – full fact sheet
+const llmsFull = `# ZARQ – full fact sheet
 
 Last updated: ${today}. Website: ${url('/')}
 
@@ -303,12 +303,12 @@ Last updated: ${today}. Website: ${url('/')}
 
 ${c.coreMessage}
 
-- What: a youth technology and digital opportunity company with two offers: Zarq Digital (technology services for businesses and organisations) and Zarq programmes (technology education for young people).
+- What: a youth technology and digital opportunity company with two offers: ZARQ Digital (technology services for businesses and organisations) and ZARQ programmes (technology education for young people).
 - Company: ${c.company.legalName}, CIPC registration number ${c.company.regNo}. ${c.company.bbbee} (${c.company.bbbeeDetail}).
 - Where: ${c.location.base}. ${c.location.delivery}
 - Founder: ${c.founder.name}, who holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.
-- Model: hybrid social-impact and commercial. Zarq Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.
-- Availability: Zarq Digital services are available now. Young people can register their interest in Zarq programmes. Zarq Hub, a dedicated technology space in Matatiele, is coming soon and is not yet open.
+- Model: hybrid social-impact and commercial. ZARQ Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.
+- Availability: ZARQ Digital services are available now. Young people can register their interest in ZARQ programmes. ZARQ Hub, a dedicated technology space in Matatiele, is coming soon and is not yet open.
 
 ## Vision
 
@@ -318,7 +318,7 @@ ${c.vision}
 
 ${c.mission}
 
-## The Zarq journey
+## The ZARQ journey
 
 ${c.journey.map((j, i) => `${i + 1}. ${j.step}: ${j.text}`).join('\n')}
 
@@ -326,21 +326,21 @@ ${c.journey.map((j, i) => `${i + 1}. ${j.step}: ${j.text}`).join('\n')}
 
 ${programmesMd}
 
-## Zarq Digital (technology services)
+## ZARQ Digital (technology services)
 
-Zarq Digital is the commercial arm of Zarq, based in Matatiele, Eastern Cape, working with clients online across South Africa. It works with ${c.digitalAudiences.join('; ').toLowerCase()}.
+ZARQ Digital is the commercial arm of ZARQ, based in Matatiele, Eastern Cape, working with clients online across South Africa. It works with ${c.digitalAudiences.join('; ').toLowerCase()}.
 
 Services:
 
 ${c.digitalServices.map((s) => `- ${s.title}: ${s.text}`).join('\n')}
 
-## Zarq Digital pricing
+## ZARQ Digital pricing
 
 Current prices include a launch special (${c.pricingNote.toLowerCase()}). All prices exclude VAT. Larger or custom projects are quoted individually, and quotes are valid for 30 days. App development and IT services are quoted per project.
 
 ${pricingMd}
 
-## Zarq Digital client FAQ
+## ZARQ Digital client FAQ
 
 ${c.digitalFaq.map((q) => `**${q.question}**\n${q.answer}`).join('\n\n')}
 
@@ -351,11 +351,11 @@ ${c.yearOneTargets.map((t) => `- ${t.value} ${t.label}`).join('\n')}
 ## Ways to get involved
 
 - Young people and families: register interest to join a programme.
-- Schools: partner with Zarq on learner programmes and workshops.
+- Schools: partner with ZARQ on learner programmes and workshops.
 - Technology professionals: become a mentor.
-- Corporates, CSI/ESG programmes, NGOs and foundations: partner with Zarq.
+- Corporates, CSI/ESG programmes, NGOs and foundations: partner with ZARQ.
 - Sponsors and supporters: support devices, connectivity, resources and programme funding.
-- Businesses and organisations: work with Zarq Digital.
+- Businesses and organisations: work with ZARQ Digital.
 
 All enquiries: ${url('/contact')}
 

@@ -234,7 +234,7 @@ export default function Contact() {
                 {contact.addressLines.map((l) => <span key={l} className="block">{l}</span>)}
               </address>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Zarq Digital works with clients online, wherever they are. Zarq Hub is coming to Matatiele, so for in-person meetings please get in touch first.
+                ZARQ Digital works with clients online, wherever they are. ZARQ Hub is coming to Matatiele, so for in-person meetings please get in touch first.
               </p>
             </div>
           </div>

@@ -8,7 +8,7 @@ export default function Privacy() {
 
   return (
     <div>
-      <PageHeader eyebrow="Legal · Last updated October 2026" title="Privacy Policy" intro="How Zarq collects, uses and protects your personal information, in line with POPIA." />
+      <PageHeader eyebrow="Legal · Last updated October 2026" title="Privacy Policy" intro="How ZARQ collects, uses and protects your personal information, in line with POPIA." />
 
       {/* Content */}
       <section className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -16,7 +16,7 @@ export default function Privacy() {
 
           <div className="mb-8">
             <p className="text-gray-600 leading-relaxed">
-              {company.legalName} (registration number {company.regNo}), trading as Zarq ("we", "our", or "us"), is committed to protecting your privacy.
+              {company.legalName} (registration number {company.regNo}), trading as ZARQ ("we", "our", or "us"), is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
               provide when you visit our website (<a href="https://zarq.co.za" className="text-gray-950 underline underline-offset-2">zarq.co.za</a>) or
               contact us about our services and programmes.
@@ -86,7 +86,7 @@ export default function Privacy() {
             <div>
               <h2 className="text-xl font-bold text-gray-900 mb-3">6. Children’s Privacy</h2>
               <p className="text-gray-600 leading-relaxed">
-                Zarq programmes are open to young people aged 5 and up. For anyone under 18, registration must be made or approved by a parent or guardian, and we keep them informed. We collect only what we need to run the programme, and we never use children’s personal information for commercial purposes.
+                ZARQ programmes are open to young people aged 5 and up. For anyone under 18, registration must be made or approved by a parent or guardian, and we keep them informed. We collect only what we need to run the programme, and we never use children’s personal information for commercial purposes.
               </p>
             </div>
 
@@ -123,7 +123,7 @@ export default function Privacy() {
             <div className="bg-gray-50 rounded-2xl p-6">
               <h2 className="text-xl font-bold text-gray-900 mb-3">10. Contact Us</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Our Information Officer is Lesedi Siyaya, founder of Zarq. For questions about this Privacy Policy or to exercise your rights, please get in touch:
+                Our Information Officer is Lesedi Siyaya, founder of ZARQ. For questions about this Privacy Policy or to exercise your rights, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
                 <li><span className="font-medium">Email:</span> <a href="mailto:admin@zarq.co.za" className="text-gray-950 underline underline-offset-2">admin@zarq.co.za</a></li>

@@ -23,7 +23,7 @@ export default function CipcRegistration() {
   return (
     <div>
       <PageHeader
-        eyebrow="Zarq Digital · Business registration"
+        eyebrow="ZARQ Digital · Business registration"
         title="Register your company with CIPC, the easy way."
         intro="Starting a business or a non-profit? We handle the CIPC paperwork with you, from reserving your name to receiving your registration certificate, so you can focus on getting started. Everything is done online, wherever you are in South Africa."
       >
@@ -67,7 +67,7 @@ export default function CipcRegistration() {
         title="Ready to make it official?"
         intro="Tell us about your business and we’ll get your registration started."
         primary={{ to: quote, label: 'Get started' }}
-        secondary={{ to: '/digital', label: 'All Zarq Digital services' }}
+        secondary={{ to: '/digital', label: 'All ZARQ Digital services' }}
       />
     </div>
   );
