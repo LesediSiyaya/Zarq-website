@@ -10,15 +10,15 @@ const howItWorks = [
   { title: 'Ages 5 and up', text: 'Grouped by age and experience, from first steps to career-ready skills.' },
   { title: 'Hands-on', text: 'Every module ends with a project learners can show.' },
   { title: 'Mentored', text: 'Guidance from people working in technology.' },
-  { title: 'Devices provided', text: 'Learners are welcome to bring their own laptop too.' },
+  { title: 'Devices and kits provided', text: 'Laptops and robotics kits are provided. Learners are welcome to bring their own laptop too.' },
   { title: 'Matatiele & online', text: 'Learn in person in Matatiele, or join online.' },
 ];
 
-// Example projects, matched to the Academy learning areas (web development, AI literacy, app development).
+// Example projects, matched to the Academy learning areas (web development, AI literacy, robotics).
 const makes = [
   { icon: '{ }', title: 'Your first website', text: 'Design and publish a real site about something you love.', style: 'bg-[#ffc8dd] text-gray-950', iconStyle: 'bg-white', rotate: 'md:-rotate-1' },
   { icon: '✦', title: 'Understand AI', text: 'Learn what AI is, how it works and how to use it well and safely.', style: 'bg-gray-950 text-white', iconStyle: 'bg-[#ffc8dd] text-gray-950', rotate: 'md:rotate-1' },
-  { icon: '▶', title: 'Apps and projects', text: 'Turn your ideas into apps and projects you can show your family and friends.', style: 'bg-[#e7c6ff] text-gray-950', iconStyle: 'bg-white', rotate: 'md:-rotate-[0.5deg]' },
+  { icon: '⚙', title: 'Robots and gadgets', text: 'Build things that move, light up and respond, then program them yourself.', style: 'bg-[#e7c6ff] text-gray-950', iconStyle: 'bg-white', rotate: 'md:-rotate-[0.5deg]' },
 ];
 
 export default function CodingClasses() {
@@ -46,7 +46,7 @@ export default function CodingClasses() {
                 Show the world.
               </h1>
               <p className="text-lg sm:text-xl text-gray-700 leading-relaxed max-w-xl mb-9">
-                Free coding and digital skills classes for young people in Matatiele and online. Build real projects, learn from mentors, and have fun doing it.
+                Free coding, robotics and digital skills classes for young people in Matatiele and online. Build real projects, learn from mentors, and have fun doing it.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <ButtonLink to={join}>Register your interest</ButtonLink>
@@ -60,7 +60,16 @@ export default function CodingClasses() {
               </div>
               <figure className="absolute right-0 bottom-0 w-72 sm:w-80 bg-white p-3 pb-12 rotate-3 shadow-[0_20px_40px_-18px_rgba(3,7,18,0.35)]">
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#e7c6ff]/90 -rotate-3" />
-                <img src="/media/stock/breadboard.jpg" alt="" loading="lazy" className="w-full h-48 sm:h-52 object-cover" />
+                <video
+                  src="/media/stock/kids-robotics.mp4"
+                  poster="/media/stock/kids-robotics-poster.jpg"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  className="w-full h-48 sm:h-52 object-cover"
+                />
                 <figcaption className="absolute bottom-3 inset-x-0 text-center font-brand italic text-xl">build real things</figcaption>
               </figure>
             </div>
@@ -84,9 +93,9 @@ export default function CodingClasses() {
 
       <Section tone="paper" id="learn">
         <SectionHeading eyebrow="What learners will learn" title="Skills for the digital economy." />
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
+        <ul className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
           {academy.points!.map((point) => (
-            <li key={point} className="bg-white p-5 font-medium">{point}</li>
+            <li key={point} className="bg-white p-5 font-medium last:col-span-2 lg:last:col-span-1">{point}</li>
           ))}
         </ul>
       </Section>

@@ -30,7 +30,7 @@ export const pages: PageMeta[] = [
     name: 'Programmes',
     title: 'Coding, AI & STEM Classes for Youth in Matatiele',
     description:
-      'Practical coding, AI, web development and digital skills for young people in Matatiele and online, through ZARQ Academy, learner tracks, Labs and ZARQ Hub.',
+      'Practical coding, robotics, AI, web development and digital skills for young people in Matatiele and online, through ZARQ Academy, learner tracks, Labs and ZARQ Hub.',
   },
   {
     path: '/digital',
@@ -61,7 +61,7 @@ export const pages: PageMeta[] = [
     parent: '/programmes',
     title: 'Free Coding Classes for Kids & Youth in Matatiele',
     description:
-      'Free coding, AI, web development and digital skills classes for young people aged 5 and up, in Matatiele and online. Devices provided. Register your interest.',
+      'Free coding, robotics, AI and web development classes for young people aged 5 and up, in Matatiele and online. Devices and kits provided. Register your interest.',
   },
   {
     path: '/partners',

@@ -1,13 +1,12 @@
 import { founder } from './content';
 
 // "Real people, real work": the founder, ZARQ's own site as a work sample, and
-// stock photos (Unsplash) as placeholders until ZARQ has its own photography.
-// Stock images never show faces, so they can't be mistaken for ZARQ people or classes.
+// supporting photography (see public/media/stock/CREDITS.txt).
 
 const stock = [
   { src: '/media/stock/drakensberg.jpg', alt: 'Green valleys below the Drakensberg mountains', caption: 'Drakensberg country' },
   { src: '/media/stock/planning.jpg', alt: 'Hands planning in a notebook beside a laptop and phone', caption: 'Every project starts with a plan' },
-  { src: '/media/stock/circuit-board-hand.jpg', alt: 'A hand holding a programmable circuit board', caption: 'Hands-on technology' },
+  { src: '/media/stock/kids-robotics-class.jpg', alt: 'Young learners building and wiring robot cars', caption: 'Build it. Code it. Test it.' },
 ];
 
 function Caption({ children }: { children: string }) {

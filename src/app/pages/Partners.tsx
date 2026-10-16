@@ -146,7 +146,7 @@ export default function Partners() {
           {supportOptions.map(({ title, text }, i) => (
             <div
               key={title}
-              className={`rounded-2xl p-6 sm:p-8 flex flex-col ${i === supportOptions.length - 1 ? 'bg-gray-950 text-white md:col-span-2' : 'border border-gray-200'}`}
+              className={`rounded-2xl p-6 sm:p-8 flex flex-col ${i === supportOptions.length - 1 ? 'bg-gray-950 text-white' : 'border border-gray-200'}`}
             >
               <p className={`font-spec text-xs mb-6 ${i === supportOptions.length - 1 ? 'text-gray-500' : 'text-gray-400'}`}>{String(i + 1).padStart(2, '0')}</p>
               <h3 className="text-2xl mb-3">{title}</h3>

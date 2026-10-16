@@ -84,6 +84,7 @@ export const academy: Programme = {
     'Digital literacy',
     'AI literacy',
     'Coding',
+    'Robotics & electronics',
     'App & web development',
     'UI/UX',
     'Cybersecurity awareness',
@@ -242,11 +243,13 @@ export const supportOptions = [
   { title: 'Equip a learner', text: 'A refurbished business-grade laptop with warranty, used by learners in class and for their projects.' },
   { title: 'Build the device bank', text: 'A shared bank of laptops for ZARQ programmes, matching our first-year goal of 5–10 devices.' },
   { title: 'Sponsor a cohort', text: 'Fund a full programme intake: learning, materials, mentorship and project work. We’ll scope the budget with you.' },
+  { title: 'Fund robotics kits', text: 'Robotics and electronics kits that learners use to build, wire and program their own robots.' },
   { title: 'Founding partner of ZARQ Hub', text: 'Help establish a dedicated technology space in Matatiele, with naming and recognition opportunities.' },
 ];
 
 export const inKindOptions = [
   'Donate working laptops or tablets',
+  'Donate robotics or electronics kits',
   'Sponsor data or connectivity',
   'Offer venue space for classes and workshops',
   'Volunteer staff as mentors or guest speakers',
@@ -348,6 +351,7 @@ export const codingFaq = [
   { question: 'How much do classes cost?', answer: 'ZARQ classes are free for learners.' },
   { question: 'Who can join?', answer: 'Young people aged 5 and up. Classes are grouped by age and experience, from ZARQ Juniors to ZARQ Youth and ZARQ Future.' },
   { question: 'Do I need my own laptop?', answer: 'No. Devices are provided, and learners are welcome to bring their own.' },
+  { question: 'Do learners do robotics?', answer: 'Yes. Learners build and program simple robots and electronics projects. Kits are provided.' },
   { question: 'Do I need experience?', answer: 'No. Classes start from the basics.' },
   { question: 'Where are classes held?', answer: 'In Matatiele and online.' },
   { question: 'How do I join?', answer: 'Register your interest and we’ll be in touch with programme dates and details. Parents and guardians can register on a young person’s behalf.' },

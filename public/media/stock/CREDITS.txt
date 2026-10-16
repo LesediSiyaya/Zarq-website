@@ -1,7 +1,7 @@
-Stock photos, free to use under the Unsplash License (https://unsplash.com/license).
-Temporary placeholders until ZARQ has its own photos.
+Stock photos and video. Unsplash items: Unsplash License (https://unsplash.com/license).
+Pexels items: Pexels License (https://www.pexels.com/license/).
 
 drakensberg.jpg        Simon Hurry          https://unsplash.com/photos/wGF_L0375Ic
 planning.jpg           Jakub Żerdzicki      https://unsplash.com/photos/C9HUHreoPc0
-circuit-board-hand.jpg Unsplash contributor https://unsplash.com/photos/Oc9wZnEiamI
-breadboard.jpg         Unsplash contributor https://unsplash.com/photos/vtg8tAdoWVQ
+kids-robotics-class.jpg Vanessa Loring (Pexels) https://www.pexels.com/photo/a-young-boy-holding-a-robotic-car-7868834/
+kids-robotics.mp4       Vanessa Loring (Pexels) https://www.pexels.com/video/kids-building-robots-7868196/
