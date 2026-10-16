@@ -6,7 +6,7 @@
 export type Status = 'current' | 'developing' | 'planned' | 'target';
 
 export const contact = {
-  email: 'admin.zarq@gmail.com',
+  email: 'admin@zarq.co.za',
   phoneDisplay: '073 028 6401',
   phoneHref: 'tel:+27730286401',
   whatsapp: 'https://wa.me/27730286401',

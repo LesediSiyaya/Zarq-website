@@ -125,7 +125,7 @@ export default function Privacy() {
                 Our Information Officer is Lesedi Siyaya, founder of Zarq. For questions about this Privacy Policy or to exercise your rights, please get in touch:
               </p>
               <ul className="space-y-2 text-gray-700 text-sm sm:text-base">
-                <li><span className="font-medium">Email:</span> <a href="mailto:admin.zarq@gmail.com" className="text-gray-950 underline underline-offset-2">admin.zarq@gmail.com</a></li>
+                <li><span className="font-medium">Email:</span> <a href="mailto:admin@zarq.co.za" className="text-gray-950 underline underline-offset-2">admin@zarq.co.za</a></li>
                 <li><span className="font-medium">WhatsApp:</span> <a href="https://wa.me/27730286401" className="text-gray-950 underline underline-offset-2">+27 73 028 6401</a></li>
                 <li><span className="font-medium">Instagram:</span> <a href="https://www.instagram.com/zarq_sa" target="_blank" rel="noopener noreferrer" className="text-gray-950 underline underline-offset-2">@zarq_sa</a></li>
               </ul>

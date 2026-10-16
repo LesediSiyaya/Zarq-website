@@ -82,7 +82,7 @@ export const pages: PageMeta[] = [
     name: 'Contact',
     title: 'Contact Us: Matatiele, Eastern Cape',
     description:
-      'Get a quote, join a programme or start a partnership. Email admin.zarq@gmail.com, call or WhatsApp 073 028 6401. Based in Matatiele, working online.',
+      'Get a quote, join a programme or start a partnership. Email admin@zarq.co.za, call or WhatsApp 073 028 6401. Based in Matatiele, working online.',
   },
   {
     path: '/faq',
