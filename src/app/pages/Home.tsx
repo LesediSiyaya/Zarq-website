@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { ArrowRight, GraduationCap, Handshake, Briefcase, School } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import Journey from '../components/zarq/Journey';
+import RealWork from '../components/zarq/RealWork';
 import {
   Section, SectionHeading, Container, Eyebrow, ButtonLink, TextLink, Card,
 } from '../components/zarq/ui';
@@ -99,8 +100,18 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Real people, real work */}
+      <Section tone="paper" id="real-work">
+        <SectionHeading
+          eyebrow="Real people, real work"
+          title={<>Built in Matatiele.<br />Used across South Africa.</>}
+          intro="Meet the founder, and see the kind of work we do."
+        />
+        <RealWork />
+      </Section>
+
       {/* ZARQ Digital */}
-      <Section tone="paper">
+      <Section>
         <div className="grid lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-start">
           <div>
             <Eyebrow>ZARQ Digital</Eyebrow>
@@ -141,7 +152,7 @@ export default function Home() {
       </Section>
 
       {/* Why ZARQ */}
-      <Section>
+      <Section tone="paper">
         <SectionHeading eyebrow="Why ZARQ" title="Work that pays it forward." />
         <div className="grid md:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden border border-gray-200">
           {reasons.map(({ title, text }, i) => (
@@ -155,7 +166,7 @@ export default function Home() {
       </Section>
 
       {/* How we work */}
-      <Section tone="paper">
+      <Section>
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 sm:mb-12">
           <SectionHeading className="!mb-0" eyebrow="How we work" title="From first call to launch." />
           <TextLink to="/digital#process">More about our process</TextLink>

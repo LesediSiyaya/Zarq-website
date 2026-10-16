@@ -1,0 +1,7 @@
+Stock photos, free to use under the Unsplash License (https://unsplash.com/license).
+Temporary placeholders until ZARQ has its own photos.
+
+drakensberg.jpg        Simon Hurry          https://unsplash.com/photos/wGF_L0375Ic
+planning.jpg           Jakub Żerdzicki      https://unsplash.com/photos/C9HUHreoPc0
+circuit-board-hand.jpg Unsplash contributor https://unsplash.com/photos/Oc9wZnEiamI
+breadboard.jpg         Unsplash contributor https://unsplash.com/photos/vtg8tAdoWVQ
