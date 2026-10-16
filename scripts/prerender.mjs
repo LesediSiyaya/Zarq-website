@@ -42,6 +42,8 @@ const areaServed = [
 const globalGraph = [
   {
     '@type': 'Organization',
+    legalName: c.company.legalName,
+    identifier: { '@type': 'PropertyValue', name: 'CIPC registration number', value: c.company.regNo },
     '@id': ORG,
     name: 'Zarq',
     url: url('/'),
@@ -302,6 +304,7 @@ Last updated: ${today}. Website: ${url('/')}
 ${c.coreMessage}
 
 - What: a youth technology and digital opportunity company with two offers: Zarq Digital (technology services for businesses and organisations) and Zarq programmes (technology education for young people).
+- Company: ${c.company.legalName}, CIPC registration number ${c.company.regNo}. ${c.company.bbbee} (${c.company.bbbeeDetail}).
 - Where: ${c.location.base}. ${c.location.delivery}
 - Founder: ${c.founder.name}, who holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.
 - Model: hybrid social-impact and commercial. Zarq Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.

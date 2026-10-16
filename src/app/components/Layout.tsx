@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
 import { Menu, X, Instagram, ChevronUp } from 'lucide-react';
-import { contact, footerBlurb } from './zarq/content';
+import { contact, footerBlurb, company } from './zarq/content';
 import { sendToInbox } from './zarq/web3forms';
 import { getConsent, setConsent, loadAnalytics, track } from './zarq/analytics';
 
@@ -285,11 +285,11 @@ export default function Layout() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Zarq. Rooted in Matatiele.</p>
+            <p>&copy; {new Date().getFullYear()} {company.legalName} · Reg. no. {company.regNo} · {company.bbbee}</p>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link to="/terms" className="hover:text-gray-950">Terms of Service</Link>
               <Link to="/privacy" className="hover:text-gray-950">Privacy Policy</Link>
-              <button type="button" onClick={() => setShowConsent(true)} className="hover:text-gray-950">Analytics settings</button>
+              <button type="button" onClick={() => setShowConsent(true)} className="text-sm font-normal hover:text-gray-950">Analytics settings</button>
             </div>
           </div>
         </div>

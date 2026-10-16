@@ -4,7 +4,7 @@ import { track } from '../components/zarq/analytics';
 import Journey from '../components/zarq/Journey';
 import { PageHeader, Section, SectionHeading, Eyebrow, CTABand, ButtonLink } from '../components/zarq/ui';
 import {
-  founder, journey, flywheel, needStats, supportOptions, inKindOptions, partnerBenefits, reportingMetrics,
+  founder, journey, flywheel, needStats, supportOptions, inKindOptions, partnerBenefits, reportingMetrics, company,
 } from '../components/zarq/content';
 
 const partnerLink = '/contact?interest=partner';
@@ -46,6 +46,24 @@ export default function Partners() {
           <PackDownload />
         </div>
       </PageHeader>
+
+      {/* Trust strip */}
+      <div className="border-b border-gray-200 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid sm:grid-cols-3 gap-4 text-sm">
+          <div>
+            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">Registered company</p>
+            <p className="font-medium">{company.legalName}</p>
+          </div>
+          <div>
+            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">CIPC registration</p>
+            <p className="font-medium">{company.regNo}</p>
+          </div>
+          <div>
+            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">B-BBEE</p>
+            <p className="font-medium">{company.bbbee} · {company.bbbeeDetail}</p>
+          </div>
+        </div>
+      </div>
 
       {/* The need */}
       <Section id="need">

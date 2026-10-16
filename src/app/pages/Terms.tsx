@@ -1,13 +1,13 @@
 import { Link } from 'react-router';
 import { useSEO } from '../components/useSEO';
 import { PageHeader } from '../components/zarq/ui';
-import { contact } from '../components/zarq/content';
+import { contact, company } from '../components/zarq/content';
 
 const sections: { title: string; body: string[] }[] = [
   {
     title: '1. About these terms',
     body: [
-      'These terms apply to the technology services Zarq provides through Zarq Digital, including website design and development, app development, UI/UX design, branding, AI and automation, IT services, cybersecurity, digital strategy, CIPC business registration and domain registration. By accepting a quote or paying a deposit, you agree to these terms.',
+      `These terms apply to the technology services that ${company.legalName} (registration number ${company.regNo}), trading as Zarq (“Zarq”, “we”), provides through Zarq Digital, including website design and development, app development, UI/UX design, branding, AI and automation, IT services, cybersecurity, digital strategy, CIPC business registration and domain registration. By accepting a quote or paying a deposit, you agree to these terms.`,
       'Zarq’s youth programmes are covered in section 13.',
     ],
   },

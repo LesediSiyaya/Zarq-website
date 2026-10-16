@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
 import { useSEO } from '../components/useSEO';
 import { PageHeader, Section, SectionHeading, CTABand, ButtonLink, Eyebrow } from '../components/zarq/ui';
-import { digitalServices, digitalAudiences, digitalFaq, pricing, pricingNote } from '../components/zarq/content';
+import { digitalServices, digitalAudiences, digitalFaq, pricing, pricingNote, company } from '../components/zarq/content';
 import { FAQAccordion } from '../components/zarq/FAQAccordion';
 
 const process = [
@@ -25,6 +25,7 @@ export default function Digital() {
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <ButtonLink to="/contact?interest=digital">Get a quote</ButtonLink>
           <span className="text-sm text-gray-600">Based in Matatiele, Eastern Cape · Working with clients online, nationwide</span>
+          <span className="inline-flex px-3 py-1.5 rounded-full bg-white border border-gray-200 text-sm font-medium">{company.bbbee} · {company.bbbeeDetail}</span>
         </div>
       </PageHeader>
 

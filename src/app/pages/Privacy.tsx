@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import { useSEO } from '../components/useSEO';
 import { PageHeader } from '../components/zarq/ui';
+import { company } from '../components/zarq/content';
 
 export default function Privacy() {
   useSEO('/privacy');
@@ -15,7 +16,7 @@ export default function Privacy() {
 
           <div className="mb-8">
             <p className="text-gray-600 leading-relaxed">
-              Zarq ("we", "our", or "us") is committed to protecting your privacy.
+              {company.legalName} (registration number {company.regNo}), trading as Zarq ("we", "our", or "us"), is committed to protecting your privacy.
               This Privacy Policy explains how we collect, use, and safeguard the information you
               provide when you visit our website (<a href="https://zarq.co.za" className="text-gray-950 underline underline-offset-2">zarq.co.za</a>) or
               contact us about our services and programmes.

@@ -16,6 +16,15 @@ export const contact = {
   addressLines: ['Maluti, Matatiele', 'Eastern Cape, South Africa'],
 };
 
+// Registered company details (CIPC registration certificate and B-BBEE affidavit).
+// The B-BBEE affidavit is renewed every year: update `bbbee` if the level changes.
+export const company = {
+  legalName: 'Zarq (Pty) Ltd',
+  regNo: '2026/828877/07',
+  bbbee: 'Level 1 B-BBEE contributor',
+  bbbeeDetail: '135% procurement recognition',
+};
+
 export const founder = {
   name: 'Lesedi Siyaya',
   role: 'Founder, Zarq',
