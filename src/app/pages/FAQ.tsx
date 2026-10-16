@@ -42,6 +42,11 @@ export const faqGroups: { title: string; items: FAQItem[] }[] = [
           'Register your interest through the contact form and choose “Joining a programme”. We’ll be in touch with programme dates and details. Parents and guardians are welcome to enquire on behalf of a young person.',
       },
       {
+        question: 'What is Digital Kindness?',
+        answer:
+          'Digital Kindness is part of every ZARQ class. Learners practise kindness online, healthy digital habits, responsible AI use, online safety and using technology to help others. It’s education, not counselling, and it’s free for learners.',
+      },
+      {
         question: 'Is there a ZARQ centre I can visit?',
         answer:
           'ZARQ Hub, a dedicated technology space in Matatiele, is coming. Until it opens, please get in touch before visiting, and we’ll arrange to meet.',

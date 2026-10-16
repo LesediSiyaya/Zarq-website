@@ -29,7 +29,7 @@ const paths: Path[] = [
     who: 'Schools & educational organisations',
     title: 'Partner as a school',
     text: 'Work with ZARQ to bring practical technology learning, workshops and STEM exposure to your learners.',
-    how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM'],
+    how: ['Learner programmes and workshops', 'Digital and AI literacy', 'Robotics & STEM', 'Digital Kindness and online safety'],
     cta: { label: 'Partner as a school', to: '/contact?interest=school' },
   },
   {
@@ -38,7 +38,7 @@ const paths: Path[] = [
     who: 'Technology professionals',
     title: 'Become a mentor',
     text: 'Share your experience with young people who are learning to build with technology.',
-    how: ['Mentorship sessions', 'Project feedback', 'Career and industry insight'],
+    how: ['Mentorship sessions', 'Project feedback', 'Career and industry insight', 'Modelling responsible technology use'],
     cta: { label: 'Become a mentor', to: '/contact?interest=mentor' },
   },
   {

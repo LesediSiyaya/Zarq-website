@@ -9,6 +9,7 @@ import Partners from "./pages/Partners";
 import Websites from "./pages/services/Websites";
 import CipcRegistration from "./pages/services/CipcRegistration";
 import CodingClasses from "./pages/services/CodingClasses";
+import DigitalKindness from "./pages/services/DigitalKindness";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import Privacy from "./pages/Privacy";
@@ -28,6 +29,7 @@ export const routes: RouteObject[] = [
       { path: "digital/websites", Component: Websites },
       { path: "digital/cipc-registration", Component: CipcRegistration },
       { path: "programmes/coding-classes", Component: CodingClasses },
+      { path: "programmes/digital-kindness", Component: DigitalKindness },
       { path: "get-involved", Component: GetInvolved },
       { path: "partners", Component: Partners },
       { path: "contact", Component: Contact },
@@ -40,6 +42,7 @@ export const routes: RouteObject[] = [
       { path: "hub", element: <Navigate to="/programmes#hub" replace /> },
       { path: "robotics", element: <Navigate to="/programmes#robotics" replace /> },
       { path: "impact", element: <Navigate to="/about#impact" replace /> },
+      { path: "digital-kindness", element: <Navigate to="/programmes/digital-kindness" replace /> },
       { path: "*", Component: NotFound },
     ],
   },

@@ -134,7 +134,7 @@ const programmeList = [c.academy, ...c.tracks, ...c.ecosystem].map((p, i) => ({
 }));
 
 // Local landing pages: their own FAQ and a Service with that service's published packages.
-const landingFaq = { '/digital/websites': c.websitesFaq, '/digital/cipc-registration': c.cipcFaq, '/programmes/coding-classes': c.codingFaq };
+const landingFaq = { '/digital/websites': c.websitesFaq, '/digital/cipc-registration': c.cipcFaq, '/programmes/coding-classes': c.codingFaq, '/programmes/digital-kindness': c.digitalKindnessFaq };
 const serviceFor = (path, name, priceList, description) => ({
   '@type': 'Service',
   '@id': `${url(path)}#service`,
@@ -246,7 +246,7 @@ for (const meta of pages) {
 
 // ---------- sitemap.xml & robots.txt ----------
 const indexable = pages.filter((p) => p.indexable !== false);
-const priority = { '/': '1.0', '/programmes': '0.9', '/digital': '0.9', '/digital/websites': '0.8', '/digital/cipc-registration': '0.8', '/programmes/coding-classes': '0.8', '/privacy': '0.3', '/terms': '0.3' };
+const priority = { '/': '1.0', '/programmes': '0.9', '/digital': '0.9', '/digital/websites': '0.8', '/digital/cipc-registration': '0.8', '/programmes/coding-classes': '0.8', '/programmes/digital-kindness': '0.7', '/privacy': '0.3', '/terms': '0.3' };
 await writeFile(
   join(dist, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${indexable
@@ -308,7 +308,7 @@ ${c.coreMessage}
 - Where: ${c.location.base}. ${c.location.delivery}
 - Founder: ${c.founder.name}, who holds a BSc in Information Technology and brings business analysis experience, with practical experience in websites, applications, UI/UX, digital products and AI-related work.
 - Model: hybrid social-impact and commercial. ZARQ Digital earns revenue; revenue and partnerships fund youth programmes; programmes build skills, projects and opportunity pathways.
-- Availability: ZARQ Digital services are available now. Young people can register their interest in ZARQ programmes. ZARQ Hub, a dedicated technology space in Matatiele, is coming soon and is not yet open.
+- Availability: ZARQ Digital services are available now. Young people can register their interest in ZARQ programmes. ZARQ Hub, a dedicated technology space in Matatiele, is coming soon and is not yet open. Digital Kindness (empathy, online safety, wellbeing and responsible AI) is being built into every ZARQ class.
 
 ## Vision
 
@@ -325,6 +325,15 @@ ${c.journey.map((j, i) => `${i + 1}. ${j.step}: ${j.text}`).join('\n')}
 ## Programmes
 
 ${programmesMd}
+
+## Digital Kindness
+
+Digital Kindness is part of ZARQ Academy, not a separate service: ${c.digitalKindness.summary} It is being built into the curriculum for the first ZARQ classes and is free for learners. It is education, not counselling. More: ${url('/programmes/digital-kindness')}
+
+${c.digitalKindness.themes.map((t) => `- ${t.title}: ${t.text} Learners practise: ${t.practise.join('; ').toLowerCase()}.`).join('\n')}
+
+In place now: ${c.digitalKindness.now.join('; ').toLowerCase()}.
+Planned with partners (not yet running): ${c.digitalKindness.next.join('; ').toLowerCase()}.
 
 ## ZARQ Digital (technology services)
 

@@ -1,6 +1,6 @@
 import { useSEO } from '../components/useSEO';
 import Journey from '../components/zarq/Journey';
-import { PageHeader, Section, SectionHeading, Eyebrow, CTABand } from '../components/zarq/ui';
+import { PageHeader, Section, SectionHeading, Eyebrow, CTABand, TextLink } from '../components/zarq/ui';
 import { founder, vision, mission, problemPoints, flywheel, yearOneTargets } from '../components/zarq/content';
 
 const approach = [
@@ -16,6 +16,7 @@ const combines = [
   'Practical technology education',
   'Project-based learning',
   'Mentorship',
+  'Digital Kindness',
   'Entrepreneurship',
   'Commercial technology services',
   'Career and opportunity pathways',
@@ -46,6 +47,10 @@ export default function About() {
             <p>
               ZARQ exists to close that gap. It combines access, learning, practical creation and opportunity, so young people can move from consuming technology to creating with it.
             </p>
+            <p>
+              We also believe learning technology is about more than using the tools. It’s about how we treat people when we use them. That’s why Digital Kindness, covering empathy, online safety, wellbeing and responsible AI, is part of every ZARQ class.
+            </p>
+            <TextLink to="/programmes/digital-kindness">About Digital Kindness</TextLink>
           </div>
         </div>
       </Section>

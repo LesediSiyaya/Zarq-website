@@ -32,6 +32,7 @@ const footerGroups = [
     links: [
       { to: '/programmes#academy', label: 'ZARQ Academy' },
       { to: '/programmes/coding-classes', label: 'Free coding classes' },
+      { to: '/programmes/digital-kindness', label: 'Digital Kindness' },
       { to: '/programmes#tracks', label: 'Juniors, Youth & Future' },
       { to: '/programmes#robotics', label: 'Robotics & STEM' },
       { to: '/programmes#labs', label: 'ZARQ Labs' },

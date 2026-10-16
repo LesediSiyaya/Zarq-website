@@ -114,6 +114,106 @@ export const tracks: Programme[] = [
   },
 ];
 
+// ---------- Digital Kindness (/programmes/digital-kindness) ----------
+// Part of ZARQ Academy, not a separate service. It is being built into the curriculum for the
+// first classes: keep wording to "being built in" / "aims to" until classes have run, and never
+// add learner numbers, outcomes or wellbeing claims without evidence.
+export const digitalKindness = {
+  summary:
+    'Empathy, online safety, wellbeing and responsible AI, built into how ZARQ teaches technology.',
+  themes: [
+    {
+      id: 'kindness',
+      title: 'Kindness online',
+      text: 'Respectful communication, empathy and inclusion in group chats, comments and games.',
+      practise: [
+        'Rewriting a harsh comment before posting it',
+        'Spotting when someone is left out or targeted',
+        'Supporting a friend who is being bullied online',
+      ],
+    },
+    {
+      id: 'wellbeing',
+      title: 'Digital wellbeing',
+      text: 'How time online can affect confidence, friendships and mood, and how to keep it healthy.',
+      practise: [
+        'Planning screen breaks and phone-free time',
+        'Noticing how a feed or a comment makes you feel',
+        'Knowing which trusted adult to talk to',
+      ],
+    },
+    {
+      id: 'ai',
+      title: 'Responsible AI',
+      text: 'Using AI thoughtfully: questioning answers, noticing bias and respecting other people.',
+      practise: [
+        'Checking an AI answer against a reliable source',
+        'Spotting bias or stereotypes in generated content',
+        'Why fake photos or voices of real people cause harm',
+      ],
+    },
+    {
+      id: 'safety',
+      title: 'Online safety',
+      text: 'Privacy, consent and personal information, and what to do when something feels wrong.',
+      practise: [
+        'Setting strong passwords and privacy settings',
+        'Recognising scams and suspicious messages',
+        'Asking before sharing someone else’s photo, and how to report and block',
+      ],
+    },
+    {
+      id: 'good',
+      title: 'Tech for good',
+      text: 'Seeing yourself as someone who can use technology to help others and solve local problems.',
+      practise: [
+        'Choosing a problem in your community',
+        'Building a project that helps people, such as a website for a local cause',
+        'Presenting your work to family and community',
+      ],
+    },
+  ],
+  // How it fits into classes, by learner track.
+  byTrack: [
+    { track: 'ZARQ Juniors', text: 'Kind words online, keeping personal details private and always telling a trusted adult.' },
+    { track: 'ZARQ Youth', text: 'Group-chat conduct, privacy settings, scams, healthy screen habits and checking AI answers.' },
+    { track: 'ZARQ Future', text: 'Digital footprint, professional conduct online, AI ethics and building technology for the community.' },
+  ],
+  now: [
+    'Being built into the ZARQ Academy curriculum for the first classes',
+    'Taught inside coding, AI and robotics lessons, not as a separate subject',
+    'Shared with parents and guardians before classes begin',
+  ],
+  next: [
+    'Take-home guides for parents and guardians',
+    'Digital Kindness workshops for schools',
+    'Guidance for mentors on modelling responsible technology use',
+    'Community sessions in Matatiele',
+  ],
+};
+
+export const digitalKindnessFaq = [
+  {
+    question: 'What is Digital Kindness?',
+    answer:
+      'It’s treating people with empathy, respect and care when we use technology. At ZARQ it covers kindness online, digital wellbeing, responsible AI use, online safety and using technology to help others.',
+  },
+  {
+    question: 'Is it a separate class?',
+    answer:
+      'No. It’s part of every ZARQ class. A lesson on building a website also covers privacy, and a lesson on AI also covers checking answers and treating people fairly.',
+  },
+  {
+    question: 'Does it cost anything?',
+    answer: 'No. It’s part of ZARQ’s free classes for learners.',
+  },
+  {
+    question: 'Is this counselling?',
+    answer:
+      'No. Digital Kindness is education: healthy habits, safety skills and knowing where to find help. If a young person needs support, we encourage them to talk to a parent, guardian or teacher, and they can call Childline South Africa free on 116.',
+  },
+];
+
 export const ecosystem: Programme[] = [
   {
     id: 'robotics',
@@ -352,6 +452,7 @@ export const codingFaq = [
   { question: 'Who can join?', answer: 'Young people aged 5 and up. Classes are grouped by age and experience, from ZARQ Juniors to ZARQ Youth and ZARQ Future.' },
   { question: 'Do I need my own laptop?', answer: 'No. Devices are provided, and learners are welcome to bring their own.' },
   { question: 'Do learners do robotics?', answer: 'Yes. Learners build and program simple robots and electronics projects. Kits are provided.' },
+  { question: 'What is Digital Kindness?', answer: 'Part of every ZARQ class: learning to be kind, safe and responsible online, including when using AI.' },
   { question: 'Do I need experience?', answer: 'No. Classes start from the basics.' },
   { question: 'Where are classes held?', answer: 'In Matatiele and online.' },
   { question: 'How do I join?', answer: 'Register your interest and we’ll be in touch with programme dates and details. Parents and guardians can register on a young person’s behalf.' },

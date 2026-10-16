@@ -1,8 +1,8 @@
 import { useSEO } from '../components/useSEO';
 import {
-  PageHeader, Section, SectionHeading, Card, CTABand, ButtonLink,
+  PageHeader, Section, SectionHeading, Card, CTABand, ButtonLink, Eyebrow,
 } from '../components/zarq/ui';
-import { academy, tracks, ecosystem } from '../components/zarq/content';
+import { academy, tracks, ecosystem, digitalKindness } from '../components/zarq/content';
 
 export default function Programmes() {
   useSEO('/programmes');
@@ -37,6 +37,28 @@ export default function Programmes() {
               ))}
             </ul>
           </div>
+        </div>
+      </Section>
+
+      {/* Digital Kindness: part of every class, with its own page */}
+      <Section tone="blush" id="digital-kindness">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 lg:gap-16 items-start">
+          <div>
+            <Eyebrow>Part of every class</Eyebrow>
+            <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-5">Digital Kindness</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              Learning technology also means learning how we treat people when we use it. Every ZARQ class builds in empathy, online safety, wellbeing and responsible AI.
+            </p>
+            <ButtonLink to="/programmes/digital-kindness">About Digital Kindness</ButtonLink>
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {digitalKindness.themes.map((t) => (
+              <li key={t.id} className="rounded-2xl bg-white border border-[#ffe0ec] p-5 sm:last:col-span-2">
+                <p className="font-medium mb-1">{t.title}</p>
+                <p className="text-sm text-gray-600 leading-relaxed">{t.text}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </Section>
 

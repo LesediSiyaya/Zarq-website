@@ -1,5 +1,5 @@
 import { useSEO } from '../../components/useSEO';
-import { Section, SectionHeading, Eyebrow, CTABand, ButtonLink, Card, Container } from '../../components/zarq/ui';
+import { Section, SectionHeading, Eyebrow, CTABand, ButtonLink, Card, Container, TextLink } from '../../components/zarq/ui';
 import { FAQSection } from '../../components/zarq/landing';
 import { academy, tracks, codingFaq } from '../../components/zarq/content';
 
@@ -98,6 +98,10 @@ export default function CodingClasses() {
             <li key={point} className="bg-white p-5 font-medium last:col-span-2 lg:last:col-span-1">{point}</li>
           ))}
         </ul>
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
+          <p className="text-gray-700">Every class also includes Digital Kindness: being safe, kind and responsible online.</p>
+          <TextLink to="/programmes/digital-kindness">Learn more</TextLink>
+        </div>
       </Section>
 
       <Section id="how">

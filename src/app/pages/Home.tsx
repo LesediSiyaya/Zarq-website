@@ -212,7 +212,7 @@ export default function Home() {
             className="!mb-0"
             eyebrow="Programmes"
             title="Learn it. Build it. Use it."
-            intro="ZARQ programmes take young people from first access to real projects and opportunity. Free for learners, in Matatiele and online."
+            intro="ZARQ programmes take young people from first access to real projects and opportunity, with Digital Kindness in every class. Free for learners, in Matatiele and online."
           />
           <TextLink to="/programmes">All programmes</TextLink>
         </div>

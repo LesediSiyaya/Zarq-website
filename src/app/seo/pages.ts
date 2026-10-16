@@ -64,6 +64,14 @@ export const pages: PageMeta[] = [
       'Free coding, robotics, AI and web development classes for young people aged 5 and up, in Matatiele and online. Devices and kits provided. Register your interest.',
   },
   {
+    path: '/programmes/digital-kindness',
+    name: 'Digital Kindness',
+    parent: '/programmes',
+    title: 'Digital Kindness: Online Safety & Responsible AI for Youth',
+    description:
+      'Part of every ZARQ class: kindness online, digital wellbeing, responsible AI, online safety and using technology for good. Free for learners in Matatiele and online.',
+  },
+  {
     path: '/partners',
     name: 'Partner with ZARQ',
     title: 'Partner With Us: Sponsor Youth Tech Skills',
