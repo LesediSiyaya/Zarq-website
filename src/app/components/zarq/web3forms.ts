@@ -1,6 +1,6 @@
-// Web3Forms delivers website submissions to the inbox registered with this access key. The access key is public by
+// Web3Forms delivers website submissions to admin@zarq.co.za (the inbox registered with this key). The access key is public by
 // design: it only allows sending submissions to that inbox.
-const WEB3FORMS_ACCESS_KEY = 'd217695d-772d-4c9d-8e01-72119cb30bb5';
+const WEB3FORMS_ACCESS_KEY = '03670228-c0a6-42d4-9315-60b6b015694b';
 
 /** Sends fields to the Zarq inbox. Resolves true when Web3Forms accepted the submission. */
 export async function sendToInbox(fields: Record<string, string | boolean>): Promise<boolean> {
