@@ -51,15 +51,15 @@ export default function Partners() {
       <div className="border-b border-gray-200 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid sm:grid-cols-3 gap-4 text-sm">
           <div>
-            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">Registered company</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">Registered company</p>
             <p className="font-medium">{company.legalName}</p>
           </div>
           <div>
-            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">CIPC registration</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">CIPC registration</p>
             <p className="font-medium">{company.regNo}</p>
           </div>
           <div>
-            <p className="font-spec text-[11px] uppercase tracking-[0.18em] text-gray-500 mb-1">B-BBEE</p>
+            <p className="font-spec text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">B-BBEE</p>
             <p className="font-medium">{company.bbbee} · {company.bbbeeDetail}</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function Partners() {
             <div key={label} className="rounded-2xl border border-gray-200 p-6 flex flex-col">
               <p className="font-brand text-5xl leading-none mb-3">{value}</p>
               <p className="text-gray-700 leading-relaxed mb-6 flex-1">{label}</p>
-              <p className="font-spec text-[11px] uppercase tracking-wider text-gray-400">{source}</p>
+              <p className="font-spec text-xs uppercase tracking-wider text-gray-400">{source}</p>
             </div>
           ))}
         </div>

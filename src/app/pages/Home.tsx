@@ -56,12 +56,17 @@ export default function Home() {
       <section className="relative overflow-hidden bg-stone-50 border-b border-gray-200">
         <div className="zq-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
         <Container className="relative pt-16 pb-14 sm:pt-28 sm:pb-20">
-          <Eyebrow>Technology services · Youth programmes · Matatiele, Eastern Cape</Eyebrow>
+          <Eyebrow>
+            Technology services · Youth programmes<span className="hidden sm:inline"> · Matatiele, Eastern Cape</span>
+          </Eyebrow>
           <h1 className="text-5xl sm:text-7xl lg:text-8xl leading-[0.95] text-gray-950 max-w-5xl mb-7">
             From digital exclusion to economic participation.
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mb-9">
-            ZARQ is a technology company with a clear purpose. We build websites, apps and digital solutions for businesses and organisations, and we use that work to give young people access to technology, practical skills and real opportunity.
+          <p className="text-xl sm:text-2xl text-gray-950 font-medium leading-snug max-w-2xl mb-4">
+            Websites and digital services for businesses. Free coding classes for young people.
+          </p>
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mb-9">
+            Based in Matatiele, Eastern Cape, and working online across South Africa. Every ZARQ Digital project helps fund the programmes.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-14 sm:mb-20">
             <ButtonLink to="/contact?interest=digital">Get a quote</ButtonLink>

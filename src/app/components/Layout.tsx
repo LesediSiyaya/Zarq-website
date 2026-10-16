@@ -296,7 +296,8 @@ export default function Layout() {
       </footer>
 
       {/* WhatsApp Floating Button — collapsed by default, tap to expand */}
-      <div className={`fixed ${floatingBottom} right-4 sm:right-6 z-40 flex flex-col items-end gap-2 transition-all duration-300`}>
+      {/* On phones it appears once the visitor scrolls, so it never covers the first screen. */}
+      <div className={`fixed ${floatingBottom} right-4 sm:right-6 z-40 flex flex-col items-end gap-2 transition-all duration-300 ${showBackToTop ? '' : 'max-sm:opacity-0 max-sm:translate-y-4 max-sm:pointer-events-none'}`}>
         {whatsappOpen && (
           <a
             href={contact.whatsapp}
