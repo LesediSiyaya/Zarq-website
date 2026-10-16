@@ -4,7 +4,7 @@ import { founder } from './content';
 // supporting photography (see public/media/stock/CREDITS.txt).
 
 const stock = [
-  { src: '/media/stock/drakensberg.jpg', alt: 'Green valleys below the Drakensberg mountains', caption: 'Drakensberg country' },
+  { src: '/media/stock/drakensberg.jpg', alt: 'Green valleys below the Drakensberg mountains', caption: 'Rooted in the Eastern Cape' },
   { src: '/media/stock/planning.jpg', alt: 'Hands planning in a notebook beside a laptop and phone', caption: 'Every project starts with a plan' },
   { src: '/media/stock/kids-robotics-class.jpg', alt: 'Young learners building and wiring robot cars', caption: 'Build it. Code it. Test it.' },
 ];
