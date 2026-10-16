@@ -234,7 +234,9 @@ function buildPage(meta, body) {
 for (const meta of pages) {
   const body = await render(meta.path === '/404' ? '/__not-found__' : meta.path);
   const html = buildPage(meta, body);
-  const file = meta.path === '/' ? join(dist, 'index.html') : meta.path === '/404' ? join(dist, '404.html') : join(dist, meta.path.slice(1), 'index.html');
+  // /about is written as about.html (not about/index.html) so it is served at /about with no
+  // trailing-slash redirect, matching the canonical address.
+  const file = meta.path === '/' ? join(dist, 'index.html') : meta.path === '/404' ? join(dist, '404.html') : join(dist, `${meta.path.slice(1)}.html`);
   await mkdir(dirname(file), { recursive: true });
   await writeFile(file, html);
   console.log(`prerendered ${meta.path.padEnd(14)} → ${file.replace(root + '/', '')}`);

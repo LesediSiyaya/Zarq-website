@@ -3,7 +3,7 @@
 // The old Pages address permanently redirects to the main site, so search engines
 // consolidate on one address. Keep in sync with SITE_URL in src/app/seo/site.ts.
 const OLD_HOST = 'novatechhub.pages.dev';
-const SITE_URL = 'https://zarq.sa-tech.workers.dev';
+const SITE_URL = 'https://zarq.co.za';
 
 export async function onRequest({ request, next, env }) {
   const url = new URL(request.url);
