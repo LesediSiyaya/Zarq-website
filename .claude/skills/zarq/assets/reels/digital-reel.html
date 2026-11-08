@@ -1,0 +1,194 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:G;font-weight:400;src:url(assets/geist-400.woff2)}
+@font-face{font-family:G;font-weight:500;src:url(assets/geist-500.woff2)}
+@font-face{font-family:G;font-weight:600;src:url(assets/geist-600.woff2)}
+@font-face{font-family:GM;src:url(assets/geist-mono-500.woff2)}
+@font-face{font-family:IS;src:url(assets/instrument-serif-400.woff2)}
+@font-face{font-family:IS;font-style:italic;src:url(assets/instrument-serif-400-italic.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0B0F19}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B0F19;font-family:G,sans-serif;color:#F5F3EE}
+.a{position:absolute;transform-origin:50% 50%;opacity:0}
+.blob{position:absolute;border-radius:50%;filter:blur(130px)}
+.serif{font-family:IS,serif;font-weight:400;line-height:1;white-space:nowrap}
+.mono{font-family:GM,monospace;letter-spacing:4px;text-transform:uppercase}
+.chip{display:flex;align-items:center;gap:18px;padding:22px 34px 22px 22px;border-radius:999px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);font-size:42px;font-weight:500;white-space:nowrap}
+.chip i{width:56px;height:56px;border-radius:50%;background:#FFC8DD;color:#0B0F19;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:GM;font-size:24px}
+.note{width:720px;display:flex;gap:22px;align-items:center;padding:26px 30px;border-radius:32px;background:rgba(245,243,238,.92);color:#0B0F19;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.note b{display:block;font-size:24px;font-weight:600;color:#8A3B62;font-family:GM;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.note span{font-size:36px;font-weight:500}
+.note .ic{width:72px;height:72px;flex:none;border-radius:50%;background:#0B0F19;color:#FFC8DD;font-family:GM;font-size:28px;display:flex;align-items:center;justify-content:center}
+.price{width:860px;display:flex;justify-content:space-between;align-items:center;padding:36px 44px;border-radius:36px;background:#FAFAF7;color:#0B0F19;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.price p{font-size:40px;font-weight:600}
+.price small{display:block;font-family:GM;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#8A3B62;margin-bottom:8px}
+.price div:last-child{text-align:right}
+.price b{font-family:IS;font-weight:400;font-size:96px;line-height:1}
+.price s{display:block;font-size:28px;color:#9CA3AF}
+.step{display:flex;align-items:center;gap:30px;width:860px}
+.step i{width:96px;height:96px;flex:none;border-radius:50%;background:#FFC8DD;color:#0B0F19;font-family:GM;font-style:normal;font-size:30px;display:flex;align-items:center;justify-content:center}
+.step p{font-family:IS;font-size:76px;line-height:1}
+.step span{display:block;font-family:G;font-size:30px;color:#C9CCD3;margin-top:8px}
+.pill{padding:18px 34px;border-radius:999px;font-size:40px;font-weight:600;white-space:nowrap}
+</style></head>
+<body><div id="stage">
+<div id="bg" style="position:absolute;inset:0">
+<div class="blob" id="b1" style="width:900px;height:900px;background:#8A3B62"></div>
+<div class="blob" id="b2" style="width:800px;height:800px;background:#E7C6FF;opacity:.55"></div>
+<div class="blob" id="b3" style="width:700px;height:700px;background:#FFC8DD;opacity:.5"></div>
+</div>
+<div id="blush" style="position:absolute;inset:0;background:#FFF1F6;opacity:0"></div>
+<div class="blob" id="b4" style="width:760px;height:760px;background:#E7C6FF;opacity:0"></div>
+<div class="blob" id="b5" style="width:640px;height:640px;background:#FFC8DD;opacity:0"></div>
+
+<!-- S1 hook -->
+<div class="a serif" id="s1a" style="font-size:170px;left:540px;top:740px">Your business</div>
+<div class="a" id="s1box" style="left:540px;top:940px;height:150px;border-radius:28px;background:#FFC8DD"></div>
+<div class="a" id="s1t" style="left:540px;top:940px;font-size:84px;font-weight:600;color:#0B0F19;white-space:nowrap"><span id="s1txt"></span><span id="s1car" style="display:inline-block;width:8px;height:90px;background:#0B0F19;margin-left:8px;vertical-align:-14px"></span></div>
+
+<!-- S2 customers asking -->
+<div class="a serif" id="s2a" style="font-size:150px;left:540px;top:380px">Customers ask:</div>
+<div class="a note" id="n1" style="left:540px;top:760px"><div class="ic">?</div><div><b>Customer</b><span>Do you have a website?</span></div></div>
+<div class="a note" id="n2" style="left:540px;top:960px"><div class="ic">?</div><div><b>Customer</b><span>Where can I see your prices?</span></div></div>
+<div class="a note" id="n3" style="left:540px;top:1160px"><div class="ic">?</div><div><b>Customer</b><span>Is your company registered?</span></div></div>
+<div class="a" id="s2b" style="left:540px;top:1430px;font-size:56px;font-weight:500;color:#C9CCD3;white-space:nowrap">Let’s give them a <span style="color:#FFC8DD">yes.</span></div>
+
+<!-- S3 we build it -->
+<div class="a serif" id="s3a" style="font-size:190px;left:540px;top:400px">We build it.</div>
+<div class="a" id="lap" style="left:520px;top:1040px;width:900px">
+<div style="background:#0B0F19;border:3px solid #2A303C;border-radius:28px 28px 10px 10px;padding:18px;box-shadow:0 40px 80px rgba(0,0,0,.5)"><div style="height:540px;overflow:hidden;border-radius:8px"><img id="lapimg" src="assets/zarq-site-desktop.jpg" style="width:100%;display:block"></div></div>
+<div style="height:26px;background:#C9C4BB;border-radius:0 0 30px 30px;margin:0 -50px"></div>
+</div>
+<div class="a" id="phone" style="left:880px;top:1260px;width:250px;height:520px;border:12px solid #0B0F19;border-radius:44px;overflow:hidden;background:#0B0F19;box-shadow:0 30px 60px rgba(0,0,0,.55)"><img src="assets/zarq-site-mobile.jpg" style="width:100%;display:block;border-radius:32px"></div>
+<div class="a mono" id="s3b" style="left:540px;top:1640px;font-size:30px;color:#FFC8DD;white-space:nowrap">Designed and built by ZARQ</div>
+
+<!-- S4 services -->
+<div class="a serif" id="s4a" style="font-size:150px;left:540px;top:330px">Everything <i style="color:#FFC8DD">digital.</i></div>
+<div class="a chip" id="c1" style="left:330px;top:600px"><i>01</i>Websites</div>
+<div class="a chip" id="c2" style="left:760px;top:720px"><i>02</i>Branding</div>
+<div class="a chip" id="c3" style="left:330px;top:840px"><i>03</i>UI/UX design</div>
+<div class="a chip" id="c4" style="left:770px;top:960px"><i>04</i>Apps</div>
+<div class="a chip" id="c5" style="left:360px;top:1080px"><i>05</i>AI &amp; automation</div>
+<div class="a chip" id="c6" style="left:760px;top:1200px"><i>06</i>IT support</div>
+<div class="a chip" id="c7" style="left:340px;top:1320px"><i>07</i>Cybersecurity</div>
+<div class="a chip" id="c8" style="left:700px;top:1440px"><i>08</i>CIPC registration</div>
+<div class="a chip" id="c9" style="left:400px;top:1560px"><i>09</i>Domains &amp; email</div>
+
+<!-- S5 prices -->
+<div class="a serif" id="s5a" style="font-size:160px;left:540px;top:360px">Clear <i style="color:#FFC8DD">prices.</i></div>
+<div class="a mono" id="s5tag" style="left:540px;top:540px;font-size:30px;color:#0B0F19;background:#FFC8DD;border-radius:999px;padding:16px 34px;white-space:nowrap">Launch special · 40% off</div>
+<div class="a price" id="q1" style="left:540px;top:820px"><div><small>Websites</small><p>Mobile-friendly</p></div><div><s>R2,500</s><b>R1,500</b></div></div>
+<div class="a price" id="q2" style="left:540px;top:1100px"><div><small>Branding</small><p>Logo &amp; colours</p></div><div><s>R1,500</s><b>R900</b></div></div>
+<div class="a price" id="q3" style="left:540px;top:1380px"><div><small>CIPC registration</small><p>Name reservation</p></div><div><s>R800</s><b>R480</b></div></div>
+<div class="a" id="s5b" style="left:540px;top:1610px;font-size:36px;color:#C9CCD3;white-space:nowrap">Starting prices · excluding VAT</div>
+
+<!-- S6 process -->
+<div class="a serif" id="s6a" style="font-size:140px;left:540px;top:380px">From first call</div>
+<div class="a serif" id="s6b" style="font-size:140px;left:540px;top:520px;font-style:italic;color:#FFC8DD">to launch.</div>
+<div class="a" id="s6line" style="left:178px;top:1185px;width:4px;height:0;background:rgba(255,200,221,.6);transform-origin:50% 0%"></div>
+<div class="a step" id="t1" style="left:560px;top:820px"><i>01</i><div><p>Conversation</p><span>Tell us what you need</span></div></div>
+<div class="a step" id="t2" style="left:560px;top:1060px"><i>02</i><div><p>Scope</p><span>Clear deliverables, time and cost</span></div></div>
+<div class="a step" id="t3" style="left:560px;top:1300px"><i>03</i><div><p>Design &amp; build</p><span>With check-ins along the way</span></div></div>
+<div class="a step" id="t4" style="left:560px;top:1540px"><i style="background:#FAFAF7">04</i><div><p>Launch &amp; support</p><span>14 days of free support</span></div></div>
+
+<!-- S7 B-BBEE + impact -->
+<div class="a mono" id="s7tag" style="left:540px;top:520px;font-size:32px;color:#8A3B62;border:2px solid #8A3B62;border-radius:999px;padding:14px 32px;white-space:nowrap">B-BBEE contributor</div>
+<div class="a" id="s7a" style="left:540px;top:760px;font-size:250px;font-weight:600;letter-spacing:-10px;color:#0B0F19;line-height:1;white-space:nowrap">Level 1</div>
+<div class="a serif" id="s7b" style="left:540px;top:960px;font-size:76px;font-style:italic;color:#8A3B62">135% procurement recognition</div>
+<div class="a" id="s7card" style="left:540px;top:1340px;width:880px;padding:44px;border-radius:40px;background:#0B0F19;color:#F5F3EE;text-align:center">
+<p class="mono" style="font-size:26px;color:#FFC8DD;margin-bottom:18px">Work that pays it forward</p>
+<p style="font-family:IS;font-size:68px;line-height:1.1">Every project helps fund free coding classes for young people.</p>
+</div>
+<div class="a serif" id="k1" style="left:170px;top:460px;font-size:110px;color:#8A3B62">✦</div>
+<div class="a serif" id="k2" style="left:930px;top:640px;font-size:80px;color:#E7C6FF">✦</div>
+<div class="a" id="k3" style="left:940px;top:1110px;width:80px;height:80px;border-radius:50%;background:#FFC8DD;border:3px solid #0B0F19"></div>
+<div class="a" id="k4" style="left:140px;top:1150px;width:60px;height:60px;border-radius:50%;background:#E7C6FF"></div>
+
+<!-- S8 end card -->
+<div class="a serif" id="e1" style="left:540px;top:360px;font-size:190px;color:#0B0F19">ZARQ</div>
+<div class="a mono" id="e1b" style="left:540px;top:500px;font-size:40px;color:#8A3B62;letter-spacing:10px">Digital</div>
+<div class="a serif" id="e2" style="left:540px;top:680px;font-size:100px;color:#0B0F19">Websites from <i style="color:#8A3B62">R1,500</i></div>
+<div class="a" id="e3" style="left:540px;top:800px;font-size:38px;color:#4B5563;white-space:nowrap">Based in Matatiele · Working across South Africa</div>
+<div class="a" id="e4" style="left:540px;top:1180px;width:900px">
+<div style="background:#0B0F19;border-radius:24px 24px 8px 8px;padding:16px;box-shadow:0 30px 60px rgba(11,15,25,.25)"><div style="height:500px;overflow:hidden;border-radius:6px"><img src="assets/zarq-site-desktop.jpg" style="width:100%;display:block"></div></div>
+<div style="height:22px;background:#C9C4BB;border-radius:0 0 28px 28px;margin:0 -40px"></div>
+</div>
+<div class="a" id="e5" style="left:540px;top:1580px;padding:30px 70px;border-radius:999px;background:#0B0F19;color:#F5F3EE;font-size:52px;font-weight:600;white-space:nowrap;box-shadow:0 20px 40px rgba(11,15,25,.3)">Get a quote  →</div>
+<div class="a" id="e6" style="left:540px;top:1720px;font-size:42px;font-weight:500;color:#0B0F19;white-space:nowrap">zarq.co.za · admin@zarq.co.za</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const C=x=>Math.max(0,Math.min(1,x));
+const P=(t,a,b)=>C((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eb=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+function set(id,o,tx=0,ty=0,s=1,r=0,bl=0){const e=$(id);e.style.opacity=o;e.style.transform=`translate(-50%,-50%) translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`;e.style.filter=bl>0.2?`blur(${bl}px)`:'none'}
+function win(t,a,b,d=.45,d2=.4){return {i:eo(P(t,a,a+d)),o:1-eio(P(t,b-d2,b))}}
+function word(id,t,a,b,dy=60){const w=win(t,a,b);set(id,w.i*w.o,0,(1-w.i)*dy-(1-w.o)*80,1,0,(1-w.i)*14+(1-w.o)*14)}
+// Time warp: real seconds -> design seconds, so scenes can land on a voice-over.
+window.WARP=[[0,0],[32,32]];
+function warp(T){const W=window.WARP;for(let i=1;i<W.length;i++){if(T<=W[i][0]){const [a,ta]=W[i-1],[b,tb]=W[i];return ta+(tb-ta)*(T-a)/(b-a);}}return W[W.length-1][1];}
+window.render=async function(T){
+  const t=warp(T);const s=T*.35;
+  $('b1').style.transform=`translate(${-200+Math.sin(s)*160}px,${-150+Math.cos(s*.8)*200}px)`;
+  $('b2').style.transform=`translate(${450+Math.cos(s*.9)*180}px,${700+Math.sin(s*.7)*220}px)`;
+  $('b3').style.transform=`translate(${-150+Math.sin(s*1.1+2)*200}px,${1250+Math.cos(s)*180}px)`;
+  const bl=eio(P(t,23.4,24.0));
+  $('blush').style.opacity=bl;$('b4').style.opacity=bl*.7;$('b5').style.opacity=bl*.8;
+  $('b4').style.transform=`translate(${520+Math.sin(s)*120}px,${-200+Math.cos(s)*120}px)`;
+  $('b5').style.transform=`translate(${-260+Math.cos(s)*120}px,${1350+Math.sin(s)*140}px)`;
+
+  // S1 0–3.2
+  word('s1a',t,.1,3.2);
+  {const w=win(t,.5,3.2,.4);const full='deserves to be found.';const n=Math.round(full.length*P(t,.9,2.2));$('s1txt').textContent=full.slice(0,n);
+   const bw=eo(P(t,.5,.9))*960;$('s1box').style.width=bw+'px';set('s1box',(bw>4?1:0)*w.o,0,0,1,-2*(1-w.o));
+   set('s1t',(n>0?1:0)*w.o,0,0,1,-2*(1-w.o));$('s1car').style.opacity=(Math.floor(t*3)%2===0||P(t,.9,2.2)<1)?1:0;}
+
+  // S2 3.2–7.4
+  word('s2a',t,3.2,7.4);
+  ['n1','n2','n3'].forEach((id,k)=>{const a=3.6+k*.5;const w=win(t,a,7.4,.5);
+    set(id,w.i*w.o,(k%2?1:-1)*(1-w.i)*700,Math.sin(t*1.3+k)*6-(1-w.o)*100,1,(k%2?2:-2)+(k%2?1:-1)*(1-w.i)*8);});
+  word('s2b',t,5.6,7.4,40);
+
+  // S3 7.4–11.6
+  word('s3a',t,7.4,11.6);
+  {const a=7.8;const w=win(t,a,11.6,.7);set('lap',w.i*w.o,0,(1-w.i)*300-(1-w.o)*150,.8+.2*eo(P(t,a,a+.7)),0);
+   $('lapimg').style.transform=`translateY(${-eio(P(t,8.6,11.2))*80}px)`;
+   const w2=win(t,8.5,11.6,.6);set('phone',w2.i*w2.o,(1-w2.i)*300,Math.sin(t*1.4)*10-(1-w2.o)*150,.85+.15*eb(P(t,8.5,9.1)),6-4*w2.i);}
+  word('s3b',t,9.3,11.6,30);
+
+  // S4 11.6–15.6
+  word('s4a',t,11.6,15.6);
+  ['c1','c2','c3','c4','c5','c6','c7','c8','c9'].forEach((id,k)=>{const a=11.9+k*.14;const w=win(t,a,15.6,.55);const fl=Math.sin(t*1.6+k)*10;
+    set(id,w.i*w.o,(k%2?1:-1)*(1-w.i)*260,(1-w.i)*300+fl-(1-w.o)*120,.7+.3*eb(P(t,a,a+.55)),(k%2?5:-5)*(1-w.i)+Math.sin(t+k)*1.5);});
+
+  // S5 15.6–19.6
+  word('s5a',t,15.6,19.6);
+  {const w=win(t,15.9,19.6,.4);set('s5tag',w.i*w.o,0,0,.6+.4*eb(P(t,15.9,16.3)),-2);}
+  ['q1','q2','q3'].forEach((id,k)=>{const a=16.3+k*.4;const w=win(t,a,19.6,.55);set(id,w.i*w.o,0,(1-w.i)*260+Math.sin(t*1.2+k)*6-(1-w.o)*120,.9+.1*eo(w.i),(k%2?1:-1)*(1-w.i)*4);});
+  word('s5b',t,17.8,19.6,30);
+
+  // S6 19.6–23.6
+  word('s6a',t,19.6,23.6);word('s6b',t,19.85,23.6);
+  {const w=win(t,20.1,23.6,.4);const L=eio(P(t,20.2,22.4));$('s6line').style.height=(L*720)+'px';set('s6line',w.o*(L>0?1:0),0,0,1,0);$('s6line').style.transform='translate(-50%,0)';$('s6line').style.top='820px';}
+  ['t1','t2','t3','t4'].forEach((id,k)=>{const a=20.2+k*.55;const w=win(t,a,23.6,.45);set(id,w.i*w.o,(1-w.i)*-120,-(1-w.o)*100,.9+.1*eb(P(t,a,a+.45)));});
+
+  // S7 23.6–27.2
+  {const w=win(t,23.9,27.2,.4);set('s7tag',w.i*w.o,0,(1-w.i)*40,1);}
+  {const w=win(t,24.1,27.2,.5);set('s7a',w.i*w.o,0,Math.sin(t*3)*4,(.3+.7*eb(P(t,24.1,24.6)))*(1+.015*Math.sin(t*4)),-3*(1-w.i));}
+  word('s7b',t,24.5,27.2);
+  {const w=win(t,25.2,27.2,.55);set('s7card',w.i*w.o,0,(1-w.i)*200-(1-w.o)*100,.9+.1*eb(P(t,25.2,25.75)),-1*(1-w.i));}
+  ['k1','k2','k3','k4'].forEach((id,k)=>{const a=24.2+k*.12;const w=win(t,a,27.2,.4);set(id,w.i*w.o,0,Math.sin(t*2.2+k)*20,.2+.8*eb(P(t,a,a+.4)),t*30*(k%2?-1:1));});
+
+  // S8 27.2–32
+  {const a=27.2;
+   const w1=win(t,a,40,.6);set('e1',w1.i,0,(1-w1.i)*80,.9+.1*w1.i,0,(1-w1.i)*12);
+   word('e1b',t,a+.2,40,30);word('e2',t,a+.35,40);word('e3',t,a+.55,40,30);
+   const w4=win(t,a+.7,40,.7);set('e4',w4.i,0,(1-w4.i)*240+Math.sin(t*1.2)*8,.85+.15*eo(w4.i),0);
+   const w5=win(t,a+1.2,40,.5);set('e5',w5.i,0,(1-w5.i)*60,(.6+.4*eb(P(t,a+1.2,a+1.7)))*(1+.025*Math.sin((t-a)*5)*P(t,a+2,a+2.5)));
+   word('e6',t,a+1.5,40,30);
+   const end=P(t,31.5,32);if(end>0){['e1','e1b','e2','e3','e4','e5','e6'].forEach(id=>$(id).style.opacity=parseFloat($(id).style.opacity)*(1-end));$('blush').style.opacity=1-end;$('b4').style.opacity=.7*(1-end);$('b5').style.opacity=.8*(1-end);}}
+};
+</script></body></html>

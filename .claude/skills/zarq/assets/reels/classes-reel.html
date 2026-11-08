@@ -1,0 +1,204 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:G;font-weight:400;src:url(assets/geist-400.woff2)}
+@font-face{font-family:G;font-weight:500;src:url(assets/geist-500.woff2)}
+@font-face{font-family:G;font-weight:600;src:url(assets/geist-600.woff2)}
+@font-face{font-family:GM;src:url(assets/geist-mono-500.woff2)}
+@font-face{font-family:IS;src:url(assets/instrument-serif-400.woff2)}
+@font-face{font-family:IS;font-style:italic;src:url(assets/instrument-serif-400-italic.woff2)}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0B0F19}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B0F19;font-family:G,sans-serif;color:#F5F3EE}
+.a{position:absolute;transform-origin:50% 50%;will-change:transform,opacity;opacity:0}
+.blob{position:absolute;border-radius:50%;filter:blur(130px)}
+.serif{font-family:IS,serif;font-weight:400;line-height:1;white-space:nowrap}
+.mono{font-family:GM,monospace;letter-spacing:4px;text-transform:uppercase}
+.chip{display:flex;align-items:center;gap:18px;padding:22px 34px 22px 22px;border-radius:999px;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);font-size:44px;font-weight:500;white-space:nowrap}
+.chip i{width:56px;height:56px;border-radius:50%;background:#FFC8DD;color:#0B0F19;display:flex;align-items:center;justify-content:center;font-style:normal;font-family:GM;font-size:26px}
+.note{width:700px;display:flex;gap:22px;align-items:center;padding:26px 30px;border-radius:32px;background:rgba(245,243,238,.92);color:#0B0F19;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.note b{display:block;font-size:26px;font-weight:600;color:#8A3B62;font-family:GM;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.note span{font-size:36px;font-weight:500}
+.note .ic{width:72px;height:72px;flex:none;border-radius:20px;background:#0B0F19;color:#FFC8DD;font-family:IS;font-size:46px;display:flex;align-items:center;justify-content:center}
+.card{border-radius:36px;background:#FAFAF7;color:#0B0F19;box-shadow:0 30px 70px rgba(0,0,0,.4);overflow:hidden}
+.tag{position:absolute;left:24px;bottom:24px;padding:12px 24px;border-radius:999px;background:#FAFAF7;color:#0B0F19;font-size:30px;font-weight:600;white-space:nowrap}
+.pill{padding:18px 34px;border-radius:999px;font-size:40px;font-weight:600;white-space:nowrap}
+.bub{padding:22px 32px;border-radius:34px;font-size:42px;white-space:nowrap}
+</style></head>
+<body><div id="stage">
+<div id="bg" style="position:absolute;inset:0">
+<div class="blob" id="b1" style="width:900px;height:900px;background:#8A3B62"></div>
+<div class="blob" id="b2" style="width:800px;height:800px;background:#E7C6FF;opacity:.55"></div>
+<div class="blob" id="b3" style="width:700px;height:700px;background:#FFC8DD;opacity:.5"></div>
+</div>
+<div id="blush" style="position:absolute;inset:0;background:#FFF1F6;opacity:0"></div>
+<div class="blob" id="b4" style="width:760px;height:760px;background:#E7C6FF;opacity:0"></div>
+<div class="blob" id="b5" style="width:640px;height:640px;background:#FFC8DD;opacity:0"></div>
+
+<!-- S1 -->
+<div class="a serif" id="s1a" style="font-size:170px;left:540px;top:760px">Are you</div>
+<div class="a" id="s1box" style="left:540px;top:950px;height:150px;border-radius:28px;background:#FFC8DD"></div>
+<div class="a" id="s1t" style="left:540px;top:950px;font-size:92px;font-weight:600;color:#0B0F19;white-space:nowrap"><span id="s1txt"></span><span id="s1car" style="display:inline-block;width:8px;height:96px;background:#0B0F19;margin-left:8px;vertical-align:-14px"></span></div>
+
+<!-- S2 -->
+<div class="a serif" id="s2a" style="font-size:150px;left:540px;top:330px">Curious about</div>
+<div class="a chip" id="c1" style="left:330px;top:640px"><i>{ }</i>Coding</div>
+<div class="a chip" id="c2" style="left:760px;top:760px"><i>⚙</i>Robotics</div>
+<div class="a chip" id="c3" style="left:300px;top:900px"><i>✦</i>AI</div>
+<div class="a chip" id="c4" style="left:700px;top:1030px"><i>▶</i>Apps</div>
+<div class="a chip" id="c5" style="left:360px;top:1170px"><i>⌘</i>Websites</div>
+<div class="a note" id="n1" style="left:540px;top:1390px"><div class="ic">?</div><div><b>Big question</b><span>How does AI actually work?</span></div></div>
+<div class="a note" id="n2" style="left:540px;top:1560px"><div class="ic">?</div><div><b>Big question</b><span>Can I build my own app?</span></div></div>
+<div class="a note" id="n3" style="left:540px;top:1730px"><div class="ic">?</div><div><b>Big question</b><span>Can I make a robot move?</span></div></div>
+
+<!-- S3 -->
+<div class="a serif" id="s3a" style="font-size:200px;left:540px;top:430px">Build it.</div>
+<div class="a" id="s3card" style="left:540px;top:1060px;width:880px;padding:26px 26px 110px;background:#FAFAF7;box-shadow:0 40px 80px rgba(0,0,0,.45)">
+<div style="position:absolute;left:50%;top:-22px;width:220px;height:50px;margin-left:-110px;background:rgba(231,198,255,.92);transform:rotate(-3deg)"></div>
+<video id="vid" src="assets/robotics.webm" muted playsinline preload="auto" style="display:block;width:828px;height:560px;object-fit:cover"></video>
+<div class="serif" style="position:absolute;left:0;right:0;bottom:26px;text-align:center;font-style:italic;font-size:64px;color:#0B0F19">build real things</div>
+</div>
+<div class="a" id="s3b" style="left:540px;top:1610px;font-size:56px;font-weight:500;color:#C9CCD3;white-space:nowrap">Code it. Test it. Show it.</div>
+
+<!-- S4 -->
+<div class="a serif" id="s4a" style="font-size:170px;left:540px;top:300px">Real <i style="color:#FFC8DD">projects.</i></div>
+<div class="a" id="p1" style="left:300px;top:1040px;width:380px;height:780px;border-radius:56px;border:14px solid #0B0F19;background:#0B0F19;box-shadow:0 30px 70px rgba(0,0,0,.5);overflow:hidden"><img src="assets/zarq-site-mobile.jpg" style="width:100%;height:100%;object-fit:cover;object-position:top;border-radius:42px"><div class="tag">Your first website</div></div>
+<div class="a card" id="p2" style="left:760px;top:820px;width:520px;height:400px"><img src="assets/robotics-car.jpg" style="width:100%;height:100%;object-fit:cover"><div class="tag">Robots that move</div></div>
+<div class="a card" id="p3" style="left:740px;top:1340px;width:560px;padding:34px">
+<p class="mono" style="font-size:24px;color:#8A3B62;margin-bottom:20px">AI check</p>
+<p style="font-size:34px;font-weight:500;margin-bottom:22px">“The Drakensberg is in Brazil.”</p>
+<div style="display:flex;gap:16px;align-items:center;font-size:30px;color:#4B5563"><span style="width:48px;height:48px;border-radius:50%;background:#FFC8DD;color:#0B0F19;display:flex;align-items:center;justify-content:center;font-weight:600">✕</span>Checked. Not true.</div>
+<div class="tag" style="position:static;display:inline-block;margin-top:26px;background:#0B0F19;color:#F5F3EE">Understand AI</div>
+</div>
+
+<!-- S5 -->
+<div class="a mono" id="s5tag" style="left:540px;top:430px;font-size:34px;color:#FFC8DD;border:2px solid #FFC8DD;border-radius:999px;padding:16px 34px;white-space:nowrap">Ages 5 and up</div>
+<div class="a" id="s5ring" style="left:540px;top:1040px;width:760px;height:760px;border-radius:50%;border:3px dashed rgba(255,255,255,.28)"></div>
+<div class="a serif" id="s5c" style="left:540px;top:1040px;font-size:120px;text-align:center;line-height:1.05">A track for<br><i style="color:#FFC8DD">every age</i></div>
+<div class="a pill" id="o1" style="background:#FFC8DD;color:#0B0F19">Juniors</div>
+<div class="a pill" id="o2" style="background:#E7C6FF;color:#0B0F19">Youth</div>
+<div class="a pill" id="o3" style="background:#FAFAF7;color:#0B0F19">Future</div>
+<div class="a" id="d1" style="width:34px;height:34px;border-radius:50%;background:#FFC8DD"></div>
+<div class="a" id="d2" style="width:26px;height:26px;border-radius:50%;background:#E7C6FF"></div>
+<div class="a" id="d3" style="width:30px;height:30px;border-radius:50%;background:#FAFAF7"></div>
+
+<!-- S6 -->
+<div class="a serif" id="s6a" style="font-size:150px;left:540px;top:420px">Smart with tech.</div>
+<div class="a serif" id="s6b" style="font-size:150px;left:540px;top:580px;font-style:italic;color:#FFC8DD">Kind with people.</div>
+<div class="a card" id="s6card" style="left:540px;top:1150px;width:900px;padding:44px 40px 60px">
+<p class="mono" style="font-size:26px;color:#9CA3AF;margin-bottom:30px">Group chat · Grade 7</p>
+<div style="display:flex;margin-bottom:24px"><div class="bub" id="bub1" style="position:relative;background:#F1EFEA;color:#0B0F19">lol who even invited you<div id="strike" style="position:absolute;left:28px;top:50%;height:4px;background:#8A3B62;width:0"></div></div></div>
+<div style="display:flex;justify-content:flex-end"><div class="bub" id="bub2" style="background:#0B0F19;color:#F5F3EE;opacity:0">Want to join our project group?</div></div>
+</div>
+<div class="a serif" id="s6st" style="left:640px;top:1520px;font-size:66px;font-style:italic;background:#FFC8DD;color:#0B0F19;border:3px solid #0B0F19;border-radius:999px;padding:14px 44px">pause before you post</div>
+<div class="a mono" id="s6lab" style="left:540px;top:1740px;font-size:30px;color:#C9CCD3;white-space:nowrap">Digital Kindness in every class</div>
+
+<!-- S7 -->
+<div class="a serif" id="s7a" style="font-size:150px;left:540px;top:640px;color:#0B0F19">Completely</div>
+<div class="a" id="s7b" style="left:540px;top:900px;font-size:330px;font-weight:600;letter-spacing:-12px;color:#0B0F19;line-height:1">FREE</div>
+<div class="a serif" id="s7c" style="font-size:120px;left:540px;top:1150px;font-style:italic;color:#8A3B62">for learners</div>
+<div class="a pill" id="s7p1" style="left:540px;top:1400px;background:#0B0F19;color:#F5F3EE">Devices provided</div>
+<div class="a pill" id="s7p2" style="left:540px;top:1530px;background:#FFC8DD;color:#0B0F19;border:2px solid #0B0F19">Robotics kits provided</div>
+<div class="a serif" id="k1" style="left:170px;top:520px;font-size:120px;color:#8A3B62">✦</div>
+<div class="a serif" id="k2" style="left:920px;top:470px;font-size:90px;color:#E7C6FF">✦</div>
+<div class="a" id="k3" style="left:930px;top:1270px;width:90px;height:90px;border-radius:50%;background:#FFC8DD;border:3px solid #0B0F19"></div>
+<div class="a" id="k4" style="left:150px;top:1300px;width:70px;height:70px;border-radius:50%;background:#E7C6FF"></div>
+<div class="a serif" id="k5" style="left:160px;top:1700px;font-size:80px;color:#FFC8DD">✦</div>
+<div class="a" id="k6" style="left:930px;top:1720px;width:56px;height:56px;border-radius:50%;background:#8A3B62"></div>
+
+<!-- S8 -->
+<div class="a serif" id="e1" style="left:540px;top:330px;font-size:190px;color:#0B0F19">ZARQ</div>
+<div class="a serif" id="e2" style="left:540px;top:520px;font-size:104px;color:#0B0F19">Free coding classes</div>
+<div class="a mono" id="e3" style="left:540px;top:640px;font-size:30px;color:#8A3B62;white-space:nowrap">Matatiele &amp; online · From January 2027</div>
+<div class="a card" id="e4" style="left:540px;top:1060px;width:900px;height:620px;border-radius:44px"><img src="assets/kids-robotics-class.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="a" id="e5" style="left:540px;top:1540px;padding:30px 60px;border-radius:999px;background:#0B0F19;color:#F5F3EE;font-size:50px;font-weight:600;white-space:nowrap;box-shadow:0 20px 40px rgba(11,15,25,.3)">Register your interest  →</div>
+<div class="a" id="e6" style="left:540px;top:1690px;font-size:46px;font-weight:500;color:#0B0F19">zarq.co.za</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const C=x=>Math.max(0,Math.min(1,x));
+const P=(t,a,b)=>C((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);
+const eb=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+function set(id,o,tx=0,ty=0,s=1,r=0,bl=0){const e=$(id);e.style.opacity=o;e.style.transform=`translate(-50%,-50%) translate(${tx}px,${ty}px) scale(${s}) rotate(${r}deg)`;e.style.filter=bl>0.2?`blur(${bl}px)`:'none'}
+// fade in over [a,a+d], out over [b-d2,b]
+function win(t,a,b,d=.45,d2=.4){return {i:eo(P(t,a,a+d)),o:1-eio(P(t,b-d2,b))}}
+function word(id,t,a,b,dy=60){const w=win(t,a,b);set(id,w.i*w.o,0,(1-w.i)*dy-(1-w.o)*80,1,0,(1-w.i)*14+(1-w.o)*14)}
+const vid=$('vid');
+// Time warp: real seconds -> design seconds, so scenes land on the voice-over.
+window.WARP=[[0,0],[32,32]];
+function warp(T){const W=window.WARP;for(let i=1;i<W.length;i++){if(T<=W[i][0]){const [a,ta]=W[i-1],[b,tb]=W[i];return ta+(tb-ta)*(T-a)/(b-a);}}return W[W.length-1][1];}
+window.render=async function(T){
+  const t=warp(T);
+  // background blobs drift
+  const s=T*.35;
+  $('b1').style.transform=`translate(${-200+Math.sin(s)*160}px,${-150+Math.cos(s*.8)*200}px)`;
+  $('b2').style.transform=`translate(${450+Math.cos(s*.9)*180}px,${700+Math.sin(s*.7)*220}px)`;
+  $('b3').style.transform=`translate(${-150+Math.sin(s*1.1+2)*200}px,${1250+Math.cos(s)*180}px)`;
+  const bl=eio(P(t,23.4,24.0));
+  $('blush').style.opacity=bl;
+  $('b4').style.opacity=bl*.7;$('b5').style.opacity=bl*.8;
+  $('b4').style.transform=`translate(${520+Math.sin(s)*120}px,${-200+Math.cos(s)*120}px)`;
+  $('b5').style.transform=`translate(${-260+Math.cos(s)*120}px,${1350+Math.sin(s)*140}px)`;
+
+  // S1 0–3.2
+  word('s1a',t,.1,3.2);
+  {const w=win(t,.5,3.2,.4);const full='a future coder?';const n=Math.round(full.length*P(t,.9,2.1));$('s1txt').textContent=full.slice(0,n);
+   const bw=eo(P(t,.5,.9))*880;const b=$('s1box');b.style.width=bw+'px';set('s1box',(bw>4?1:0)*w.o,0,0,1,-2*(1-w.o));
+   set('s1t',(n>0?1:0)*w.o,0,0,1,-2*(1-w.o));$('s1car').style.opacity=(Math.floor(t*3)%2===0||P(t,.9,2.1)<1)?1:0;}
+
+  // S2 3.2–7.4
+  word('s2a',t,3.2,7.4);
+  ['c1','c2','c3','c4','c5'].forEach((id,k)=>{const a=3.5+k*.16;const w=win(t,a,7.4,.6);const fl=Math.sin(t*1.6+k)*12;
+    set(id,w.i*w.o,(k%2?1:-1)*(1-w.i)*260,(1-w.i)*400+fl-(1-w.o)*120,.7+.3*eb(P(t,a,a+.6)),(k%2?6:-6)*(1-w.i)+Math.sin(t+k)*2);});
+  ['n1','n2','n3'].forEach((id,k)=>{const a=4.6+k*.45;const w=win(t,a,7.4,.5);
+    set(id,w.i*w.o,(k%2?1:-1)*(1-w.i)*700,Math.sin(t*1.3+k)*6-(1-w.o)*100,1,(k%2?2:-2)+(k%2?1:-1)*(1-w.i)*8);});
+
+  // S3 7.4–11.6
+  word('s3a',t,7.4,11.6);
+  {const a=7.8;const w=win(t,a,11.6,.7);const e=eb(P(t,a,a+.7));
+   set('s3card',C(w.i*1.5)*w.o,0,(1-w.i)*300-(1-w.o)*150,(.55+.45*e)*(1+.06*P(t,a,11.6)),-8+5*e+(1-w.o)*-6);
+   if(t>=a-.1&&t<=11.7){const vt=Math.min(Math.max(t-a+.4,0),7.9);if(Math.abs(vid.currentTime-vt)>.001){await new Promise(r=>{vid.addEventListener('seeked',r,{once:true});vid.currentTime=vt;});}}}
+  word('s3b',t,9.1,11.6,40);
+
+  // S4 11.6–15.6
+  word('s4a',t,11.6,15.6);
+  [['p1',12.0,-1,-4],['p2',12.35,1,5],['p3',12.7,1,-3]].forEach(([id,a,dir,rot],k)=>{const w=win(t,a,15.6,.6);
+    set(id,w.i*w.o,dir*(1-w.i)*600,Math.sin(t*1.4+k*2)*14-(1-w.o)*150,.85+.15*eo(P(t,a,a+.6)),rot*(1-.4*w.i)+dir*(1-w.i)*10);});
+
+  // S5 15.6–19.6
+  word('s5tag',t,15.7,19.6,40);
+  {const w=win(t,15.8,19.6,.7);set('s5ring',w.i*w.o,0,0,.6+.4*eo(w.i),t*8);
+   word('s5c',t,16.1,19.6);
+   const R=380,cx=540,cy=1040;
+   [['o1',0],['o2',2.094],['o3',4.189],['d1',1.05],['d2',3.14],['d3',5.24]].forEach(([id,ph],k)=>{const a=16.4+k*.12;const wi=win(t,a,19.6,.5);const ang=ph+t*.55-1.4;
+     const e=$(id);e.style.left=(cx+Math.cos(ang)*R)+'px';e.style.top=(cy+Math.sin(ang)*R)+'px';set(id,wi.i*wi.o,0,0,.4+.6*eb(P(t,a,a+.5)));});}
+
+  // S6 19.6–23.6
+  word('s6a',t,19.6,23.6);word('s6b',t,19.85,23.6);
+  {const w=win(t,20.2,23.6,.6);set('s6card',w.i*w.o,0,(1-w.i)*260-(1-w.o)*120,.9+.1*w.i);
+   const st=eio(P(t,21.0,21.5));$('strike').style.width=(st*500)+'px';$('bub1').style.color=st>.5?'#9CA3AF':'#0B0F19';
+   const b2=eb(P(t,21.6,22.1));$('bub2').style.opacity=C(P(t,21.6,21.8)*1);$('bub2').style.transform=`scale(${.6+.4*b2})`;$('bub2').style.transformOrigin='100% 100%';
+   const sw=win(t,22.2,23.6,.45);set('s6st',sw.i*sw.o,0,0,.3+.7*eb(P(t,22.2,22.65)),-6);
+   word('s6lab',t,22.5,23.6,30);}
+
+  // S7 23.6–27.2
+  word('s7a',t,23.9,27.2);
+  {const w=win(t,24.2,27.2,.5);set('s7b',w.i*w.o,0,Math.sin(t*3)*4,(.3+.7*eb(P(t,24.2,24.7)))*(1+.02*Math.sin(t*4)),-3*(1-w.i));}
+  word('s7c',t,24.6,27.2);
+  ['s7p1','s7p2'].forEach((id,k)=>{const a=25.2+k*.3;const w=win(t,a,27.2,.45);set(id,w.i*w.o,0,(1-w.i)*120,.8+.2*eb(P(t,a,a+.45)),k?2:-2);});
+  ['k1','k2','k3','k4','k5','k6'].forEach((id,k)=>{const a=24.3+k*.12;const w=win(t,a,27.2,.4);set(id,w.i*w.o,0,Math.sin(t*2.2+k)*22,.2+.8*eb(P(t,a,a+.4)),t*30*(k%2?-1:1));});
+
+  // S8 27.2–32
+  {const a=27.2;
+   const w1=win(t,a,40,.6);set('e1',w1.i,0,(1-w1.i)*80,.9+.1*w1.i,0,(1-w1.i)*12);
+   word('e2',t,a+.25,40);word('e3',t,a+.45,40,30);
+   const w4=win(t,a+.6,40,.7);set('e4',w4.i,0,(1-w4.i)*240+Math.sin(t*1.2)*8,.85+.15*eo(w4.i),-2*(1-w4.i)+Math.sin(t)*.6);
+   const w5=win(t,a+1.2,40,.5);set('e5',w5.i,0,(1-w5.i)*60,(.6+.4*eb(P(t,a+1.2,a+1.7)))*(1+.025*Math.sin((t-a)*5)*P(t,a+2,a+2.5)));
+   word('e6',t,a+1.5,40,30);
+   // fade to the opening background for a clean loop
+   $('stage').style.filter='none';
+   const end=P(t,31.5,32);if(end>0){['e1','e2','e3','e4','e5','e6'].forEach(id=>$(id).style.opacity=parseFloat($(id).style.opacity)*(1-end));$('blush').style.opacity=1-end;$('b4').style.opacity=.7*(1-end);$('b5').style.opacity=.8*(1-end);}}
+};
+</script></body></html>
