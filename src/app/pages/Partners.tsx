@@ -214,12 +214,12 @@ export default function Partners() {
       <Section tone="blush" id="founder">
         <div className="grid md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-16 items-center">
           <img
-            src="/founder-lesedi-smile.jpg"
+            src={founder.photo}
             alt={founder.photoAlt}
-            width={900}
-            height={1352}
+            width={941}
+            height={1672}
             loading="lazy"
-            className="w-full max-w-sm rounded-2xl object-cover aspect-[4/5]"
+            className="w-full max-w-sm rounded-2xl object-cover object-[50%_18%] aspect-[4/5]"
           />
           <div>
             <Eyebrow>Meet the founder</Eyebrow>

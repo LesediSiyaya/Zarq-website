@@ -22,7 +22,7 @@ export default function RealWork() {
     <div className="space-y-4">
       <div className="grid md:grid-cols-[1.05fr_1.5fr_0.9fr] gap-4 md:h-[430px]">
         <figure className="relative rounded-2xl overflow-hidden bg-gray-100 h-[360px] md:h-auto">
-          <img src="/founder-lesedi-smile.jpg" alt={founder.photoAlt} loading="lazy" className="w-full h-full object-cover object-[50%_25%]" />
+          <img src={founder.photo} alt={founder.photoAlt} loading="lazy" className="w-full h-full object-cover object-[50%_25%]" />
           <Caption>{`${founder.name}, founder`}</Caption>
         </figure>
         <figure className="relative rounded-2xl overflow-hidden bg-[#fff1f6] flex items-center justify-center p-6 sm:p-9 h-[300px] md:h-auto">

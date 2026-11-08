@@ -176,10 +176,10 @@ export default function About() {
             <img
               src={founder.photo}
               alt={founder.photoAlt}
-              width={900}
-              height={1352}
+              width={941}
+              height={1672}
               loading="lazy"
-              className="w-full max-w-xs rounded-2xl object-cover aspect-[4/5] mb-8"
+              className="w-full max-w-xs rounded-2xl object-cover object-[50%_18%] aspect-[4/5] mb-8"
             />
             <Eyebrow>Founder</Eyebrow>
             <h2 className="text-4xl sm:text-5xl leading-[1.05] mb-2">{founder.name}</h2>

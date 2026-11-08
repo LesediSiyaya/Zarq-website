@@ -28,8 +28,8 @@ export const company = {
 export const founder = {
   name: 'Lesedi Siyaya',
   role: 'Founder, ZARQ',
-  photo: '/founder-lesedi.jpg',
-  photoAlt: 'Lesedi Siyaya, founder of ZARQ, at her graduation',
+  photo: '/founder-lesedi-headshot.jpg',
+  photoAlt: 'Lesedi Siyaya, founder of ZARQ',
 };
 
 export const coreMessage =
